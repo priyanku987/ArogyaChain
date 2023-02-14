@@ -1,0 +1,325 @@
+# Used in the multi-org-ca setup
+
+#   CAPABILITIES
+Capabilities:
+  Application: &ApplicationCapabilities
+    V2_0: true
+  Orderer: &OrdererCapabilities
+    V2_0: true
+  Channel: &ChannelCapabilities
+    V2_0: true
+
+# ORGANIZATIONS
+Organizations:
+  - &Orderer
+    Name: Orderer
+    ID: OrdererMSP
+    MSPDir: client/orderer/msp
+    # Policies are mandatory starting 2.x
+    Policies: &OrdererPolicies
+      Readers:
+        Type: Signature
+        Rule: "OR('OrdererMSP.member')"
+      Writers:
+        Type: Signature
+        Rule: "OR('OrdererMSP.member')"
+      Admins:
+        Type: Signature
+        # ONLY Admin Role can carry out administration activities
+        Rule: "OR('OrdererMSP.admin')"
+      Endorsement:
+        Type: Signature
+        Rule: "OR('OrdererMSP.member')"
+
+  - &Mohfw
+    Name: Mohfw
+    ID: MohfwMSP
+    MSPDir: client/mohfw/msp
+    Policies: &MohfwPolicies
+      Readers:
+        Type: Signature
+        # Any member can READ e.g., query
+        Rule: "OR('MohfwMSP.member','Hosp1MSP.member','Hosp2MSP.member','Hosp3MSP.member')"
+      Writers:
+        Type: Signature
+        # Any member can WRITE e.g., submit transaction
+        Rule: "OR('MohfwMSP.member','Hosp1MSP.member','Hosp2MSP.member','Hosp3MSP.member')"
+      Admins:
+        Type: Signature
+        # Either Acme admin OR Orderer Admin can carry out admin activities
+        Rule: "OR('MohfwMSP.admin')"
+      Endorsement:
+        Type: Signature
+        # Any member can act as an endorser
+        Rule: "OR('MohfwMSP.member')"
+    AnchorPeers:
+      - Host: localhost
+        Port: 49153
+
+  # Added by the Administrator
+  - &Hosp1
+    Name: Hosp1
+    ID: Hosp1MSP
+    MSPDir: client/hosp1/msp
+
+    Policies: &Hosp1Policies
+      Readers:
+        Type: Signature
+        # Any member can READ e.g., query
+        Rule: "OR('Hosp1MSP.member','MohfwMSP.member','Hosp2MSP.member','Hosp3MSP.member')"
+      Writers:
+        Type: Signature
+        # Any member can WRITE e.g., submit transaction
+        Rule: "OR('Hosp1MSP.member','MohfwMSP.member','Hosp2MSP.member','Hosp3MSP.member')"
+      Admins:
+        Type: Signature
+        # Either Acme admin OR Orderer Admin can carry out admin activities
+        Rule: "OR('Hosp1MSP.admin')"
+      Endorsement:
+        Type: Signature
+        # Any member can act as an endorser
+        Rule: "OR('Hosp1MSP.member')"
+    AnchorPeers:
+      - Host: localhost
+        Port: 51000
+
+        # Added by the Administrator
+  - &Hosp2
+    Name: Hosp2
+    ID: Hosp2MSP
+    MSPDir: client/hosp2/msp
+
+    Policies: &Hosp2Policies
+      Readers:
+        Type: Signature
+        # Any member can READ e.g., query
+        Rule: "OR('Hosp2MSP.member','MohfwMSP.member','Hosp1MSP.member','Hosp3MSP.member')"
+      Writers:
+        Type: Signature
+        # Any member can WRITE e.g., submit transaction
+        Rule: "OR('Hosp2MSP.member','MohfwMSP.member','Hosp1MSP.member','Hosp3MSP.member')"
+      Admins:
+        Type: Signature
+        # Either Acme admin OR Orderer Admin can carry out admin activities
+        Rule: "OR('Hosp2MSP.admin')"
+      Endorsement:
+        Type: Signature
+        # Any member can act as an endorser
+        Rule: "OR('Hosp2MSP.member')"
+    AnchorPeers:
+      - Host: localhost
+        Port: 53000
+
+  - &Hosp3
+    Name: Hosp3
+    ID: Hosp3MSP
+    MSPDir: client/hosp3/msp
+
+    Policies: &Hosp3Policies
+      Readers:
+        Type: Signature
+        # Any member can READ e.g., query
+        Rule: "OR('Hosp3MSP.member','MohfwMSP.member','Hosp1MSP.member','Hosp2MSP.member')"
+      Writers:
+        Type: Signature
+        # Any member can WRITE e.g., submit transaction
+        Rule: "OR('Hosp3MSP.member','MohfwMSP.member','Hosp1MSP.member','Hosp2MSP.member')"
+      Admins:
+        Type: Signature
+        # Either Acme admin OR Orderer Admin can carry out admin activities
+        Rule: "OR('Hosp3MSP.admin')"
+      Endorsement:
+        Type: Signature
+        # Any member can act as an endorser
+        Rule: "OR('Hosp3MSP.member')"
+    AnchorPeers:
+      - Host: localhost
+        Port: 55000
+
+#   ORDERER
+Orderer: &OrdererDefaults
+  OrdererType: solo
+
+  Addresses:
+    - localhost:7050
+  # Policies for Orderer
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      # UPDATED December 15, 2019
+      Rule: "ANY Admins"
+      # Rule: "MAJORITY Admins"
+
+    # BlockValidation specifies what signatures must be included in the block
+    # from the orderer for the peer to validate it.
+    # Starting Fabric 2.x this is REQUIRED
+    BlockValidation:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+
+  # Batch Timeout: The amount of time to wait before creating a batch
+  BatchTimeout: 2s
+
+  # Batch Size: Controls the number of messages batched into a block
+  BatchSize:
+    MaxMessageCount: 10
+    AbsoluteMaxBytes: 98 MB
+    PreferredMaxBytes: 512 KB
+
+  Capabilities:
+    <<: *OrdererCapabilities
+
+Application: &ApplicationDefaults
+  ACLs: &ACLsDefault # ACL policy for lscc's "getid" function
+    lscc/ChaincodeExists: /Channel/Application/Readers
+
+    # ACL policy for lscc's "getdepspec" function
+    lscc/GetDeploymentSpec: /Channel/Application/Readers
+
+    # ACL policy for lscc's "getccdata" function
+    lscc/GetChaincodeData: /Channel/Application/Readers
+
+    # ACL Policy for lscc's "getchaincodes" function
+    lscc/GetInstantiatedChaincodes: /Channel/Application/Readers
+
+    #---Query System Chaincode (qscc) function to policy mapping for access control---#
+
+    # ACL policy for qscc's "GetChainInfo" function
+    qscc/GetChainInfo: /Channel/Application/Readers
+
+    # ACL policy for qscc's "GetBlockByNumber" function
+    qscc/GetBlockByNumber: /Channel/Application/Readers
+
+    # ACL policy for qscc's  "GetBlockByHash" function
+    qscc/GetBlockByHash: /Channel/Application/Readers
+
+    # ACL policy for qscc's "GetTransactionByID" function
+    qscc/GetTransactionByID: /Channel/Application/Readers
+
+    # ACL policy for qscc's "GetBlockByTxID" function
+    qscc/GetBlockByTxID: /Channel/Application/Readers
+
+    #---Configuration System Chaincode (cscc) function to policy mapping for access control---#
+
+    # ACL policy for cscc's "GetConfigBlock" function
+    cscc/GetConfigBlock: /Channel/Application/Readers
+
+    # ACL policy for cscc's "GetConfigTree" function
+    cscc/GetConfigTree: /Channel/Application/Readers
+
+    # ACL policy for cscc's "SimulateConfigTreeUpdate" function
+    cscc/SimulateConfigTreeUpdate: /Channel/Application/Readers
+
+    #---Miscellanesous peer function to policy mapping for access control---#
+
+    # ACL policy for invoking chaincodes on peer
+    peer/Propose: /Channel/Application/Writers
+
+    # ACL policy for chaincode to chaincode invocation
+    peer/ChaincodeToChaincode: /Channel/Application/Readers
+
+    #---Events resource to policy mapping for access control###---#
+
+    # ACL policy for sending block events
+    event/Block: /Channel/Application/Readers
+
+    # ACL policy for sending filtered block events
+    event/FilteredBlock: /Channel/Application/Readers
+
+    # Chaincode Lifecycle Policies introduced in Fabric 2.x
+    # ACL policy for _lifecycle's "CheckCommitReadiness" function
+    _lifecycle/CheckCommitReadiness: /Channel/Application/Writers
+
+    # ACL policy for _lifecycle's "CommitChaincodeDefinition" function
+    _lifecycle/CommitChaincodeDefinition: /Channel/Application/Writers
+
+    # ACL policy for _lifecycle's "QueryChaincodeDefinition" function
+    _lifecycle/QueryChaincodeDefinition: /Channel/Application/Readers
+
+    # ACL policy for _lifecycle's "QueryChaincodeDefinitions" function
+    _lifecycle/QueryChaincodeDefinitions: /Channel/Application/Readers
+
+  # Default policies
+  Policies: &ApplicationDefaultPolicies # --channel-config-policy
+    Endorsement:
+      Type: ImplicitMeta
+      # Rule: "MAJORITY Endorsement"
+      Rule: "ANY Endorsement"
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "ANY Admins"
+
+    # Introduced in Fabric 2.x for Chaincode Lifecycle
+    LifecycleEndorsement:
+      Type: ImplicitMeta
+      Rule: "ANY Endorsement"
+
+  Organizations:
+
+  Capabilities:
+    <<: *ApplicationCapabilities
+
+#   CHANNEL
+Channel: &ChannelDefaults
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "ANY Admins"
+
+  Capabilities:
+    <<: *ChannelCapabilities
+
+#   PROFILES
+Profiles:
+  ArogyaChainOrdererGenesis:
+    <<: *ChannelDefaults
+    Orderer:
+      <<: *OrdererDefaults
+      Organizations:
+        - <<: *Orderer
+    Consortiums:
+      ArogyaChainConsortium:
+        Organizations:
+          - <<: *Mohfw
+          - <<: *Hosp1
+          - <<: *Hosp2
+          - <<: *Hosp3
+    Application:
+      <<: *ApplicationDefaults
+
+      Organizations:
+        - <<: *Mohfw
+        - <<: *Hosp1
+        - <<: *Hosp2
+        - <<: *Hosp3
+
+  ArogyaEhrChannel:
+    <<: *ChannelDefaults
+    Consortium: ArogyaChainConsortium
+
+    Application:
+      <<: *ApplicationDefaults
+
+      Organizations:
+        - <<: *Mohfw
+        - <<: *Hosp1
+        - <<: *Hosp2
+        - <<: *Hosp3

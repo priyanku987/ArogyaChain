@@ -1,0 +1,77 @@
+[34m2023-01-11 23:38:10.614 IST 0001 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer:
+ Version: 2.4.7
+ Commit SHA: df9c661
+ Go version: go1.18.7
+ OS/Arch: linux/amd64
+ Chaincode:
+  Base Docker Label: org.hyperledger.fabric
+  Docker Namespace: hyperledger
+[34m2023-01-11 23:38:10.615 IST 0002 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Auto-detected peer address: 192.168.1.8:7051
+[34m2023-01-11 23:38:10.615 IST 0003 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Returning localhost:7051
+[34m2023-01-11 23:38:10.641 IST 0004 INFO[0m [deliveryClient] [34;1mloadDeliverServiceConfig[0m -> peer.deliveryclient.blockGossipEnabled is not set, defaulting to true.
+[34m2023-01-11 23:38:10.641 IST 0005 INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2024-01-11 17:59:00 +0000 UTC
+[34m2023-01-11 23:38:10.642 IST 0006 INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initializing LedgerMgr
+[34m2023-01-11 23:38:10.677 IST 0007 INFO[0m [leveldbhelper] [34;1mopenDBAndCheckFormat[0m -> DB is empty Setting db format as 2.0
+[34m2023-01-11 23:38:10.679 IST 0008 INFO[0m [blkstorage] [34;1mNewProvider[0m -> Creating new file ledger directory at /home/priyanku/Desktop/major-project/ArogyaChain/client/client/mohfw/peer1/ledger/ledgersData/chains/chains
+[34m2023-01-11 23:38:10.701 IST 0009 INFO[0m [leveldbhelper] [34;1mopenDBAndCheckFormat[0m -> DB is empty Setting db format as 2.0
+[34m2023-01-11 23:38:10.737 IST 000a INFO[0m [leveldbhelper] [34;1mopenDBAndCheckFormat[0m -> DB is empty Setting db format as 2.0
+[34m2023-01-11 23:38:10.742 IST 000b INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initialized LedgerMgr
+[34m2023-01-11 23:38:10.744 IST 000c INFO[0m [gossip.service] [34;1mNew[0m -> Initialize gossip with endpoint localhost:7051
+[34m2023-01-11 23:38:10.745 IST 000d INFO[0m [gossip.gossip] [34;1mNew[0m -> Creating gossip service with self membership of Endpoint: 127.0.0.1:9111, InternalEndpoint: localhost:7051, PKI-ID: d772df1fcfb4876e4e2156b33096f4a13bfc38f55984627c18e6665a28b5ef50, Metadata: 
+[34m2023-01-11 23:38:10.745 IST 000f INFO[0m [lifecycle] [34;1mInitializeLocalChaincodes[0m -> Initialized lifecycle cache with 0 already installed chaincodes
+[34m2023-01-11 23:38:10.745 IST 000e INFO[0m [gossip.gossip] [34;1mstart[0m -> Gossip instance localhost:7051 started
+[34m2023-01-11 23:38:10.746 IST 0010 INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Entering computeChaincodeEndpoint with peerHostname: localhost
+[34m2023-01-11 23:38:10.746 IST 0011 INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Exit with ccEndpoint: localhost:7052
+[34m2023-01-11 23:38:10.747 IST 0012 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'lscc'
+[34m2023-01-11 23:38:10.748 IST 0013 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'cscc'
+[34m2023-01-11 23:38:10.748 IST 0014 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'qscc'
+[34m2023-01-11 23:38:10.748 IST 0015 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode '_lifecycle'
+[34m2023-01-11 23:38:10.749 IST 0016 INFO[0m [nodeCmd] [34;1mserve[0m -> Deployed system chaincodes
+[34m2023-01-11 23:38:10.749 IST 0017 INFO[0m [discovery] [34;1mNewService[0m -> Created with config TLS: false, authCacheMaxSize: 1000, authCachePurgeRatio: 0.750000
+[34m2023-01-11 23:38:10.749 IST 0018 INFO[0m [nodeCmd] [34;1mserve[0m -> Discovery service activated
+[34m2023-01-11 23:38:10.749 IST 0019 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with Gateway enabled
+[34m2023-01-11 23:38:10.749 IST 001a INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with ID=[peer1], network ID=[dev], address=[localhost:7051]
+[34m2023-01-11 23:38:10.749 IST 001b INFO[0m [nodeCmd] [34;1mserve[0m -> Started peer with ID=[peer1], network ID=[dev], address=[localhost:7051]
+[34m2023-01-11 23:38:10.750 IST 001c INFO[0m [kvledger] [34;1mLoadPreResetHeight[0m -> Loading prereset height from path [/home/priyanku/Desktop/major-project/ArogyaChain/client/client/mohfw/peer1/ledger/ledgersData/chains]
+[34m2023-01-11 23:38:10.750 IST 001d INFO[0m [blkstorage] [34;1mpreResetHtFiles[0m -> No active channels passed
+[34m2023-01-11 23:39:48.474 IST 001e INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: cscc duration: 0ms channel= txID=a1a6d980
+[34m2023-01-11 23:39:48.474 IST 001f INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:59456 grpc.code=OK grpc.call_duration=880.922µs
+[34m2023-01-11 23:41:34.338 IST 0020 INFO[0m [ledgermgmt] [34;1mCreateLedger[0m -> Creating ledger [arogyaehrchannel] with genesis block
+[34m2023-01-11 23:41:34.346 IST 0021 INFO[0m [blkstorage] [34;1mnewBlockfileMgr[0m -> Getting block information from block storage
+[34m2023-01-11 23:41:34.363 IST 0022 INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [0] with 1 transaction(s) in 10ms (state_validation=0ms block_and_pvtdata_commit=5ms state_commit=2ms) commitHash=[]
+[34m2023-01-11 23:41:34.363 IST 0023 INFO[0m [kvledger] [34;1mupdateLedgerStatus[0m -> Updating ledger [arogyaehrchannel] status to [ACTIVE]
+[34m2023-01-11 23:41:34.365 IST 0024 INFO[0m [ledgermgmt] [34;1mCreateLedger[0m -> Created ledger [arogyaehrchannel] with genesis block
+[34m2023-01-11 23:41:34.367 IST 0025 INFO[0m [gossip.gossip] [34;1mJoinChan[0m -> Joining gossip network of channel arogyaehrchannel with 4 organizations
+[34m2023-01-11 23:41:34.367 IST 0026 INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp3MSP for channel arogyaehrchannel to learn about
+[34m2023-01-11 23:41:34.367 IST 0027 INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of MohfwMSP for channel arogyaehrchannel to learn about
+[34m2023-01-11 23:41:34.367 IST 0028 INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp1MSP for channel arogyaehrchannel to learn about
+[34m2023-01-11 23:41:34.367 IST 0029 INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp2MSP for channel arogyaehrchannel to learn about
+[34m2023-01-11 23:41:34.367 IST 002a INFO[0m [gateway] [34;1mconfigUpdate[0m -> Updating orderer config channel=arogyaehrchannel
+[34m2023-01-11 23:41:34.367 IST 002b INFO[0m [gossip.state] [34;1mNewGossipStateProvider[0m -> Updating metadata information for channel arogyaehrchannel, current ledger sequence is at = 0, next expected block is = 1
+[34m2023-01-11 23:41:34.367 IST 002c INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: cscc duration: 31ms channel= txID=fdc1cbf0
+[34m2023-01-11 23:41:34.367 IST 002d INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:40728 grpc.code=OK grpc.call_duration=32.397871ms
+[34m2023-01-11 23:41:40.369 IST 002e INFO[0m [gossip.election] [34;1mbeLeader[0m -> d772df1fcfb4876e4e2156b33096f4a13bfc38f55984627c18e6665a28b5ef50 : Becoming a leader
+[34m2023-01-11 23:41:40.369 IST 002f INFO[0m [gossip.service] [34;1mfunc1[0m -> Elected as a leader, starting delivery service for channel arogyaehrchannel
+[34m2023-01-11 23:41:40.369 IST 0030 INFO[0m [deliveryClient] [34;1mStartDeliverForChannel[0m -> This peer will retrieve blocks from ordering service and disseminate to other peers in the organization channel=arogyaehrchannel
+[34m2023-01-11 23:41:40.371 IST 0031 INFO[0m [peer.blocksprovider] [34;1mDeliverBlocks[0m -> Pulling next blocks from ordering service channel=arogyaehrchannel orderer-address=localhost:7050 nextBlock=1
+[34m2023-01-11 23:41:47.913 IST 0032 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: cscc duration: 0ms channel= txID=3f606c4c
+[34m2023-01-11 23:41:47.914 IST 0033 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:34964 grpc.code=OK grpc.call_duration=635.693µs
+[34m2023-01-12 00:57:39.837 IST 0034 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=gossip.Gossip grpc.method=Ping grpc.request_deadline=2023-01-12T00:57:41.836+05:30 grpc.peer_address=127.0.0.1:57558 grpc.code=OK grpc.call_duration=60.362µs
+[34m2023-01-12 00:57:39.839 IST 0035 INFO[0m [gossip.comm] [34;1mGossipStream[0m -> Peer 28ea7f2aee39aed18715991db83b8a17c5eb901d55cdc4035d8d8075ed0eb10e (127.0.0.1:57558) probed us
+[34m2023-01-12 00:57:39.839 IST 0036 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=gossip.Gossip grpc.method=GossipStream grpc.request_deadline=2023-01-12T00:57:49.838+05:30 grpc.peer_address=127.0.0.1:57558 grpc.code=OK grpc.call_duration=1.452724ms
+[34m2023-01-12 00:57:39.840 IST 0037 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=gossip.Gossip grpc.method=Ping grpc.request_deadline=2023-01-12T00:57:41.84+05:30 grpc.peer_address=127.0.0.1:57560 grpc.code=OK grpc.call_duration=25.834µs
+[34m2023-01-12 00:58:28.613 IST 0038 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: cscc duration: 0ms channel= txID=6fd8a056
+[34m2023-01-12 00:58:28.613 IST 0039 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:54800 grpc.code=OK grpc.call_duration=486.299µs
+[34m2023-01-12 01:01:14.368 IST 003a INFO[0m [gossip.channel] [34;1mreportMembershipChanges[0m -> [[arogyaehrchannel] Membership view has changed. peers went online:  [[127.0.0.1:9111 localhost:8051]] , current view:  [[127.0.0.1:9111 localhost:8051]]]
+[34m2023-01-12 01:01:18.222 IST 003b INFO[0m [gossip.election] [34;1mstopBeingLeader[0m -> d772df1fcfb4876e4e2156b33096f4a13bfc38f55984627c18e6665a28b5ef50 Stopped being a leader
+[34m2023-01-12 01:01:18.222 IST 003c INFO[0m [gossip.service] [34;1mfunc1[0m -> Renounced leadership, stopping delivery service for channel arogyaehrchannel
+[33m2023-01-12 01:01:18.222 IST 003d WARN[0m [peer.blocksprovider] [33;1mfunc1[0m -> Encountered an error reading from deliver stream: rpc error: code = Canceled desc = context canceled channel=arogyaehrchannel orderer-address=localhost:7050
+[34m2023-01-12 01:02:44.397 IST 003e INFO[0m [nodeCmd] [34;1mfunc1[0m -> Received signal: 15 (terminated)
+[34m2023-01-12 01:02:44.397 IST 003f INFO[0m [gossip.service] [34;1mStop[0m -> Stopping chain arogyaehrchannel
+[34m2023-01-12 01:02:44.397 IST 0040 INFO[0m [gossip.service] [34;1mStop[0m -> Stopping leader election for arogyaehrchannel
+[34m2023-01-12 01:02:44.397 IST 0041 INFO[0m [gossip.gossip] [34;1mStop[0m -> Stopping gossip
+[34m2023-01-12 01:02:44.397 IST 0042 INFO[0m [gossip.discovery] [34;1mStop[0m -> Stopping
+[34m2023-01-12 01:02:44.397 IST 0043 INFO[0m [gossip.discovery] [34;1mStop[0m -> Stopped
+[34m2023-01-12 01:02:44.397 IST 0044 INFO[0m [gossip.comm] [34;1mStop[0m -> Stopping
+[34m2023-01-12 01:02:44.397 IST 0045 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=gossip.Gossip grpc.method=GossipStream grpc.peer_address=127.0.0.1:57560 grpc.code=OK grpc.call_duration=5m4.557268249s
+[34m2023-01-12 01:02:44.397 IST 0046 INFO[0m [gossip.comm] [34;1mStop[0m -> Stopped

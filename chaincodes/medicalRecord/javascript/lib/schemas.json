@@ -1,0 +1,55 @@
+{
+  "medicalRecordSchema": {
+    "Id": "xxxxx",
+    "Type": "PRESCRIPTION|LABREPORT",
+    "Owner": "owner (represents the owner of the prescription i.e the patient)",
+    "IssuedBy": "Doctor's user ID",
+    "ConsultingDoctorID": "Doctor's user ID",
+    "ConsultingDoctorName": "Doctor's name",
+    "ConsultingDoctorRegisteredNumber": "Consulting Doctor Registered Number",
+    "HospitalId": "hospitalId",
+    "HospitalName": "hospitalName",
+    "HospitalRegisteredNumber": "Hospital Registered Number",
+    "IssueDate": "Date on which the prescriptio is issued",
+    "CreatedAt": "Date in which this record is created",
+    "UpdatedAt": "Date in which this record is updated",
+    "CreatedBy": "Person's ID who created this EMR",
+    "UpdatedBy": "Person's Id who updated this EMR",
+    "PatientId": "Id of the Patient (USER id - will be the ADHAAR ID)",
+    "PatientName": "Name of the Patient",
+    "PatientAge": "Age of the Patient",
+    "PatientAddress": "Address of the Patient",
+    "PatientCountry": "Patient's Country",
+    "PatientState": "Patient's State",
+    "PatientCity": "Patient's City (can be blank)",
+    "PatientDistrict": "Patient's District (can be blank)",
+    "PatientVillage": "Patient's Village (can be blank)",
+    "PatientZipcode": "Patient's zipcode",
+    "PatientEmail": "Email of the Patient (can be blank)",
+    "PatientPhoneNumbers": [
+      "Phone Number 1",
+      "Phone Number 2 (starts with country code.eg. +91)"
+    ],
+    "PatientAttendantName": "Name of Patient's attendant",
+    "PatientAttendantRelation": "Relation of Patients attendant with the patient",
+    "DiseaseName": "Name of the Disease",
+    "DiseaseDescription": "Description of the Disease",
+    "SeverityOfDisease": "The severity of the disease",
+    "MedicinesPrescribed": [
+      {
+        "name": "name of medicine",
+        "reason": "reason for prescribing this medicine",
+        "dosage": "once daily after food"
+      }
+    ]
+  },
+  "grantAccessSchema": {
+    "Id": "xxxxx",
+    "Type": "ACCESS-GRANT-REVOKE",
+    "Operation": "GRANT_ACCESS|REVOKE_ACCESS",
+    "EMRId": "EMR Id (can be blank)",
+    "PerformedBy": "User or Patient Id",
+    "PerformedFor": "Doctor or any other person Id",
+    "Date": "Date"
+  }
+}

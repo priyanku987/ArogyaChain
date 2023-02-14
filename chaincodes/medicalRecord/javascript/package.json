@@ -1,0 +1,21 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "fabric-contract-api": "^2.2.3",
+    "fabric-shim": "^2.2.3",
+    "fabric-shim-api": "^2.2.3",
+    "fabric-shim-crypto": "^2.2.2",
+    "sinon": "^15.0.1",
+    "sinon-chai": "^3.7.0"
+  }
+}
