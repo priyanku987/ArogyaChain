@@ -1,13 +1,12 @@
 const { Wallets, Gateway, X509 } = require("fabric-network");
 const FabricCaServices = require("fabric-ca-client");
-
-const connectionProfilePath = "";
-const walletPath = "";
+const fs = require("fs");
+const { getConnectionProfileJSON, getWalletPath } = require("../../utils/misc");
 
 module.exports.enrollUser = async (req, res) => {
   try {
-    const { enrollmentId, enrollmentSecret } = req?.body;
-    if (!enrollmentId || !enrollmentSecret) {
+    const { enrollmentId, enrollmentSecret, org } = req?.body;
+    if (!enrollmentId || !enrollmentSecret || !org) {
       return res?.status(400).json({
         message: "Required fields are not provided!",
       });
@@ -18,6 +17,7 @@ module.exports.enrollUser = async (req, res) => {
 
     // See if the user is already being enrolled
     // Currently this is simply done by checking if the identity exists in the wallet
+    const walletPath = getWalletPath();
     const wallet = await Wallets.newFileSystemWallet(walletPath);
     const identity = await wallet?.get(enrollmentId);
     if (typeof identity !== "undefined") {
@@ -25,11 +25,7 @@ module.exports.enrollUser = async (req, res) => {
     }
 
     //Make the ca connection
-    const ca = new FabricCaServices(
-      "url", // Need to be replaced
-      { trustedRoots: "cacerts", verify: false }, // Need to be replaced
-      "caname" // Need to be replaced
-    );
+    const ca = new FabricCaServices(process.env.CA_SERVER_ENDPOINT);
 
     // Enroll the user
     const enrollment = await ca.enroll({
@@ -38,11 +34,14 @@ module.exports.enrollUser = async (req, res) => {
     });
 
     // Make the identity
+    const connectionProfileJSON = getConnectionProfileJSON();
     const X509Identity = {
       credentials: {
         certificate: enrollment?.certificate,
         privateKey: enrollment?.key.toBytes(),
       },
+      mspId: connectionProfileJSON.organizations[org]?.mspid,
+      type: "X.509",
     };
 
     // insert into wallet
