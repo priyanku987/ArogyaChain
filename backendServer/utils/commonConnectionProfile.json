@@ -1,0 +1,82 @@
+{
+    "name": "ArogyaChainEhrNetwork",
+    "version": "1.1",
+    "channels": {
+        "arogyaehrchannel": {
+            "orderers": [
+                "orderer"
+            ],
+            "peers": [
+                "hosp1-anchor-peer",
+                "hosp1-peer1",
+                "hosp2-anchor-peer",
+                "hosp2-peer1",
+                "hosp3-anchor-peer",
+                "hosp3-peer1",
+                "mohfw-anchor-peer",
+                "mohfw-peer1"
+            ]
+        }
+    },
+    "organizations": {
+        "Mohfw": {
+            "mspid": "MohfwMSP",
+            "peers": [
+                "mohfw-anchor-peer",
+                "mohfw-peer1"
+            ]
+        },
+        "Hosp1": {
+            "mspid": "Hosp1MSP",
+            "peers": [
+                "hosp1-anchor-peer",
+                "hosp1-peer1"
+            ]
+        },
+        "Hosp2": {
+            "mspid": "Hosp2MSP",
+            "peers": [
+                "hosp2-anchor-peer",
+                "hosp2-peer1"
+            ]
+        },
+        "Hosp3": {
+            "mspid": "Hosp3MSP",
+            "peers": [
+                "hosp3-anchor-peer",
+                "hosp3-peer1"
+            ]
+        }
+    },
+    "orderers": {
+        "orderer": {
+            "url": "grpcs://localhost:7050"
+        }
+    },
+    "peers": {
+        "mohfw-anchor-peer": {
+            "url": "grpcs://localhost:49153"
+        },
+        "mohfw-peer1": {
+            "url": "grpcs://localhost:50000"
+        },
+        "hosp1-anchor-peer": {
+            "url": "grpcs://localhost:51000"
+        },
+        "hosp1-peer1": {
+            "url": "grpcs://localhost:52000"
+        },
+        "hosp2-anchor-peer": {
+            "url": "grpcs://localhost:53000"
+        },
+        "hosp2-peer1": {
+            "url": "grpcs://localhost:54000"
+        },
+        "hosp3-anchor-peer": {
+            "url": "grpcs://localhost:55000"
+        },
+        "hosp3-peer1": {
+            "url": "grpcs://localhost:56000"
+        }
+    }
+}
