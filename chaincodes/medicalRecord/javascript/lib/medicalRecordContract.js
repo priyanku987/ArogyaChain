@@ -46,6 +46,8 @@ class MedicalRecord extends Contract {
             dosage: "once daily after food",
           },
         ],
+        Suggesstions: "Eath Healthy",
+        TestsRecommended: ["Sterotonin LIB1 blood test", "Creatin B12 test"],
       },
     ];
     for (const emr of emrs) {
@@ -132,7 +134,9 @@ class MedicalRecord extends Contract {
     diseaseName,
     diseaseDescription,
     diseaseSeverity,
-    prescribedMedicines
+    prescribedMedicines,
+    suggesstions,
+    testsRecommended
   ) {
     const emr = {
       Id: id,
@@ -168,8 +172,11 @@ class MedicalRecord extends Contract {
       DiseaseDescription: diseaseDescription,
       SeverityOfDisease: diseaseSeverity,
       MedicinesPrescribed: prescribedMedicines,
+      Suggesstions: suggesstions,
+      TestsRecommended: testsRecommended,
     };
     await ctx.stub.putState(emr.Id, Buffer.from(JSON.stringify(emr)));
+    // Also create an access grant transaction
     return JSON.stringify(emr);
   }
 

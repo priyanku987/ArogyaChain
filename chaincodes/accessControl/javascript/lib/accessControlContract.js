@@ -12,7 +12,7 @@ class AccessRecord extends Contract {
         Id: "1kwd13",
         Type: "ACCESS-GRANT-REVOKE",
         Operation: "GRANT_ACCESS",
-        EMRId: "demo",
+        EHRId: "demo",
         PerformedBy: "demo",
         PerformedFor: "demo",
         Date: new Date(),

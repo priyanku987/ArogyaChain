@@ -1,9 +1,13 @@
 const Express = require("express");
 const { registerPatient } = require("./auth");
+const { createEHR, getEHRByPatient } = require("./chaincode");
 
 const router = Express.Router();
 
 router.post("/auth/rgeisterPatient", registerPatient);
+
+router.post("/chaincode/createEHR", createEHR);
+router.get("/chaincode/getEHRByPatient", getEHRByPatient);
 
 router.all("*", (req, res) =>
   res
