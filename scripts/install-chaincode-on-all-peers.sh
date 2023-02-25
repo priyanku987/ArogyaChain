@@ -2,7 +2,7 @@
 echo "Starting chaincode installation for Mohfw..."
 echo "setting env variables..."
 export CORE_PEER_TLS_ENABLED=false
-export CORE_PEER_LOCALMSPID=MohfwMSP
+export CORE_PEER_LOCALMSPID="MohfwMSP"
 export CORE_PEER_MSPCONFIGPATH=/home/priyanku/Desktop/major-project/ArogyaChain/client/mohfw/admin/msp
 echo "setting env variables for mohfw-anchor-peer..."
 export CORE_PEER_ADDRESS=localhost:49153
@@ -23,7 +23,7 @@ echo "installing chaincode on mohfw-peer1 ..."
 echo "Starting chaincode installation for hosp1..."
 echo "setting env variables..."
 export CORE_PEER_TLS_ENABLED=false
-export CORE_PEER_LOCALMSPID=Hosp1MSP
+export CORE_PEER_LOCALMSPID="Hosp1MSP"
 export CORE_PEER_MSPCONFIGPATH=/home/priyanku/Desktop/major-project/ArogyaChain/client/hosp1/admin/msp
 echo "setting env variables for hosp1-anchor-peer..."
 export CORE_PEER_ADDRESS=localhost:51000
@@ -46,7 +46,7 @@ echo "installing chaincode on hosp1-peer1 ..."
 echo "Starting chaincode installation for hosp2..."
 echo "setting env variables..."
 export CORE_PEER_TLS_ENABLED=false
-export CORE_PEER_LOCALMSPID=Hosp2MSP
+export CORE_PEER_LOCALMSPID="Hosp2MSP"
 export CORE_PEER_MSPCONFIGPATH=/home/priyanku/Desktop/major-project/ArogyaChain/client/hosp2/admin/msp
 echo "setting env variables for hosp2-anchor-peer..."
 export CORE_PEER_ADDRESS=localhost:53000
