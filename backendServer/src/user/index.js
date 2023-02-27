@@ -5,9 +5,15 @@ const {
   grantParticularEHRAccessToIdentity,
   revokeParticularEHRAccessFromIdentity,
 } = require("./chaincode");
+const { enrollUser, reenrollUser } = require("./auth");
 
 const router = Express.Router();
 
+// Auth routes
+router.post("/auth/enroll", enrollUser);
+router.post("/auth/reenroll", reenrollUser);
+
+// Chaincode routes
 router.get("/chaincode/getAllEHR", getEHRs);
 router.post(
   "/chaincode/grantAllEHRAccessToIdentity",

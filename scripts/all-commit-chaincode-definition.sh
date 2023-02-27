@@ -1,3 +1,34 @@
+function usage {
+    echo "./all-commit-chaincode-definition.sh   CHAINCODE_NAME CHAINCODE_VERSION SEQUENCE_NUMBER"
+}
+
+if [ -z $1 ];
+then
+    usage
+    echo "Please provide the CHAINCODE_PACKAGE_ID!!!"
+    exit 0
+else
+    CHAINCODE_NAME=$1
+fi
+
+if [ -z $2 ];
+then
+    usage
+    echo "Please provide the CHAINCODE_PACKAGE_ID!!!"
+    exit 0
+else
+    CHAINCODE_VERSION=$2
+fi
+
+if [ -z $3 ];
+then
+    usage
+    echo "Please provide the CHAINCODE_PACKAGE_ID!!!"
+    exit 0
+else
+    SEQUENCE_NUMBER=$3
+fi
+
 export CORE_PEER_TLS_ENABLED=false
 export CORE_PEER_LOCALMSPID="MohfwMSP"
 export CORE_PEER_MSPCONFIGPATH=/home/priyanku/Desktop/major-project/ArogyaChain/client/hosp2/admin/msp
@@ -14,4 +45,4 @@ echo "setting identity..."
 source set-identity.sh mohfw admin
 
 #NOTE: ca file path needs to be replace according to the system in which it is executed
-peer lifecycle chaincode commit -o localhost:7050 --channelID arogyaehrchannel --name medicalRecord-2 --version 1.2 --sequence 3 --cafile "${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem" --peerAddresses localhost:49153 --peerAddress localhost:50000 --peerAddress localhost:51000 --peerAddress localhost:52000 --peerAddress localhost:53000 --peerAddress localhost:54000
+peer lifecycle chaincode commit -o localhost:7050 --channelID arogyaehrchannel --name $CHAINCODE_NAME --version $CHAINCODE_VERSION --sequence $SEQUENCE_NUMBER --cafile "${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem" --peerAddresses localhost:49153 --peerAddress localhost:50000 --peerAddress localhost:51000 --peerAddress localhost:52000 --peerAddress localhost:53000 --peerAddress localhost:54000

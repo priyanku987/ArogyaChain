@@ -4,7 +4,7 @@ const { createEHR, getEHRByPatient } = require("./chaincode");
 
 const router = Express.Router();
 
-router.post("/auth/rgeisterPatient", registerPatient);
+router.post("/auth/registerPatient", registerPatient);
 
 router.post("/chaincode/createEHR", createEHR);
 router.get("/chaincode/getEHRByPatient", getEHRByPatient);

@@ -12,4 +12,15 @@ function getWalletPath() {
   return walletPath;
 }
 
-export { getConnectionProfileJSON, getWalletPath };
+function makeX509Identity(certificate, privatekeyString, mspId) {
+  return {
+    credentials: {
+      certificate,
+      privateKey: privatekeyString.toBytes(),
+    },
+    mspId: mspId,
+    type: "X.509",
+  };
+}
+
+export { getConnectionProfileJSON, getWalletPath, makeX509Identity };

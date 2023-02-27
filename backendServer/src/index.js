@@ -12,8 +12,8 @@ app.use(Express.json({ limit: "50mb" }));
 app.use(cors());
 app.use("/health", (req, res) => res.status(200));
 
-app.all("/hosp", hospRouter);
+app.all("/healthcare", hospRouter);
 
-app.all("/users", userRouter);
+app.all("/user", userRouter);
 
 module.exports = app;
