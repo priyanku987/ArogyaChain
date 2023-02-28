@@ -1,5 +1,3 @@
-"use strict";
-
 // Fabric smart contract classes
 const { Contract, Context } = require("fabric-contract-api");
 
@@ -93,7 +91,7 @@ class AccessRecord extends Contract {
 
   // GetAccessList retrieves the access list for the person who is now invoking this contract.
   async GetAccessList(ctx) {
-    const invoker = await ctx.stub.getID();
+    const invoker = await ctx.clientIdentity.id;
     let queryString = {};
     queryString.selector = {};
     queryString.selector.PerformedFor = invoker;

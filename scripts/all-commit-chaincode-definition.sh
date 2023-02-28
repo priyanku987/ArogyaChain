@@ -45,4 +45,4 @@ echo "setting identity..."
 source set-identity.sh mohfw admin
 
 #NOTE: ca file path needs to be replace according to the system in which it is executed
-peer lifecycle chaincode commit -o localhost:7050 --channelID arogyaehrchannel --name $CHAINCODE_NAME --version $CHAINCODE_VERSION --sequence $SEQUENCE_NUMBER --cafile "${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem" --peerAddresses localhost:49153 --peerAddress localhost:50000 --peerAddress localhost:51000 --peerAddress localhost:52000 --peerAddress localhost:53000 --peerAddress localhost:54000
+../bin/peer lifecycle chaincode commit -o localhost:7050 --channelID arogyaehrchannel --name $CHAINCODE_NAME --version $CHAINCODE_VERSION --sequence $SEQUENCE_NUMBER --cafile "/home/priyanku/Desktop/major-project/ArogyaChain/client/orderer/msp/cacerts/ca-cert.pem" --peerAddresses localhost:49153 --peerAddresses localhost:50000 --peerAddresses localhost:51000 --peerAddresses localhost:52000 --peerAddresses localhost:53000 --peerAddresses localhost:54000

@@ -1,3 +1,5 @@
 backendServer/node_modules
 bin
 .env
+chaincodes/accessControl/javascript/node_modules
+chaincodes/medicalRecord/javascript/node_modules

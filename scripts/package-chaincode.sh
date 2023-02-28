@@ -33,4 +33,4 @@ fi
 
 export FABRIC_CFG_PATH="../"
 
-../bin/peer lifecycle chaincode package $CHAINCODENAME-$VERSION.tar.gz --path ../chaincodes/$CHAINCODENAME/javascript/ --lang $LANG --label $CHAINCODENAME-$VERSION.0
+../bin/peer lifecycle chaincode package "$CHAINCODENAME"_"$VERSION".tar.gz --path "/home/priyanku/Desktop/major-project/ArogyaChain/chaincodes/$CHAINCODENAME/javascript" --lang $LANG --label "$CHAINCODENAME"_"$VERSION"

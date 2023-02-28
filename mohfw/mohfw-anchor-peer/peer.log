@@ -1,4 +1,4 @@
-[34m2023-02-23 14:51:35.500 IST 0001 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer:
+[34m2023-03-01 00:22:27.048 IST 0001 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer:
  Version: 2.4.7
  Commit SHA: df9c661
  Go version: go1.18.7
@@ -6,51 +6,357 @@
  Chaincode:
   Base Docker Label: org.hyperledger.fabric
   Docker Namespace: hyperledger
-[34m2023-02-23 14:51:35.500 IST 0002 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Auto-detected peer address: 172.16.72.124:49153
-[34m2023-02-23 14:51:35.500 IST 0003 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Returning localhost:49153
-[34m2023-02-23 14:51:35.533 IST 0004 INFO[0m [deliveryClient] [34;1mloadDeliverServiceConfig[0m -> peer.deliveryclient.blockGossipEnabled is not set, defaulting to true.
-[34m2023-02-23 14:51:35.533 IST 0005 INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2024-01-13 07:21:00 +0000 UTC
-[34m2023-02-23 14:51:35.534 IST 0006 INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initializing LedgerMgr
-[34m2023-02-23 14:51:35.734 IST 0007 INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initialized LedgerMgr
-[34m2023-02-23 14:51:35.734 IST 0008 INFO[0m [gossip.service] [34;1mNew[0m -> Initialize gossip with endpoint localhost:49153
-[34m2023-02-23 14:51:35.735 IST 0009 INFO[0m [gossip.gossip] [34;1mNew[0m -> Creating gossip service with self membership of Endpoint: 127.0.0.1:9111, InternalEndpoint: localhost:49153, PKI-ID: e9209f827403aad2700ab725310ecfd0c7caf954009cfccae1bb2eda9dbe658a, Metadata: 
-[34m2023-02-23 14:51:35.735 IST 000a INFO[0m [lifecycle] [34;1mInitializeLocalChaincodes[0m -> Initialized lifecycle cache with 0 already installed chaincodes
-[34m2023-02-23 14:51:35.735 IST 000b INFO[0m [gossip.gossip] [34;1mstart[0m -> Gossip instance localhost:49153 started
-[34m2023-02-23 14:51:35.735 IST 000c INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Entering computeChaincodeEndpoint with peerHostname: localhost
-[34m2023-02-23 14:51:35.735 IST 000d INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Exit with ccEndpoint: localhost:49154
-[34m2023-02-23 14:51:35.736 IST 000e INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'lscc'
-[34m2023-02-23 14:51:35.736 IST 000f INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'cscc'
-[34m2023-02-23 14:51:35.736 IST 0010 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'qscc'
-[34m2023-02-23 14:51:35.736 IST 0011 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode '_lifecycle'
-[34m2023-02-23 14:51:35.736 IST 0012 INFO[0m [nodeCmd] [34;1mserve[0m -> Deployed system chaincodes
-[34m2023-02-23 14:51:35.736 IST 0013 INFO[0m [peer] [34;1mInitialize[0m -> Loading chain arogyaehrchannel
-[34m2023-02-23 14:51:35.736 IST 0014 INFO[0m [ledgermgmt] [34;1mOpenLedger[0m -> Opening ledger with id = arogyaehrchannel
-[34m2023-02-23 14:51:35.747 IST 0015 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord' on channel 'arogyaehrchannel'
-[34m2023-02-23 14:51:35.752 IST 0016 INFO[0m [ledgermgmt] [34;1mOpenLedger[0m -> Opened ledger with id = arogyaehrchannel
-[34m2023-02-23 14:51:35.754 IST 0017 INFO[0m [gossip.gossip] [34;1mJoinChan[0m -> Joining gossip network of channel arogyaehrchannel with 4 organizations
-[34m2023-02-23 14:51:35.754 IST 0018 INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp3MSP for channel arogyaehrchannel to learn about
-[34m2023-02-23 14:51:35.754 IST 0019 INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of MohfwMSP for channel arogyaehrchannel to learn about
-[34m2023-02-23 14:51:35.754 IST 001a INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp1MSP for channel arogyaehrchannel to learn about
-[34m2023-02-23 14:51:35.754 IST 001b INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp2MSP for channel arogyaehrchannel to learn about
-[34m2023-02-23 14:51:35.754 IST 001c INFO[0m [gossip.state] [34;1mNewGossipStateProvider[0m -> Updating metadata information for channel arogyaehrchannel, current ledger sequence is at = 5, next expected block is = 6
-[34m2023-02-23 14:51:35.754 IST 001d INFO[0m [discovery] [34;1mNewService[0m -> Created with config TLS: false, authCacheMaxSize: 1000, authCachePurgeRatio: 0.750000
-[34m2023-02-23 14:51:35.754 IST 001e INFO[0m [nodeCmd] [34;1mserve[0m -> Discovery service activated
-[34m2023-02-23 14:51:35.754 IST 001f INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with Gateway enabled
-[34m2023-02-23 14:51:35.754 IST 0020 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with ID=[mohfw-anchor-peer], network ID=[dev], address=[localhost:49153]
-[34m2023-02-23 14:51:35.754 IST 0021 INFO[0m [nodeCmd] [34;1mserve[0m -> Started peer with ID=[mohfw-anchor-peer], network ID=[dev], address=[localhost:49153]
-[34m2023-02-23 14:51:35.754 IST 0022 INFO[0m [kvledger] [34;1mLoadPreResetHeight[0m -> Loading prereset height from path [/home/priyanku/Desktop/major-project/client/mohfw/mohfw-anchor-peer/ledger/ledgersData/chains]
-[34m2023-02-23 14:51:35.756 IST 0023 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=gossip.Gossip grpc.method=Ping grpc.request_deadline=2023-02-23T14:51:37.756+05:30 grpc.peer_address=127.0.0.1:49636 grpc.code=OK grpc.call_duration=30.595µs
-[34m2023-02-23 14:51:35.757 IST 0024 INFO[0m [gossip.comm] [34;1mGossipStream[0m -> Peer b4e470ab37e53e0b9e91d51ee5bc64f8483dd8b1e21753a2255281498658e62b (127.0.0.1:49636) probed us
-[34m2023-02-23 14:51:35.757 IST 0025 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=gossip.Gossip grpc.method=GossipStream grpc.request_deadline=2023-02-23T14:51:45.756+05:30 grpc.peer_address=127.0.0.1:49636 grpc.code=OK grpc.call_duration=812.078µs
-[34m2023-02-23 14:51:35.758 IST 0026 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=gossip.Gossip grpc.method=Ping grpc.request_deadline=2023-02-23T14:51:37.758+05:30 grpc.peer_address=127.0.0.1:49644 grpc.code=OK grpc.call_duration=26.546µs
-[34m2023-02-23 14:51:40.754 IST 0027 INFO[0m [gossip.channel] [34;1mreportMembershipChanges[0m -> [[arogyaehrchannel] Membership view has changed. peers went online:  [[127.0.0.1:9111 localhost:50000]] , current view:  [[127.0.0.1:9111 localhost:50000]]]
-[34m2023-02-23 14:51:41.789 IST 0028 INFO[0m [gossip.election] [34;1mleaderElection[0m -> e9209f827403aad2700ab725310ecfd0c7caf954009cfccae1bb2eda9dbe658a : Some peer is already a leader
-[34m2023-02-23 18:15:36.254 IST 0029 INFO[0m [nodeCmd] [34;1mfunc1[0m -> Received signal: 15 (terminated)
-[34m2023-02-23 18:15:36.254 IST 002a INFO[0m [gossip.service] [34;1mStop[0m -> Stopping chain arogyaehrchannel
-[34m2023-02-23 18:15:36.254 IST 002b INFO[0m [gossip.service] [34;1mStop[0m -> Stopping leader election for arogyaehrchannel
-[34m2023-02-23 18:15:36.254 IST 002c INFO[0m [gossip.gossip] [34;1mStop[0m -> Stopping gossip
-[34m2023-02-23 18:15:36.254 IST 002d INFO[0m [gossip.discovery] [34;1mStop[0m -> Stopping
-[34m2023-02-23 18:15:36.254 IST 002e INFO[0m [gossip.discovery] [34;1mStop[0m -> Stopped
-[34m2023-02-23 18:15:36.254 IST 002f INFO[0m [gossip.comm] [34;1mStop[0m -> Stopping
-[34m2023-02-23 18:15:36.254 IST 0030 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=gossip.Gossip grpc.method=GossipStream grpc.peer_address=127.0.0.1:49644 grpc.code=OK grpc.call_duration=40m8.395947727s
-[34m2023-02-23 18:15:36.254 IST 0031 INFO[0m [gossip.comm] [34;1mStop[0m -> Stopped
+[34m2023-03-01 00:22:27.048 IST 0002 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Auto-detected peer address: 172.16.36.57:49153
+[34m2023-03-01 00:22:27.048 IST 0003 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Returning localhost:49153
+[34m2023-03-01 00:22:27.354 IST 0004 INFO[0m [deliveryClient] [34;1mloadDeliverServiceConfig[0m -> peer.deliveryclient.blockGossipEnabled is not set, defaulting to true.
+[34m2023-03-01 00:22:27.355 IST 0005 INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2024-01-13 07:21:00 +0000 UTC
+[34m2023-03-01 00:22:27.363 IST 0006 INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initializing LedgerMgr
+[34m2023-03-01 00:22:28.731 IST 0007 INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initialized LedgerMgr
+[34m2023-03-01 00:22:28.732 IST 0008 INFO[0m [gossip.service] [34;1mNew[0m -> Initialize gossip with endpoint localhost:49153
+[34m2023-03-01 00:22:28.732 IST 0009 INFO[0m [gossip.gossip] [34;1mNew[0m -> Creating gossip service with self membership of Endpoint: 127.0.0.1:9111, InternalEndpoint: localhost:49153, PKI-ID: e9209f827403aad2700ab725310ecfd0c7caf954009cfccae1bb2eda9dbe658a, Metadata: 
+[34m2023-03-01 00:22:28.732 IST 000a INFO[0m [gossip.gossip] [34;1mstart[0m -> Gossip instance localhost:49153 started
+[34m2023-03-01 00:22:28.768 IST 000b INFO[0m [lifecycle] [34;1mInitializeLocalChaincodes[0m -> Initialized lifecycle cache with 10 already installed chaincodes
+[34m2023-03-01 00:22:28.768 IST 000c INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Entering computeChaincodeEndpoint with peerHostname: localhost
+[34m2023-03-01 00:22:28.768 IST 000d INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Exit with ccEndpoint: localhost:49154
+[34m2023-03-01 00:22:28.769 IST 000e INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'lscc'
+[34m2023-03-01 00:22:28.769 IST 000f INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'cscc'
+[34m2023-03-01 00:22:28.769 IST 0010 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'qscc'
+[34m2023-03-01 00:22:28.769 IST 0011 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode '_lifecycle'
+[34m2023-03-01 00:22:28.769 IST 0012 INFO[0m [nodeCmd] [34;1mserve[0m -> Deployed system chaincodes
+[34m2023-03-01 00:22:28.769 IST 0013 INFO[0m [peer] [34;1mInitialize[0m -> Loading chain arogyaehrchannel
+[34m2023-03-01 00:22:28.769 IST 0014 INFO[0m [ledgermgmt] [34;1mOpenLedger[0m -> Opening ledger with id = arogyaehrchannel
+[34m2023-03-01 00:22:29.404 IST 0015 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_6' on channel 'arogyaehrchannel'
+[34m2023-03-01 00:22:30.203 IST 0016 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_6:6ff61bf3d2cd58881488d8f773d9bca5e308ad9a9460ac8484136bed25ad550e' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_6:1_6
+[34m2023-03-01 00:22:30.203 IST 0017 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_3' on channel 'arogyaehrchannel'
+[34m2023-03-01 00:22:30.747 IST 0018 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_3:6649dc3e6a0b4925f57a6bbb655ffec115bab60b19e7c55dae0b4de56a96c777' now available on channel arogyaehrchannel for chaincode definition accessControl_1_3:1_3
+[34m2023-03-01 00:22:30.747 IST 0019 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_5' on channel 'arogyaehrchannel'
+[34m2023-03-01 00:22:31.343 IST 001a INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_5:7b1c064d305b6640d926b248167ba3dde2733eee63bc66b4a3fd94ccbd8e4993' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_5:1_5
+[34m2023-03-01 00:22:31.343 IST 001b INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_6' on channel 'arogyaehrchannel'
+[34m2023-03-01 00:22:32.032 IST 001c INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_6:d839d4b0791416bbbf908bd3850e2a522536da9fc9e9edfba7ce4169a86bf249' now available on channel arogyaehrchannel for chaincode definition accessControl_1_6:1_6
+[34m2023-03-01 00:22:32.032 IST 001d INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_4' on channel 'arogyaehrchannel'
+[34m2023-03-01 00:22:32.727 IST 001e INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_4:1da9586aebf3d6a5bb307bb38d5d0e2020e226095b5ef985eaa78b8bd7f751a8' now available on channel arogyaehrchannel for chaincode definition accessControl_1_4:1_4
+[34m2023-03-01 00:22:32.727 IST 001f INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord' on channel 'arogyaehrchannel'
+[34m2023-03-01 00:22:33.245 IST 0020 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_7' on channel 'arogyaehrchannel'
+[33m2023-03-01 00:22:33.501 IST 0021 WARN[0m [lifecycle] [33;1mWork[0m -> could not launch chaincode 'accessControl_1_3:6649dc3e6a0b4925f57a6bbb655ffec115bab60b19e7c55dae0b4de56a96c777': chaincode registration failed: container exited with 1
+[34m2023-03-01 00:22:34.044 IST 0022 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_7:1d43810fd5b9f3dc47db50adfc986db0336cecf463f986fa5fce5b0908e58227' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_7:1_7
+[34m2023-03-01 00:22:34.044 IST 0023 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_5' on channel 'arogyaehrchannel'
+[34m2023-03-01 00:22:34.777 IST 0024 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_5:b38b7bd307f0feb8e9b5bf011df4db5133b2af14994fa01b5e4b546bc22d2e15' now available on channel arogyaehrchannel for chaincode definition accessControl_1_5:1_5
+[34m2023-03-01 00:22:34.777 IST 0025 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_4' on channel 'arogyaehrchannel'
+[34m2023-03-01 00:22:35.439 IST 0026 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_4:cd35de01c50a0597586644841924a52db797a7cfc252cdb0c7197f59c6be8f9e' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_4:1_4
+[34m2023-03-01 00:22:35.498 IST 0027 INFO[0m [ledgermgmt] [34;1mOpenLedger[0m -> Opened ledger with id = arogyaehrchannel
+[34m2023-03-01 00:22:35.689 IST 0028 INFO[0m [gossip.gossip] [34;1mJoinChan[0m -> Joining gossip network of channel arogyaehrchannel with 4 organizations
+[34m2023-03-01 00:22:35.689 IST 0029 INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp2MSP for channel arogyaehrchannel to learn about
+[34m2023-03-01 00:22:35.689 IST 002a INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp3MSP for channel arogyaehrchannel to learn about
+[34m2023-03-01 00:22:35.689 IST 002b INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of MohfwMSP for channel arogyaehrchannel to learn about
+[34m2023-03-01 00:22:35.689 IST 002c INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp1MSP for channel arogyaehrchannel to learn about
+[34m2023-03-01 00:22:35.689 IST 002d INFO[0m [gossip.state] [34;1mNewGossipStateProvider[0m -> Updating metadata information for channel arogyaehrchannel, current ledger sequence is at = 37, next expected block is = 38
+[34m2023-03-01 00:22:35.691 IST 002e INFO[0m [discovery] [34;1mNewService[0m -> Created with config TLS: false, authCacheMaxSize: 1000, authCachePurgeRatio: 0.750000
+[34m2023-03-01 00:22:35.691 IST 002f INFO[0m [nodeCmd] [34;1mserve[0m -> Discovery service activated
+[34m2023-03-01 00:22:35.691 IST 0030 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with Gateway enabled
+[34m2023-03-01 00:22:35.691 IST 0031 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with ID=[mohfw-anchor-peer], network ID=[dev], address=[localhost:49153]
+[34m2023-03-01 00:22:35.696 IST 0032 INFO[0m [nodeCmd] [34;1mserve[0m -> Started peer with ID=[mohfw-anchor-peer], network ID=[dev], address=[localhost:49153]
+[34m2023-03-01 00:22:35.697 IST 0033 INFO[0m [kvledger] [34;1mLoadPreResetHeight[0m -> Loading prereset height from path [/home/priyanku/Desktop/major-project/client/mohfw/mohfw-anchor-peer/ledger/ledgersData/chains]
+[33m2023-03-01 00:22:39.103 IST 0034 WARN[0m [lifecycle] [33;1mWork[0m -> could not launch chaincode 'accessControl_1_4:1da9586aebf3d6a5bb307bb38d5d0e2020e226095b5ef985eaa78b8bd7f751a8': chaincode registration failed: container exited with 127
+[34m2023-03-01 00:22:41.694 IST 0035 INFO[0m [gossip.election] [34;1mbeLeader[0m -> e9209f827403aad2700ab725310ecfd0c7caf954009cfccae1bb2eda9dbe658a : Becoming a leader
+[34m2023-03-01 00:22:41.694 IST 0036 INFO[0m [gossip.service] [34;1mfunc1[0m -> Elected as a leader, starting delivery service for channel arogyaehrchannel
+[34m2023-03-01 00:22:41.695 IST 0037 INFO[0m [deliveryClient] [34;1mStartDeliverForChannel[0m -> This peer will retrieve blocks from ordering service and disseminate to other peers in the organization channel=arogyaehrchannel
+[34m2023-03-01 00:22:41.696 IST 0038 INFO[0m [peer.blocksprovider] [34;1mDeliverBlocks[0m -> Pulling next blocks from ordering service channel=arogyaehrchannel orderer-address=localhost:7050 nextBlock=38
+[33m2023-03-01 00:22:46.961 IST 0039 WARN[0m [lifecycle] [33;1mWork[0m -> could not launch chaincode 'medicalRecord_1_4:cd35de01c50a0597586644841924a52db797a7cfc252cdb0c7197f59c6be8f9e': chaincode registration failed: container exited with 1
+[34m2023-03-01 00:22:56.960 IST 003a INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=gossip.Gossip grpc.method=Ping grpc.request_deadline=2023-03-01T00:22:58.96+05:30 grpc.peer_address=127.0.0.1:44576 grpc.code=OK grpc.call_duration=156.123µs
+[34m2023-03-01 00:22:56.963 IST 003b INFO[0m [gossip.comm] [34;1mGossipStream[0m -> Peer b4e470ab37e53e0b9e91d51ee5bc64f8483dd8b1e21753a2255281498658e62b (127.0.0.1:44576) probed us
+[34m2023-03-01 00:22:56.963 IST 003c INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=gossip.Gossip grpc.method=GossipStream grpc.request_deadline=2023-03-01T00:23:06.961+05:30 grpc.peer_address=127.0.0.1:44576 grpc.code=OK grpc.call_duration=2.356587ms
+[34m2023-03-01 00:22:56.965 IST 003d INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=gossip.Gossip grpc.method=Ping grpc.request_deadline=2023-03-01T00:22:58.964+05:30 grpc.peer_address=127.0.0.1:44590 grpc.code=OK grpc.call_duration=64.641µs
+[34m2023-03-01 00:23:00.689 IST 003e INFO[0m [gossip.channel] [34;1mreportMembershipChanges[0m -> [[arogyaehrchannel] Membership view has changed. peers went online:  [[127.0.0.1:9111 localhost:50000]] , current view:  [[127.0.0.1:9111 localhost:50000]]]
+[34m2023-03-01 00:23:01.709 IST 003f INFO[0m [gossip.election] [34;1mstopBeingLeader[0m -> e9209f827403aad2700ab725310ecfd0c7caf954009cfccae1bb2eda9dbe658a Stopped being a leader
+[34m2023-03-01 00:23:01.709 IST 0040 INFO[0m [gossip.service] [34;1mfunc1[0m -> Renounced leadership, stopping delivery service for channel arogyaehrchannel
+[33m2023-03-01 00:23:01.709 IST 0041 WARN[0m [peer.blocksprovider] [33;1mfunc1[0m -> Encountered an error reading from deliver stream: rpc error: code = Canceled desc = context canceled channel=arogyaehrchannel orderer-address=localhost:7050
+[31m2023-03-01 00:23:10.996 IST 0042 ERRO[0m [chaincode] [31;1mHandleTransaction[0m -> [c30a6ace] Failed to handle GET_QUERY_RESULT. error: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields.
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchInstance).handleRequest
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1737
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).handleRequest
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1543
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).queryDocuments
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1008
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*queryScanner).executeQueryWithBookmark
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:691
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.newQueryScanner
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:1028
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQueryWithPagination
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:673
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQuery
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:653
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/txmgr.(*queryExecutor).ExecuteQuery
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/txmgr/query_executor.go:174
+github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:854
+github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
+runtime.goexit
+	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
+github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:857
+github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
+runtime.goexit
+	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
+GET_QUERY_RESULT failed: transaction ID: c30a6aceb0e920bfe0728d12a5772d0117a21d5afb58db017afdd36e450cdcfc
+github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:255
+runtime.goexit
+	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
+[34m2023-03-01 00:23:11.001 IST 0043 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecord_1_6 duration: 117ms channel=arogyaehrchannel txID=c30a6ace
+[31m2023-03-01 00:23:11.002 IST 0044 ERRO[0m [endorser] [31;1msimulateProposal[0m -> failed to invoke chaincode medicalRecord_1_6, error: transaction returned with failure: Error: GET_QUERY_RESULT failed: transaction ID: c30a6aceb0e920bfe0728d12a5772d0117a21d5afb58db017afdd36e450cdcfc: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields.
+github.com/hyperledger/fabric/core/chaincode.processChaincodeExecutionResult
+	/home/runner/work/fabric/fabric/core/chaincode/chaincode_support.go:188
+github.com/hyperledger/fabric/core/chaincode.(*ChaincodeSupport).Execute
+	/home/runner/work/fabric/fabric/core/chaincode/chaincode_support.go:162
+github.com/hyperledger/fabric/core/endorser.(*SupportImpl).Execute
+	/home/runner/work/fabric/fabric/core/endorser/support.go:126
+github.com/hyperledger/fabric/core/endorser.(*Endorser).callChaincode
+	/home/runner/work/fabric/fabric/core/endorser/endorser.go:120
+github.com/hyperledger/fabric/core/endorser.(*Endorser).simulateProposal
+	/home/runner/work/fabric/fabric/core/endorser/endorser.go:187
+github.com/hyperledger/fabric/core/endorser.(*Endorser).ProcessProposalSuccessfullyOrError
+	/home/runner/work/fabric/fabric/core/endorser/endorser.go:409
+github.com/hyperledger/fabric/core/endorser.(*Endorser).ProcessProposal
+	/home/runner/work/fabric/fabric/core/endorser/endorser.go:350
+github.com/hyperledger/fabric/core/handlers/auth/filter.(*expirationCheckFilter).ProcessProposal
+	/home/runner/work/fabric/fabric/core/handlers/auth/filter/expiration.go:61
+github.com/hyperledger/fabric/core/handlers/auth/filter.(*filter).ProcessProposal
+	/home/runner/work/fabric/fabric/core/handlers/auth/filter/filter.go:32
+github.com/hyperledger/fabric-protos-go/peer._Endorser_ProcessProposal_Handler.func1
+	/home/runner/work/fabric/fabric/vendor/github.com/hyperledger/fabric-protos-go/peer/peer.pb.go:107
+github.com/hyperledger/fabric/common/grpclogging.UnaryServerInterceptor.func1
+	/home/runner/work/fabric/fabric/common/grpclogging/server.go:92
+github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1.1.1
+	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:25
+github.com/hyperledger/fabric/common/grpcmetrics.UnaryServerInterceptor.func1
+	/home/runner/work/fabric/fabric/common/grpcmetrics/interceptor.go:31
+github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1.1.1
+	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:25
+github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1
+	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:34
+github.com/hyperledger/fabric-protos-go/peer._Endorser_ProcessProposal_Handler
+	/home/runner/work/fabric/fabric/vendor/github.com/hyperledger/fabric-protos-go/peer/peer.pb.go:109
+google.golang.org/grpc.(*Server).processUnaryRPC
+	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:1180
+google.golang.org/grpc.(*Server).handleStream
+	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:1503
+google.golang.org/grpc.(*Server).serveStreams.func1.2
+	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:843
+runtime.goexit
+	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571 channel=arogyaehrchannel txID=c30a6ace
+[33m2023-03-01 00:23:11.002 IST 0045 WARN[0m [endorser] [33;1mProcessProposal[0m -> Failed to invoke chaincode channel=arogyaehrchannel chaincode=medicalRecord_1_6 error="error in simulation: transaction returned with failure: Error: GET_QUERY_RESULT failed: transaction ID: c30a6aceb0e920bfe0728d12a5772d0117a21d5afb58db017afdd36e450cdcfc: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields."
+[34m2023-03-01 00:23:11.002 IST 0046 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:48304 grpc.code=OK grpc.call_duration=119.272857ms
+[31m2023-03-01 00:28:41.112 IST 0047 ERRO[0m [chaincode] [31;1mHandleTransaction[0m -> [93f679bf] Failed to handle GET_QUERY_RESULT. error: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields.
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchInstance).handleRequest
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1737
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).handleRequest
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1543
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).queryDocuments
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1008
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*queryScanner).executeQueryWithBookmark
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:691
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.newQueryScanner
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:1028
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQueryWithPagination
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:673
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQuery
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:653
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/txmgr.(*queryExecutor).ExecuteQuery
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/txmgr/query_executor.go:174
+github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:854
+github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
+runtime.goexit
+	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
+github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:857
+github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
+runtime.goexit
+	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
+GET_QUERY_RESULT failed: transaction ID: 93f679bf625ff1c1838ac162caa0947f7d6bdff7eb61c4dfcd587b8dc012a507
+github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:255
+runtime.goexit
+	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
+[34m2023-03-01 00:28:41.115 IST 0048 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecord_1_6 duration: 43ms channel=arogyaehrchannel txID=93f679bf
+[31m2023-03-01 00:28:41.117 IST 0049 ERRO[0m [endorser] [31;1msimulateProposal[0m -> failed to invoke chaincode medicalRecord_1_6, error: transaction returned with failure: Error: GET_QUERY_RESULT failed: transaction ID: 93f679bf625ff1c1838ac162caa0947f7d6bdff7eb61c4dfcd587b8dc012a507: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields.
+github.com/hyperledger/fabric/core/chaincode.processChaincodeExecutionResult
+	/home/runner/work/fabric/fabric/core/chaincode/chaincode_support.go:188
+github.com/hyperledger/fabric/core/chaincode.(*ChaincodeSupport).Execute
+	/home/runner/work/fabric/fabric/core/chaincode/chaincode_support.go:162
+github.com/hyperledger/fabric/core/endorser.(*SupportImpl).Execute
+	/home/runner/work/fabric/fabric/core/endorser/support.go:126
+github.com/hyperledger/fabric/core/endorser.(*Endorser).callChaincode
+	/home/runner/work/fabric/fabric/core/endorser/endorser.go:120
+github.com/hyperledger/fabric/core/endorser.(*Endorser).simulateProposal
+	/home/runner/work/fabric/fabric/core/endorser/endorser.go:187
+github.com/hyperledger/fabric/core/endorser.(*Endorser).ProcessProposalSuccessfullyOrError
+	/home/runner/work/fabric/fabric/core/endorser/endorser.go:409
+github.com/hyperledger/fabric/core/endorser.(*Endorser).ProcessProposal
+	/home/runner/work/fabric/fabric/core/endorser/endorser.go:350
+github.com/hyperledger/fabric/core/handlers/auth/filter.(*expirationCheckFilter).ProcessProposal
+	/home/runner/work/fabric/fabric/core/handlers/auth/filter/expiration.go:61
+github.com/hyperledger/fabric/core/handlers/auth/filter.(*filter).ProcessProposal
+	/home/runner/work/fabric/fabric/core/handlers/auth/filter/filter.go:32
+github.com/hyperledger/fabric-protos-go/peer._Endorser_ProcessProposal_Handler.func1
+	/home/runner/work/fabric/fabric/vendor/github.com/hyperledger/fabric-protos-go/peer/peer.pb.go:107
+github.com/hyperledger/fabric/common/grpclogging.UnaryServerInterceptor.func1
+	/home/runner/work/fabric/fabric/common/grpclogging/server.go:92
+github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1.1.1
+	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:25
+github.com/hyperledger/fabric/common/grpcmetrics.UnaryServerInterceptor.func1
+	/home/runner/work/fabric/fabric/common/grpcmetrics/interceptor.go:31
+github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1.1.1
+	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:25
+github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1
+	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:34
+github.com/hyperledger/fabric-protos-go/peer._Endorser_ProcessProposal_Handler
+	/home/runner/work/fabric/fabric/vendor/github.com/hyperledger/fabric-protos-go/peer/peer.pb.go:109
+google.golang.org/grpc.(*Server).processUnaryRPC
+	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:1180
+google.golang.org/grpc.(*Server).handleStream
+	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:1503
+google.golang.org/grpc.(*Server).serveStreams.func1.2
+	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:843
+runtime.goexit
+	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571 channel=arogyaehrchannel txID=93f679bf
+[33m2023-03-01 00:28:41.117 IST 004a WARN[0m [endorser] [33;1mProcessProposal[0m -> Failed to invoke chaincode channel=arogyaehrchannel chaincode=medicalRecord_1_6 error="error in simulation: transaction returned with failure: Error: GET_QUERY_RESULT failed: transaction ID: 93f679bf625ff1c1838ac162caa0947f7d6bdff7eb61c4dfcd587b8dc012a507: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields."
+[34m2023-03-01 00:28:41.117 IST 004b INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:46392 grpc.code=OK grpc.call_duration=45.637308ms
+[34m2023-03-01 00:29:51.968 IST 004c INFO[0m [couchdb] [34;1mcreateDatabaseIfNotExist[0m -> Created state database arogyaehrchannel_medical$record_1_7
+[31m2023-03-01 00:29:52.009 IST 004d ERRO[0m [chaincode] [31;1mHandleTransaction[0m -> [62527b6d] Failed to handle GET_QUERY_RESULT. error: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields.
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchInstance).handleRequest
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1737
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).handleRequest
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1543
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).queryDocuments
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1008
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*queryScanner).executeQueryWithBookmark
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:691
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.newQueryScanner
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:1028
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQueryWithPagination
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:673
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQuery
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:653
+github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/txmgr.(*queryExecutor).ExecuteQuery
+	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/txmgr/query_executor.go:174
+github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:854
+github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
+runtime.goexit
+	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
+github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:857
+github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
+runtime.goexit
+	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
+GET_QUERY_RESULT failed: transaction ID: 62527b6d7fda9afadddda22e05dff48704a425f7aa120c5a29e85ccb04dd0ca4
+github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:255
+runtime.goexit
+	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
+[34m2023-03-01 00:29:52.018 IST 004e INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecord_1_7 duration: 291ms channel=arogyaehrchannel txID=62527b6d
+[31m2023-03-01 00:29:52.018 IST 004f ERRO[0m [endorser] [31;1msimulateProposal[0m -> failed to invoke chaincode medicalRecord_1_7, error: transaction returned with failure: Error: GET_QUERY_RESULT failed: transaction ID: 62527b6d7fda9afadddda22e05dff48704a425f7aa120c5a29e85ccb04dd0ca4: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields.
+github.com/hyperledger/fabric/core/chaincode.processChaincodeExecutionResult
+	/home/runner/work/fabric/fabric/core/chaincode/chaincode_support.go:188
+github.com/hyperledger/fabric/core/chaincode.(*ChaincodeSupport).Execute
+	/home/runner/work/fabric/fabric/core/chaincode/chaincode_support.go:162
+github.com/hyperledger/fabric/core/endorser.(*SupportImpl).Execute
+	/home/runner/work/fabric/fabric/core/endorser/support.go:126
+github.com/hyperledger/fabric/core/endorser.(*Endorser).callChaincode
+	/home/runner/work/fabric/fabric/core/endorser/endorser.go:120
+github.com/hyperledger/fabric/core/endorser.(*Endorser).simulateProposal
+	/home/runner/work/fabric/fabric/core/endorser/endorser.go:187
+github.com/hyperledger/fabric/core/endorser.(*Endorser).ProcessProposalSuccessfullyOrError
+	/home/runner/work/fabric/fabric/core/endorser/endorser.go:409
+github.com/hyperledger/fabric/core/endorser.(*Endorser).ProcessProposal
+	/home/runner/work/fabric/fabric/core/endorser/endorser.go:350
+github.com/hyperledger/fabric/core/handlers/auth/filter.(*expirationCheckFilter).ProcessProposal
+	/home/runner/work/fabric/fabric/core/handlers/auth/filter/expiration.go:61
+github.com/hyperledger/fabric/core/handlers/auth/filter.(*filter).ProcessProposal
+	/home/runner/work/fabric/fabric/core/handlers/auth/filter/filter.go:32
+github.com/hyperledger/fabric-protos-go/peer._Endorser_ProcessProposal_Handler.func1
+	/home/runner/work/fabric/fabric/vendor/github.com/hyperledger/fabric-protos-go/peer/peer.pb.go:107
+github.com/hyperledger/fabric/common/grpclogging.UnaryServerInterceptor.func1
+	/home/runner/work/fabric/fabric/common/grpclogging/server.go:92
+github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1.1.1
+	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:25
+github.com/hyperledger/fabric/common/grpcmetrics.UnaryServerInterceptor.func1
+	/home/runner/work/fabric/fabric/common/grpcmetrics/interceptor.go:31
+github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1.1.1
+	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:25
+github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1
+	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:34
+github.com/hyperledger/fabric-protos-go/peer._Endorser_ProcessProposal_Handler
+	/home/runner/work/fabric/fabric/vendor/github.com/hyperledger/fabric-protos-go/peer/peer.pb.go:109
+google.golang.org/grpc.(*Server).processUnaryRPC
+	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:1180
+google.golang.org/grpc.(*Server).handleStream
+	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:1503
+google.golang.org/grpc.(*Server).serveStreams.func1.2
+	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:843
+runtime.goexit
+	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571 channel=arogyaehrchannel txID=62527b6d
+[33m2023-03-01 00:29:52.018 IST 0050 WARN[0m [endorser] [33;1mProcessProposal[0m -> Failed to invoke chaincode channel=arogyaehrchannel chaincode=medicalRecord_1_7 error="error in simulation: transaction returned with failure: Error: GET_QUERY_RESULT failed: transaction ID: 62527b6d7fda9afadddda22e05dff48704a425f7aa120c5a29e85ccb04dd0ca4: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields."
+[34m2023-03-01 00:29:52.018 IST 0051 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:39980 grpc.code=OK grpc.call_duration=292.817446ms
+[34m2023-03-01 00:34:20.053 IST 0052 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecord_1_7 duration: 13ms channel=arogyaehrchannel txID=0d0668ae
+[31m2023-03-01 00:34:20.055 IST 0053 ERRO[0m [endorser] [31;1msimulateProposal[0m -> failed to invoke chaincode medicalRecord_1_7, error: transaction returned with failure: Error: Expected 1 parameters, but 0 have been supplied
+github.com/hyperledger/fabric/core/chaincode.processChaincodeExecutionResult
+	/home/runner/work/fabric/fabric/core/chaincode/chaincode_support.go:188
+github.com/hyperledger/fabric/core/chaincode.(*ChaincodeSupport).Execute
+	/home/runner/work/fabric/fabric/core/chaincode/chaincode_support.go:162
+github.com/hyperledger/fabric/core/endorser.(*SupportImpl).Execute
+	/home/runner/work/fabric/fabric/core/endorser/support.go:126
+github.com/hyperledger/fabric/core/endorser.(*Endorser).callChaincode
+	/home/runner/work/fabric/fabric/core/endorser/endorser.go:120
+github.com/hyperledger/fabric/core/endorser.(*Endorser).simulateProposal
+	/home/runner/work/fabric/fabric/core/endorser/endorser.go:187
+github.com/hyperledger/fabric/core/endorser.(*Endorser).ProcessProposalSuccessfullyOrError
+	/home/runner/work/fabric/fabric/core/endorser/endorser.go:409
+github.com/hyperledger/fabric/core/endorser.(*Endorser).ProcessProposal
+	/home/runner/work/fabric/fabric/core/endorser/endorser.go:350
+github.com/hyperledger/fabric/core/handlers/auth/filter.(*expirationCheckFilter).ProcessProposal
+	/home/runner/work/fabric/fabric/core/handlers/auth/filter/expiration.go:61
+github.com/hyperledger/fabric/core/handlers/auth/filter.(*filter).ProcessProposal
+	/home/runner/work/fabric/fabric/core/handlers/auth/filter/filter.go:32
+github.com/hyperledger/fabric-protos-go/peer._Endorser_ProcessProposal_Handler.func1
+	/home/runner/work/fabric/fabric/vendor/github.com/hyperledger/fabric-protos-go/peer/peer.pb.go:107
+github.com/hyperledger/fabric/common/grpclogging.UnaryServerInterceptor.func1
+	/home/runner/work/fabric/fabric/common/grpclogging/server.go:92
+github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1.1.1
+	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:25
+github.com/hyperledger/fabric/common/grpcmetrics.UnaryServerInterceptor.func1
+	/home/runner/work/fabric/fabric/common/grpcmetrics/interceptor.go:31
+github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1.1.1
+	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:25
+github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1
+	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:34
+github.com/hyperledger/fabric-protos-go/peer._Endorser_ProcessProposal_Handler
+	/home/runner/work/fabric/fabric/vendor/github.com/hyperledger/fabric-protos-go/peer/peer.pb.go:109
+google.golang.org/grpc.(*Server).processUnaryRPC
+	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:1180
+google.golang.org/grpc.(*Server).handleStream
+	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:1503
+google.golang.org/grpc.(*Server).serveStreams.func1.2
+	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:843
+runtime.goexit
+	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571 channel=arogyaehrchannel txID=0d0668ae
+[33m2023-03-01 00:34:20.055 IST 0054 WARN[0m [endorser] [33;1mProcessProposal[0m -> Failed to invoke chaincode channel=arogyaehrchannel chaincode=medicalRecord_1_7 error="error in simulation: transaction returned with failure: Error: Expected 1 parameters, but 0 have been supplied"
+[34m2023-03-01 00:34:20.055 IST 0055 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:45694 grpc.code=OK grpc.call_duration=16.80746ms
+[34m2023-03-01 00:42:24.845 IST 0056 INFO[0m [nodeCmd] [34;1mfunc1[0m -> Received signal: 15 (terminated)
+[33m2023-03-01 00:42:24.899 IST 0057 WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=medicalRecord-1.2:dfcd8354cc38e3a7c37b315305c6daae02ad20f96f98710bdf0f8fc876f9148a error="No such container: dev-mohfw-anchor-peer-medicalRecord-1.2-dfcd8354cc38e3a7c37b315305c6daae02ad20f96f98710bdf0f8fc876f9148a"
+[33m2023-03-01 00:42:24.899 IST 0058 WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=medicalRecord_1.3:50ae1277bb4ba4b5073430c81a3bafb3f52dea0f7069619efb64419f0909a69f error="No such container: dev-mohfw-anchor-peer-medicalRecord_1.3-50ae1277bb4ba4b5073430c81a3bafb3f52dea0f7069619efb64419f0909a69f"
+[34m2023-03-01 00:42:26.042 IST 0059 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=gossip.Gossip grpc.method=GossipStream grpc.peer_address=127.0.0.1:44590 error="rpc error: code = Canceled desc = context canceled" grpc.code=Canceled grpc.call_duration=19m29.076824357s
+[34m2023-03-01 00:42:26.152 IST 005a INFO[0m [gossip.service] [34;1mStop[0m -> Stopping chain arogyaehrchannel
+[34m2023-03-01 00:42:26.152 IST 005b INFO[0m [gossip.service] [34;1mStop[0m -> Stopping leader election for arogyaehrchannel
+[34m2023-03-01 00:42:26.152 IST 005c INFO[0m [gossip.gossip] [34;1mStop[0m -> Stopping gossip
+[34m2023-03-01 00:42:26.152 IST 005d INFO[0m [gossip.discovery] [34;1mStop[0m -> Stopping
+[34m2023-03-01 00:42:26.152 IST 005e INFO[0m [gossip.discovery] [34;1mStop[0m -> Stopped
+[34m2023-03-01 00:42:26.152 IST 005f INFO[0m [gossip.comm] [34;1mStop[0m -> Stopping
+[34m2023-03-01 00:42:26.153 IST 0060 INFO[0m [gossip.comm] [34;1mStop[0m -> Stopped

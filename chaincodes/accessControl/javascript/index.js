@@ -1,6 +1,6 @@
 "use strict";
 
-const accessRecord = require("./lib/accessControlContract");
+const AccessRecord = require("./lib/accessControlContract");
 
-module.exports.AccessRecord = accessRecord;
-module.exports.contracts = [accessRecord];
+module.exports.AccessRecord = AccessRecord;
+module.exports.contracts = [AccessRecord];

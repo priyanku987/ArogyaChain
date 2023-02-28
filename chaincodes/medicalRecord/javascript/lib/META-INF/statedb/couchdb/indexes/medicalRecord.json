@@ -1,0 +1,38 @@
+{
+  "index": {
+    "fields": [
+      "Id",
+      "Type",
+      "Owner",
+      "IssuedBy",
+      "ConsultingDoctorID",
+      "ConsultingDoctorName",
+      "ConsultingDoctorRegisteredNumber",
+      "HospitalId",
+      "HospitalName",
+      "HospitalRegisteredNumber",
+      "IssueDate",
+      "CreatedAt",
+      "UpdatedAt",
+      "CreatedBy",
+      "UpdatedBy",
+      "PatientId",
+      "PatientName",
+      "PatientAge",
+      "PatientAddress",
+      "PatientCountry",
+      "PatientState",
+      "PatientCity",
+      "PatientDistrict",
+      "PatientVillage",
+      "PatientZipcode",
+      "PatientEmail",
+      "PatientAttendantName",
+      "DiseaseName",
+      "SeverityOfDisease"
+    ]
+  },
+  "ddoc": "indexMedicalRecordDoc",
+  "name": "medicalRecord",
+  "type": "json"
+}

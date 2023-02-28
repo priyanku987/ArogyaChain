@@ -1,4 +1,4 @@
-const medicalRecord = require("./lib/medicalRecordContract");
+const MedicalRecord = require("./lib/medicalRecordContract");
 
-module.exports.MedicalRecord = medicalRecord;
-module.exports.contracts = [medicalRecord];
+module.exports.MedicalRecord = MedicalRecord;
+module.exports.contracts = [MedicalRecord];

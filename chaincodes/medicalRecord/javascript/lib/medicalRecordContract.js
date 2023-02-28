@@ -24,7 +24,7 @@ class MedicalRecord extends Contract {
         UpdatedBy: "mohfw",
         PatientId: "demo",
         PatientName: "demo",
-        PatientAge: 0,
+        PatientAge: "20",
         PatientAddress: "demo",
         PatientCountry: "demo",
         PatientState: "demo",
@@ -183,8 +183,9 @@ class MedicalRecord extends Contract {
   // GetEMRSByPatientId returns EMRs based on Patient Id.
   async GetEMRByPatientId(ctx, patientId) {
     //get client identity
-    const invokerIdentity = await ctx.stub.getID();
+    const invokerIdentity = await ctx.clientIdentity.id;
     if (invokerIdentity === patientId) {
+      console.log("kelalala bobo");
       let queryString = {};
       queryString.selector = {};
       queryString.selector.PatientId = patientId;
