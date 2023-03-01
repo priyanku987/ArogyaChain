@@ -9,9 +9,9 @@ class MedicalRecord extends Contract {
       {
         Id: "1xasaDE",
         Type: "PRESCRIPTION",
-        Owner: "demo",
-        IssuedBy: "mohfw",
-        ConsultingDoctorID: "mohfw",
+        Owner: "demo", // Patient's Adhaar Id
+        IssuedBy: "mohfw", //Doctors Adhaar Id
+        ConsultingDoctorID: "mohfw", //Doctors Adhaar Id
         ConsultingDoctorName: "mohfw",
         ConsultingDoctorRegisteredNumber: "123432432",
         HospitalId: "demo",
@@ -22,9 +22,9 @@ class MedicalRecord extends Contract {
         UpdatedAt: new Date(),
         CreatedBy: "mohfw",
         UpdatedBy: "mohfw",
-        PatientId: "demo",
+        PatientId: "demo", // Patient's Adhaar Id
         PatientName: "demo",
-        PatientAge: "20",
+        PatientAge: 20,
         PatientAddress: "demo",
         PatientCountry: "demo",
         PatientState: "demo",
@@ -149,14 +149,14 @@ class MedicalRecord extends Contract {
       HospitalId: hospitalId,
       HospitalName: hospitalName,
       HospitalRegisteredNumber: hospitalRegisteredNumber,
-      IssueDate: new Date(),
-      CreatedAt: new Date(),
-      UpdatedAt: new Date(),
+      IssueDate: new Date().getTime(),
+      CreatedAt: new Date().getTime(),
+      UpdatedAt: new Date().getTime(),
       CreatedBy: createdBy,
       UpdatedBy: updatedBy,
       PatientId: patientId,
       PatientName: patientName,
-      PatientAge: patientAge,
+      PatientAge: parseInt(patientAge),
       PatientAddress: patientAddress,
       PatientCountry: patientCountry,
       PatientState: patientState,

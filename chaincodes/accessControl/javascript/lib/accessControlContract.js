@@ -13,7 +13,7 @@ class AccessRecord extends Contract {
         EHRId: "demo",
         PerformedBy: "demo",
         PerformedFor: "demo",
-        Date: new Date(),
+        Date: new Date().getTime(),
       },
     ];
     for (const accessRecord of accessRecords) {
@@ -97,6 +97,24 @@ class AccessRecord extends Contract {
     queryString.selector.PerformedFor = invoker;
     queryString.selector.Type = "ACCESS-GRANT-REVOKE";
     queryString.selector.Operation = "GRANT_ACCESS";
+    queryString.sort = [{ Date: "desc" }];
+    const results = await this.GetQueryResultForQueryString(
+      ctx,
+      JSON.stringify(queryString)
+    );
+    return results;
+  }
+
+  async GetAccessListByPerformedByAndPerformedFor(
+    ctx,
+    performedBy,
+    performedFor
+  ) {
+    let queryString = {};
+    queryString.selector = {};
+    queryString.selector.Type = "ACCESS-GRANT-REVOKE";
+    queryString.selector.PerformedBy = performedBy;
+    queryString.selector.PerformedFor = performedFor;
     queryString.sort = [{ Date: "desc" }];
     const results = await this.GetQueryResultForQueryString(
       ctx,
