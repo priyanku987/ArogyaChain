@@ -1,4 +1,4 @@
-[34m2023-03-01 23:22:18.799 IST 0001 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer:
+[34m2023-03-08 23:36:35.428 IST 0001 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer:
  Version: 2.4.7
  Commit SHA: df9c661
  Go version: go1.18.7
@@ -6,504 +6,317 @@
  Chaincode:
   Base Docker Label: org.hyperledger.fabric
   Docker Namespace: hyperledger
-[34m2023-03-01 23:22:18.799 IST 0002 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Auto-detected peer address: 172.16.36.57:49153
-[34m2023-03-01 23:22:18.799 IST 0003 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Returning localhost:49153
-[34m2023-03-01 23:22:18.833 IST 0004 INFO[0m [deliveryClient] [34;1mloadDeliverServiceConfig[0m -> peer.deliveryclient.blockGossipEnabled is not set, defaulting to true.
-[34m2023-03-01 23:22:18.834 IST 0005 INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2024-01-13 07:21:00 +0000 UTC
-[34m2023-03-01 23:22:18.834 IST 0006 INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initializing LedgerMgr
-[34m2023-03-01 23:22:20.856 IST 0007 INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initialized LedgerMgr
-[34m2023-03-01 23:22:20.857 IST 0008 INFO[0m [gossip.service] [34;1mNew[0m -> Initialize gossip with endpoint localhost:49153
-[34m2023-03-01 23:22:20.857 IST 0009 INFO[0m [gossip.gossip] [34;1mNew[0m -> Creating gossip service with self membership of Endpoint: 127.0.0.1:9111, InternalEndpoint: localhost:49153, PKI-ID: e9209f827403aad2700ab725310ecfd0c7caf954009cfccae1bb2eda9dbe658a, Metadata: 
-[34m2023-03-01 23:22:20.858 IST 000a INFO[0m [gossip.gossip] [34;1mstart[0m -> Gossip instance localhost:49153 started
-[34m2023-03-01 23:22:20.928 IST 000b INFO[0m [lifecycle] [34;1mInitializeLocalChaincodes[0m -> Initialized lifecycle cache with 10 already installed chaincodes
-[34m2023-03-01 23:22:20.929 IST 000c INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Entering computeChaincodeEndpoint with peerHostname: localhost
-[34m2023-03-01 23:22:20.929 IST 000d INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Exit with ccEndpoint: localhost:49154
-[34m2023-03-01 23:22:20.932 IST 000e INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'lscc'
-[34m2023-03-01 23:22:20.932 IST 000f INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'cscc'
-[34m2023-03-01 23:22:20.933 IST 0010 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'qscc'
-[34m2023-03-01 23:22:20.933 IST 0011 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode '_lifecycle'
-[34m2023-03-01 23:22:20.933 IST 0012 INFO[0m [nodeCmd] [34;1mserve[0m -> Deployed system chaincodes
-[34m2023-03-01 23:22:20.933 IST 0013 INFO[0m [peer] [34;1mInitialize[0m -> Loading chain arogyaehrchannel
-[34m2023-03-01 23:22:20.933 IST 0014 INFO[0m [ledgermgmt] [34;1mOpenLedger[0m -> Opening ledger with id = arogyaehrchannel
-[34m2023-03-01 23:22:21.278 IST 0015 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_5' on channel 'arogyaehrchannel'
-[34m2023-03-01 23:22:21.945 IST 0016 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_5:b38b7bd307f0feb8e9b5bf011df4db5133b2af14994fa01b5e4b546bc22d2e15' now available on channel arogyaehrchannel for chaincode definition accessControl_1_5:1_5
-[34m2023-03-01 23:22:21.945 IST 0017 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_6' on channel 'arogyaehrchannel'
-[34m2023-03-01 23:22:22.505 IST 0018 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_6:d839d4b0791416bbbf908bd3850e2a522536da9fc9e9edfba7ce4169a86bf249' now available on channel arogyaehrchannel for chaincode definition accessControl_1_6:1_6
-[34m2023-03-01 23:22:22.505 IST 0019 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_4' on channel 'arogyaehrchannel'
-[34m2023-03-01 23:22:23.101 IST 001a INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_4:1da9586aebf3d6a5bb307bb38d5d0e2020e226095b5ef985eaa78b8bd7f751a8' now available on channel arogyaehrchannel for chaincode definition accessControl_1_4:1_4
-[34m2023-03-01 23:22:23.101 IST 001b INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_7' on channel 'arogyaehrchannel'
-[34m2023-03-01 23:22:23.657 IST 001c INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_7:1d43810fd5b9f3dc47db50adfc986db0336cecf463f986fa5fce5b0908e58227' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_7:1_7
-[34m2023-03-01 23:22:23.657 IST 001d INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_3' on channel 'arogyaehrchannel'
-[34m2023-03-01 23:22:24.225 IST 001e INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_3:6649dc3e6a0b4925f57a6bbb655ffec115bab60b19e7c55dae0b4de56a96c777' now available on channel arogyaehrchannel for chaincode definition accessControl_1_3:1_3
-[34m2023-03-01 23:22:24.225 IST 001f INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_5' on channel 'arogyaehrchannel'
-[34m2023-03-01 23:22:24.797 IST 0020 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_5:7b1c064d305b6640d926b248167ba3dde2733eee63bc66b4a3fd94ccbd8e4993' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_5:1_5
-[34m2023-03-01 23:22:24.797 IST 0021 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_6' on channel 'arogyaehrchannel'
-[34m2023-03-01 23:22:25.352 IST 0022 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_6:6ff61bf3d2cd58881488d8f773d9bca5e308ad9a9460ac8484136bed25ad550e' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_6:1_6
-[34m2023-03-01 23:22:25.352 IST 0023 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord' on channel 'arogyaehrchannel'
-[34m2023-03-01 23:22:25.833 IST 0024 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_4' on channel 'arogyaehrchannel'
-[34m2023-03-01 23:22:26.425 IST 0025 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_4:cd35de01c50a0597586644841924a52db797a7cfc252cdb0c7197f59c6be8f9e' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_4:1_4
-[34m2023-03-01 23:22:26.607 IST 0026 INFO[0m [ledgermgmt] [34;1mOpenLedger[0m -> Opened ledger with id = arogyaehrchannel
-[34m2023-03-01 23:22:26.789 IST 0027 INFO[0m [gossip.gossip] [34;1mJoinChan[0m -> Joining gossip network of channel arogyaehrchannel with 4 organizations
-[34m2023-03-01 23:22:26.789 IST 0028 INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp2MSP for channel arogyaehrchannel to learn about
-[34m2023-03-01 23:22:26.789 IST 0029 INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp3MSP for channel arogyaehrchannel to learn about
-[34m2023-03-01 23:22:26.789 IST 002a INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of MohfwMSP for channel arogyaehrchannel to learn about
-[34m2023-03-01 23:22:26.789 IST 002b INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp1MSP for channel arogyaehrchannel to learn about
-[34m2023-03-01 23:22:26.790 IST 002c INFO[0m [gossip.state] [34;1mNewGossipStateProvider[0m -> Updating metadata information for channel arogyaehrchannel, current ledger sequence is at = 37, next expected block is = 38
-[34m2023-03-01 23:22:26.790 IST 002d INFO[0m [discovery] [34;1mNewService[0m -> Created with config TLS: false, authCacheMaxSize: 1000, authCachePurgeRatio: 0.750000
-[34m2023-03-01 23:22:26.790 IST 002e INFO[0m [nodeCmd] [34;1mserve[0m -> Discovery service activated
-[34m2023-03-01 23:22:26.790 IST 002f INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with Gateway enabled
-[34m2023-03-01 23:22:26.790 IST 0030 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with ID=[mohfw-anchor-peer], network ID=[dev], address=[localhost:49153]
-[34m2023-03-01 23:22:26.790 IST 0031 INFO[0m [nodeCmd] [34;1mserve[0m -> Started peer with ID=[mohfw-anchor-peer], network ID=[dev], address=[localhost:49153]
-[34m2023-03-01 23:22:26.790 IST 0032 INFO[0m [kvledger] [34;1mLoadPreResetHeight[0m -> Loading prereset height from path [/home/priyanku/Desktop/major-project/client/mohfw/mohfw-anchor-peer/ledger/ledgersData/chains]
-[33m2023-03-01 23:22:29.359 IST 0033 WARN[0m [lifecycle] [33;1mWork[0m -> could not launch chaincode 'accessControl_1_4:1da9586aebf3d6a5bb307bb38d5d0e2020e226095b5ef985eaa78b8bd7f751a8': chaincode registration failed: container exited with 127
-[33m2023-03-01 23:22:32.598 IST 0034 WARN[0m [lifecycle] [33;1mWork[0m -> could not launch chaincode 'accessControl_1_3:6649dc3e6a0b4925f57a6bbb655ffec115bab60b19e7c55dae0b4de56a96c777': chaincode registration failed: container exited with 1
-[34m2023-03-01 23:22:32.791 IST 0035 INFO[0m [gossip.election] [34;1mbeLeader[0m -> e9209f827403aad2700ab725310ecfd0c7caf954009cfccae1bb2eda9dbe658a : Becoming a leader
-[34m2023-03-01 23:22:32.791 IST 0036 INFO[0m [gossip.service] [34;1mfunc1[0m -> Elected as a leader, starting delivery service for channel arogyaehrchannel
-[34m2023-03-01 23:22:32.791 IST 0037 INFO[0m [deliveryClient] [34;1mStartDeliverForChannel[0m -> This peer will retrieve blocks from ordering service and disseminate to other peers in the organization channel=arogyaehrchannel
-[34m2023-03-01 23:22:32.793 IST 0038 INFO[0m [peer.blocksprovider] [34;1mDeliverBlocks[0m -> Pulling next blocks from ordering service channel=arogyaehrchannel orderer-address=localhost:7050 nextBlock=38
-[33m2023-03-01 23:22:38.459 IST 0039 WARN[0m [lifecycle] [33;1mWork[0m -> could not launch chaincode 'medicalRecord_1_4:cd35de01c50a0597586644841924a52db797a7cfc252cdb0c7197f59c6be8f9e': chaincode registration failed: container exited with 1
-[34m2023-03-01 23:22:48.821 IST 003a INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=gossip.Gossip grpc.method=Ping grpc.request_deadline=2023-03-01T23:22:50.821+05:30 grpc.peer_address=127.0.0.1:44216 grpc.code=OK grpc.call_duration=101.818µs
-[34m2023-03-01 23:22:48.823 IST 003b INFO[0m [gossip.comm] [34;1mGossipStream[0m -> Peer b4e470ab37e53e0b9e91d51ee5bc64f8483dd8b1e21753a2255281498658e62b (127.0.0.1:44216) probed us
-[34m2023-03-01 23:22:48.824 IST 003c INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=gossip.Gossip grpc.method=GossipStream grpc.request_deadline=2023-03-01T23:22:58.821+05:30 grpc.peer_address=127.0.0.1:44216 grpc.code=OK grpc.call_duration=2.034272ms
-[34m2023-03-01 23:22:48.825 IST 003d INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=gossip.Gossip grpc.method=Ping grpc.request_deadline=2023-03-01T23:22:50.825+05:30 grpc.peer_address=127.0.0.1:44224 grpc.code=OK grpc.call_duration=71.56µs
-[34m2023-03-01 23:22:51.790 IST 003e INFO[0m [gossip.channel] [34;1mreportMembershipChanges[0m -> [[arogyaehrchannel] Membership view has changed. peers went online:  [[127.0.0.1:9111 localhost:50000]] , current view:  [[127.0.0.1:9111 localhost:50000]]]
-[34m2023-03-01 23:22:52.745 IST 003f INFO[0m [gossip.election] [34;1mstopBeingLeader[0m -> e9209f827403aad2700ab725310ecfd0c7caf954009cfccae1bb2eda9dbe658a Stopped being a leader
-[34m2023-03-01 23:22:52.745 IST 0040 INFO[0m [gossip.service] [34;1mfunc1[0m -> Renounced leadership, stopping delivery service for channel arogyaehrchannel
-[33m2023-03-01 23:22:52.745 IST 0041 WARN[0m [peer.blocksprovider] [33;1mfunc1[0m -> Encountered an error reading from deliver stream: rpc error: code = Canceled desc = context canceled channel=arogyaehrchannel orderer-address=localhost:7050
-[31m2023-03-01 23:25:14.121 IST 0042 ERRO[0m [chaincode] [31;1mHandleTransaction[0m -> [f038c1e6] Failed to handle GET_QUERY_RESULT. error: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields.
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchInstance).handleRequest
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1737
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).handleRequest
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1543
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).queryDocuments
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1008
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*queryScanner).executeQueryWithBookmark
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:691
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.newQueryScanner
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:1028
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQueryWithPagination
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:673
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQuery
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:653
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/txmgr.(*queryExecutor).ExecuteQuery
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/txmgr/query_executor.go:174
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:854
+[34m2023-03-08 23:36:35.430 IST 0002 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Auto-detected peer address: 172.16.38.12:49153
+[34m2023-03-08 23:36:35.430 IST 0003 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Returning localhost:49153
+[34m2023-03-08 23:36:35.486 IST 0004 INFO[0m [deliveryClient] [34;1mloadDeliverServiceConfig[0m -> peer.deliveryclient.blockGossipEnabled is not set, defaulting to true.
+[34m2023-03-08 23:36:35.486 IST 0005 INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2024-01-13 07:21:00 +0000 UTC
+[34m2023-03-08 23:36:35.486 IST 0006 INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initializing LedgerMgr
+[34m2023-03-08 23:36:35.760 IST 0007 INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initialized LedgerMgr
+[34m2023-03-08 23:36:35.761 IST 0008 INFO[0m [gossip.service] [34;1mNew[0m -> Initialize gossip with endpoint localhost:49153
+[34m2023-03-08 23:36:35.761 IST 0009 INFO[0m [gossip.gossip] [34;1mNew[0m -> Creating gossip service with self membership of Endpoint: 127.0.0.1:9111, InternalEndpoint: localhost:49153, PKI-ID: e9209f827403aad2700ab725310ecfd0c7caf954009cfccae1bb2eda9dbe658a, Metadata: 
+[34m2023-03-08 23:36:35.762 IST 000a INFO[0m [gossip.gossip] [34;1mstart[0m -> Gossip instance localhost:49153 started
+[34m2023-03-08 23:36:35.806 IST 000b INFO[0m [lifecycle] [34;1mInitializeLocalChaincodes[0m -> Initialized lifecycle cache with 22 already installed chaincodes
+[34m2023-03-08 23:36:35.806 IST 000c INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Entering computeChaincodeEndpoint with peerHostname: localhost
+[34m2023-03-08 23:36:35.806 IST 000d INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Exit with ccEndpoint: localhost:49154
+[34m2023-03-08 23:36:35.807 IST 000e INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'lscc'
+[34m2023-03-08 23:36:35.807 IST 000f INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'cscc'
+[34m2023-03-08 23:36:35.807 IST 0010 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'qscc'
+[34m2023-03-08 23:36:35.807 IST 0011 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode '_lifecycle'
+[34m2023-03-08 23:36:35.807 IST 0012 INFO[0m [nodeCmd] [34;1mserve[0m -> Deployed system chaincodes
+[34m2023-03-08 23:36:35.807 IST 0013 INFO[0m [peer] [34;1mInitialize[0m -> Loading chain arogyaehrchannel
+[34m2023-03-08 23:36:35.807 IST 0014 INFO[0m [ledgermgmt] [34;1mOpenLedger[0m -> Opening ledger with id = arogyaehrchannel
+[34m2023-03-08 23:36:35.821 IST 0015 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_7' on channel 'arogyaehrchannel'
+[34m2023-03-08 23:36:35.821 IST 0016 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_7:1d43810fd5b9f3dc47db50adfc986db0336cecf463f986fa5fce5b0908e58227' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_7:1_7
+[34m2023-03-08 23:36:35.821 IST 0017 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord' on channel 'arogyaehrchannel'
+[34m2023-03-08 23:36:35.821 IST 0018 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_6' on channel 'arogyaehrchannel'
+[34m2023-03-08 23:36:35.821 IST 0019 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_6:d839d4b0791416bbbf908bd3850e2a522536da9fc9e9edfba7ce4169a86bf249' now available on channel arogyaehrchannel for chaincode definition accessControl_1_6:1_6
+[34m2023-03-08 23:36:35.821 IST 001a INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_2_1' on channel 'arogyaehrchannel'
+[34m2023-03-08 23:36:35.821 IST 001b INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_2_2:b1c2bb8f96c6dc4fe7e4a33652b80bf6bf15dd6b4b58829aff68d96dfe49af94' now available on channel arogyaehrchannel for chaincode definition medicalRecord_2_1:2_1
+[34m2023-03-08 23:36:35.821 IST 001c INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_4' on channel 'arogyaehrchannel'
+[34m2023-03-08 23:36:35.821 IST 001d INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_4:cd35de01c50a0597586644841924a52db797a7cfc252cdb0c7197f59c6be8f9e' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_4:1_4
+[34m2023-03-08 23:36:35.822 IST 001e INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_8' on channel 'arogyaehrchannel'
+[34m2023-03-08 23:36:35.822 IST 001f INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_8:38b151012658f5ff1194055bd1c5f2c667efcda3b3474038530ec5f4fbc650b6' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_8:1_8
+[34m2023-03-08 23:36:35.822 IST 0020 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_7' on channel 'arogyaehrchannel'
+[34m2023-03-08 23:36:35.822 IST 0021 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_7:1c3835a7b03dc6149401f8b9fb89af476bc4f7a8c74d20e7ecff4a325151f36a' now available on channel arogyaehrchannel for chaincode definition accessControl_1_7:1_7
+[34m2023-03-08 23:36:35.822 IST 0022 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_2_1' on channel 'arogyaehrchannel'
+[34m2023-03-08 23:36:35.822 IST 0023 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_2_1:8ec54a9203acfa520e69f142cad58d327d5ac74885fd5b8422ff612a7d9e7202' now available on channel arogyaehrchannel for chaincode definition accessControl_2_1:2_1
+[34m2023-03-08 23:36:35.822 IST 0024 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_2_2' on channel 'arogyaehrchannel'
+[34m2023-03-08 23:36:35.822 IST 0025 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_2_3:f67bbc0713c68403ff38a7ea9d5cff776a624ac76b015a880635d795ab19ff95' now available on channel arogyaehrchannel for chaincode definition accessControl_2_2:2_2
+[34m2023-03-08 23:36:35.822 IST 0026 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_6' on channel 'arogyaehrchannel'
+[34m2023-03-08 23:36:35.822 IST 0027 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_6:6ff61bf3d2cd58881488d8f773d9bca5e308ad9a9460ac8484136bed25ad550e' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_6:1_6
+[34m2023-03-08 23:36:35.822 IST 0028 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_5' on channel 'arogyaehrchannel'
+[34m2023-03-08 23:36:35.822 IST 0029 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_5:7b1c064d305b6640d926b248167ba3dde2733eee63bc66b4a3fd94ccbd8e4993' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_5:1_5
+[34m2023-03-08 23:36:35.822 IST 002a INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_3' on channel 'arogyaehrchannel'
+[34m2023-03-08 23:36:35.822 IST 002b INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_3:6649dc3e6a0b4925f57a6bbb655ffec115bab60b19e7c55dae0b4de56a96c777' now available on channel arogyaehrchannel for chaincode definition accessControl_1_3:1_3
+[34m2023-03-08 23:36:35.822 IST 002c INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_5' on channel 'arogyaehrchannel'
+[34m2023-03-08 23:36:35.822 IST 002d INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_5:b38b7bd307f0feb8e9b5bf011df4db5133b2af14994fa01b5e4b546bc22d2e15' now available on channel arogyaehrchannel for chaincode definition accessControl_1_5:1_5
+[34m2023-03-08 23:36:35.822 IST 002e INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_2_0' on channel 'arogyaehrchannel'
+[34m2023-03-08 23:36:35.822 IST 002f INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_2_0:0ff632e520333b219f36ec96858a7bb36284dee33173a07e458bfe69de829f1e' now available on channel arogyaehrchannel for chaincode definition medicalRecord_2_0:2_0
+[34m2023-03-08 23:36:35.822 IST 0030 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_9' on channel 'arogyaehrchannel'
+[34m2023-03-08 23:36:35.823 IST 0031 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_9:92ceabcb48a7b19ba4f1ad124f8d6e9fadac6e63371f433ed3c9c4495385b009' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_9:1_9
+[34m2023-03-08 23:36:35.823 IST 0032 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_4' on channel 'arogyaehrchannel'
+[34m2023-03-08 23:36:35.823 IST 0033 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_4:1da9586aebf3d6a5bb307bb38d5d0e2020e226095b5ef985eaa78b8bd7f751a8' now available on channel arogyaehrchannel for chaincode definition accessControl_1_4:1_4
+[34m2023-03-08 23:36:35.823 IST 0034 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_9' on channel 'arogyaehrchannel'
+[34m2023-03-08 23:36:35.823 IST 0035 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_9:689c233b9689c8ced3b8fdfb9ef2c7fb545a678d51f070bfd5ab4b9e6e3389e8' now available on channel arogyaehrchannel for chaincode definition accessControl_1_9:1_9
+[34m2023-03-08 23:36:35.823 IST 0036 INFO[0m [kvledger] [34;1mrecommitLostBlocks[0m -> Recommitting lost blocks - firstBlockNum=84, lastBlockNum=84, recoverables=[]kvledger.recoverable{(*txmgr.LockBasedTxMgr)(0xc0003e8480)}
+[34m2023-03-08 23:36:35.830 IST 0037 INFO[0m [kvledger] [34;1mrecommitLostBlocks[0m -> Recommitted lost blocks - firstBlockNum=84, lastBlockNum=84, recoverables=[]kvledger.recoverable{(*txmgr.LockBasedTxMgr)(0xc0003e8480)}
+[34m2023-03-08 23:36:35.830 IST 0038 INFO[0m [kvledger] [34;1mrecommitLostBlocks[0m -> Recommitting lost blocks - firstBlockNum=85, lastBlockNum=85, recoverables=[]kvledger.recoverable{(*txmgr.LockBasedTxMgr)(0xc0003e8480), (*history.DB)(0xc00052a750)}
+[34m2023-03-08 23:36:35.840 IST 0039 INFO[0m [kvledger] [34;1mrecommitLostBlocks[0m -> Recommitted lost blocks - firstBlockNum=85, lastBlockNum=85, recoverables=[]kvledger.recoverable{(*txmgr.LockBasedTxMgr)(0xc0003e8480), (*history.DB)(0xc00052a750)}
+[34m2023-03-08 23:36:35.845 IST 003a INFO[0m [ledgermgmt] [34;1mOpenLedger[0m -> Opened ledger with id = arogyaehrchannel
+[34m2023-03-08 23:36:35.848 IST 003b INFO[0m [gossip.gossip] [34;1mJoinChan[0m -> Joining gossip network of channel arogyaehrchannel with 4 organizations
+[34m2023-03-08 23:36:35.848 IST 003c INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of MohfwMSP for channel arogyaehrchannel to learn about
+[34m2023-03-08 23:36:35.848 IST 003d INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp1MSP for channel arogyaehrchannel to learn about
+[34m2023-03-08 23:36:35.848 IST 003e INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp2MSP for channel arogyaehrchannel to learn about
+[34m2023-03-08 23:36:35.848 IST 003f INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp3MSP for channel arogyaehrchannel to learn about
+[34m2023-03-08 23:36:35.849 IST 0040 INFO[0m [gossip.state] [34;1mNewGossipStateProvider[0m -> Updating metadata information for channel arogyaehrchannel, current ledger sequence is at = 85, next expected block is = 86
+[34m2023-03-08 23:36:35.849 IST 0041 INFO[0m [discovery] [34;1mNewService[0m -> Created with config TLS: false, authCacheMaxSize: 1000, authCachePurgeRatio: 0.750000
+[34m2023-03-08 23:36:35.849 IST 0042 INFO[0m [nodeCmd] [34;1mserve[0m -> Discovery service activated
+[34m2023-03-08 23:36:35.849 IST 0043 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with Gateway enabled
+[34m2023-03-08 23:36:35.849 IST 0044 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with ID=[mohfw-anchor-peer], network ID=[dev], address=[localhost:49153]
+[34m2023-03-08 23:36:35.849 IST 0045 INFO[0m [nodeCmd] [34;1mserve[0m -> Started peer with ID=[mohfw-anchor-peer], network ID=[dev], address=[localhost:49153]
+[34m2023-03-08 23:36:35.849 IST 0046 INFO[0m [kvledger] [34;1mLoadPreResetHeight[0m -> Loading prereset height from path [/home/priyanku/Desktop/major-project/client/mohfw/mohfw-anchor-peer/ledger/ledgersData/chains]
+[34m2023-03-08 23:36:36.755 IST 0047 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=gossip.Gossip grpc.method=Ping grpc.request_deadline=2023-03-08T23:36:38.755+05:30 grpc.peer_address=127.0.0.1:42850 grpc.code=OK grpc.call_duration=49.609µs
+[34m2023-03-08 23:36:36.757 IST 0048 INFO[0m [gossip.comm] [34;1mGossipStream[0m -> Peer b4e470ab37e53e0b9e91d51ee5bc64f8483dd8b1e21753a2255281498658e62b (127.0.0.1:42850) probed us
+[34m2023-03-08 23:36:36.757 IST 0049 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=gossip.Gossip grpc.method=GossipStream grpc.request_deadline=2023-03-08T23:36:46.756+05:30 grpc.peer_address=127.0.0.1:42850 grpc.code=OK grpc.call_duration=1.61025ms
+[34m2023-03-08 23:36:36.761 IST 004a INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=gossip.Gossip grpc.method=Ping grpc.request_deadline=2023-03-08T23:36:38.761+05:30 grpc.peer_address=127.0.0.1:42866 grpc.code=OK grpc.call_duration=52.696µs
+[34m2023-03-08 23:36:40.849 IST 004b INFO[0m [gossip.channel] [34;1mreportMembershipChanges[0m -> [[arogyaehrchannel] Membership view has changed. peers went online:  [[127.0.0.1:9111 localhost:50000]] , current view:  [[127.0.0.1:9111 localhost:50000]]]
+[34m2023-03-08 23:36:41.838 IST 004c INFO[0m [gossip.election] [34;1mleaderElection[0m -> e9209f827403aad2700ab725310ecfd0c7caf954009cfccae1bb2eda9dbe658a : Some peer is already a leader
+[33m2023-03-08 23:36:43.092 IST 004d WARN[0m [lifecycle] [33;1mWork[0m -> could not launch chaincode 'medicalRecord_1_4:cd35de01c50a0597586644841924a52db797a7cfc252cdb0c7197f59c6be8f9e': chaincode registration failed: container exited with 1
+[33m2023-03-08 23:36:47.582 IST 004e WARN[0m [lifecycle] [33;1mWork[0m -> could not launch chaincode 'accessControl_1_7:1c3835a7b03dc6149401f8b9fb89af476bc4f7a8c74d20e7ecff4a325151f36a': chaincode registration failed: container exited with 1
+[33m2023-03-08 23:36:59.882 IST 004f WARN[0m [lifecycle] [33;1mWork[0m -> could not launch chaincode 'accessControl_1_3:6649dc3e6a0b4925f57a6bbb655ffec115bab60b19e7c55dae0b4de56a96c777': chaincode registration failed: container exited with 1
+[33m2023-03-08 23:37:09.744 IST 0050 WARN[0m [lifecycle] [33;1mWork[0m -> could not launch chaincode 'accessControl_1_4:1da9586aebf3d6a5bb307bb38d5d0e2020e226095b5ef985eaa78b8bd7f751a8': chaincode registration failed: container exited with 127
+[34m2023-03-08 23:40:05.096 IST 0051 INFO[0m [lifecycle] [34;1mInstallChaincode[0m -> Successfully installed chaincode with package ID 'accessControlSimpleldb_1_0:3085fdc17424d838f4259f7ed14cecce39cc01188f1f5ea689e74eef4f7ac29e'
+[34m2023-03-08 23:40:05.096 IST 0052 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: _lifecycle duration: 9996ms channel= txID=7cee101e
+[34m2023-03-08 23:40:05.096 IST 0053 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:50756 grpc.code=OK grpc.call_duration=9.996826484s
+[34m2023-03-08 23:42:31.865 IST 0054 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: _lifecycle duration: 0ms channel= txID=29b78215
+[34m2023-03-08 23:42:31.865 IST 0055 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:40114 grpc.code=OK grpc.call_duration=676.993µs
+[34m2023-03-08 23:43:16.982 IST 0056 INFO[0m [lifecycle] [34;1mApproveChaincodeDefinitionForOrg[0m -> Successfully endorsed chaincode approval with name 'accessControlSimpleldb_1_0', package ID 'accessControlSimpleldb_1_0:3085fdc17424d838f4259f7ed14cecce39cc01188f1f5ea689e74eef4f7ac29e', on channel 'arogyaehrchannel' with definition {sequence: 1, endorsement info: (version: '1_0', plugin: 'escc', init required: false), validation info: (plugin: 'vscc', policy: '12202f4368616e6e656c2f4170706c69636174696f6e2f456e646f7273656d656e74'), collections: ()}
+[34m2023-03-08 23:43:16.982 IST 0057 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: _lifecycle duration: 0ms channel=arogyaehrchannel txID=2ba01c2a
+[34m2023-03-08 23:43:16.987 IST 0058 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:53308 grpc.code=OK grpc.call_duration=6.471576ms
+[34m2023-03-08 23:43:19.004 IST 0059 INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [86] from buffer channel=arogyaehrchannel
+[34m2023-03-08 23:43:19.006 IST 005a INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [86] in 1ms
+[34m2023-03-08 23:43:19.006 IST 005b INFO[0m [gossip.privdata] [34;1mRetrievePvtdata[0m -> Successfully fetched all 1 eligible collection private write sets for block [86] (0 from local cache, 1 from transient store, 0 from other peers) channel=arogyaehrchannel
+[34m2023-03-08 23:43:19.024 IST 005c INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [86] with 1 transaction(s) in 17ms (state_validation=0ms block_and_pvtdata_commit=10ms state_commit=3ms) commitHash=[a12228a59109b84e7da5281d9c0396a89cca18f083d8fe88bc9d298485e01836]
+[34m2023-03-08 23:43:19.026 IST 005d INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=protos.Deliver grpc.method=DeliverFiltered grpc.request_deadline=2023-03-08T23:43:46.987+05:30 grpc.peer_address=127.0.0.1:53314 error="context finished before block retrieved: context canceled" grpc.code=Unknown grpc.call_duration=2.038351135s
+[34m2023-03-08 23:43:21.079 IST 005e INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [87] from buffer channel=arogyaehrchannel
+[34m2023-03-08 23:43:21.083 IST 005f INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [87] in 3ms
+[34m2023-03-08 23:43:21.101 IST 0060 INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [87] with 1 transaction(s) in 18ms (state_validation=0ms block_and_pvtdata_commit=10ms state_commit=3ms) commitHash=[529f54e0e944512483934e7a267294055f048833c96f1838e12a30082b69e01d]
+[34m2023-03-08 23:43:23.161 IST 0061 INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [88] from buffer channel=arogyaehrchannel
+[34m2023-03-08 23:43:23.162 IST 0062 INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [88] in 0ms
+[34m2023-03-08 23:43:23.178 IST 0063 INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [88] with 1 transaction(s) in 16ms (state_validation=0ms block_and_pvtdata_commit=10ms state_commit=2ms) commitHash=[dae721528ef7efb8a5a902cb153ee7add6dbe68171fdf1002eb03b9d934a97f5]
+[34m2023-03-08 23:43:42.721 IST 0064 INFO[0m [lifecycle] [34;1mCheckCommitReadiness[0m -> Successfully checked commit readiness of chaincode name 'accessControlSimpleldb_1_0' on channel 'arogyaehrchannel' with definition {sequence: 1, endorsement info: (version: '1_0', plugin: 'escc', init required: false), validation info: (plugin: 'vscc', policy: '12202f4368616e6e656c2f4170706c69636174696f6e2f456e646f7273656d656e74'), collections: (<nil>)}
+[34m2023-03-08 23:43:42.721 IST 0065 INFO[0m [lifecycle] [34;1mCommitChaincodeDefinition[0m -> Successfully endorsed commit for chaincode name 'accessControlSimpleldb_1_0' on channel 'arogyaehrchannel' with definition {sequence: 1, endorsement info: (version: '1_0', plugin: 'escc', init required: false), validation info: (plugin: 'vscc', policy: '12202f4368616e6e656c2f4170706c69636174696f6e2f456e646f7273656d656e74'), collections: (<nil>)}
+[34m2023-03-08 23:43:42.721 IST 0066 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: _lifecycle duration: 0ms channel=arogyaehrchannel txID=d79533fd
+[34m2023-03-08 23:43:42.721 IST 0067 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:49068 grpc.code=OK grpc.call_duration=1.320218ms
+[34m2023-03-08 23:43:44.749 IST 0068 INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [89] from buffer channel=arogyaehrchannel
+[34m2023-03-08 23:43:44.755 IST 0069 INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [89] in 5ms
+[34m2023-03-08 23:43:44.755 IST 006a INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControlSimpleldb_1_0' on channel 'arogyaehrchannel'
+[34m2023-03-08 23:43:44.755 IST 006b INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControlSimpleldb_1_0:3085fdc17424d838f4259f7ed14cecce39cc01188f1f5ea689e74eef4f7ac29e' now available on channel arogyaehrchannel for chaincode definition accessControlSimpleldb_1_0:1_0
+[34m2023-03-08 23:43:44.763 IST 006c INFO[0m [cceventmgmt] [34;1mHandleStateUpdates[0m -> Channel [arogyaehrchannel]: Handling deploy or update of chaincode [accessControlSimpleldb_1_0]
+[34m2023-03-08 23:43:44.798 IST 006d INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [89] with 1 transaction(s) in 43ms (state_validation=8ms block_and_pvtdata_commit=23ms state_commit=8ms) commitHash=[98e680dc0aac40e616f37570e0f010e54c384b6f8755aefddf6f732c76e0b3d1]
+[34m2023-03-08 23:43:44.802 IST 006e INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=protos.Deliver grpc.method=DeliverFiltered grpc.request_deadline=2023-03-08T23:44:12.731+05:30 grpc.peer_address=127.0.0.1:49082 error="context finished before block retrieved: context canceled" grpc.code=Unknown grpc.call_duration=2.070339967s
+[34m2023-03-09 00:14:22.421 IST 006f INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: cscc duration: 0ms channel= txID=460ff55a
+[34m2023-03-09 00:14:22.421 IST 0070 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:54642 grpc.code=OK grpc.call_duration=608.615µs
+[34m2023-03-09 00:14:22.517 IST 0071 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: accessControlSimpleldb_1_0 duration: 91ms channel=arogyaehrchannel txID=42c36af3
+[34m2023-03-09 00:14:22.517 IST 0072 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:54642 grpc.code=OK grpc.call_duration=92.702087ms
+[34m2023-03-09 00:14:24.538 IST 0073 INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [90] from buffer channel=arogyaehrchannel
+[34m2023-03-09 00:14:24.539 IST 0074 INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [90] in 0ms
+[34m2023-03-09 00:14:24.626 IST 0075 INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [90] with 1 transaction(s) in 87ms (state_validation=0ms block_and_pvtdata_commit=83ms state_commit=1ms) commitHash=[aefa9f5f78de355568403265cab53645c5ec0200570c9e1dd2364a341238f0a1]
+[34m2023-03-09 00:16:21.314 IST 0076 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: cscc duration: 0ms channel= txID=44dde183
+[34m2023-03-09 00:16:21.314 IST 0077 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:36270 grpc.code=OK grpc.call_duration=792.389µs
+[34m2023-03-09 00:16:21.323 IST 0078 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: accessControlSimpleldb_1_0 duration: 4ms channel=arogyaehrchannel txID=f125950b
+[34m2023-03-09 00:16:21.323 IST 0079 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:36270 grpc.code=OK grpc.call_duration=5.080315ms
+[34m2023-03-09 00:21:28.133 IST 007a INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: accessControlSimpleldb_1_0 duration: 3ms channel=arogyaehrchannel txID=90637951
+[34m2023-03-09 00:21:28.133 IST 007b INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:48218 grpc.code=OK grpc.call_duration=3.964397ms
+[34m2023-03-09 00:23:59.565 IST 007c INFO[0m [lifecycle] [34;1mInstallChaincode[0m -> Successfully installed chaincode with package ID 'accessControlSimpleldb_1_1:3a92b125e1c479c7ec7adfd7f6a892b63d79851c7b206878a139e587dfa22ae6'
+[34m2023-03-09 00:23:59.565 IST 007d INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: _lifecycle duration: 6805ms channel= txID=f9aa03a8
+[34m2023-03-09 00:23:59.565 IST 007e INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:44228 grpc.code=OK grpc.call_duration=6.805435776s
+[34m2023-03-09 00:24:36.603 IST 007f INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: _lifecycle duration: 0ms channel= txID=0ace6f31
+[34m2023-03-09 00:24:36.603 IST 0080 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:60306 grpc.code=OK grpc.call_duration=499.909µs
+[34m2023-03-09 00:25:28.445 IST 0081 INFO[0m [lifecycle] [34;1mApproveChaincodeDefinitionForOrg[0m -> Successfully endorsed chaincode approval with name 'accessControlSimpleldb_1_0', package ID 'accessControlSimpleldb_1_1:3a92b125e1c479c7ec7adfd7f6a892b63d79851c7b206878a139e587dfa22ae6', on channel 'arogyaehrchannel' with definition {sequence: 2, endorsement info: (version: '1_0', plugin: 'escc', init required: false), validation info: (plugin: 'vscc', policy: '12202f4368616e6e656c2f4170706c69636174696f6e2f456e646f7273656d656e74'), collections: ()}
+[34m2023-03-09 00:25:28.445 IST 0082 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: _lifecycle duration: 2ms channel=arogyaehrchannel txID=f6775885
+[34m2023-03-09 00:25:28.450 IST 0083 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:48486 grpc.code=OK grpc.call_duration=8.554805ms
+[34m2023-03-09 00:25:30.467 IST 0084 INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [91] from buffer channel=arogyaehrchannel
+[34m2023-03-09 00:25:30.468 IST 0085 INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [91] in 0ms
+[34m2023-03-09 00:25:30.468 IST 0086 INFO[0m [gossip.privdata] [34;1mRetrievePvtdata[0m -> Successfully fetched all 1 eligible collection private write sets for block [91] (0 from local cache, 1 from transient store, 0 from other peers) channel=arogyaehrchannel
+[34m2023-03-09 00:25:30.486 IST 0087 INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [91] with 1 transaction(s) in 18ms (state_validation=0ms block_and_pvtdata_commit=12ms state_commit=3ms) commitHash=[0cd28c203e9ef6b8f320c76472d2058b9475a15710159601954db264eae22533]
+[34m2023-03-09 00:25:30.488 IST 0088 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=protos.Deliver grpc.method=DeliverFiltered grpc.request_deadline=2023-03-09T00:25:58.451+05:30 grpc.peer_address=127.0.0.1:48502 error="context finished before block retrieved: context canceled" grpc.code=Unknown grpc.call_duration=2.036663108s
+[34m2023-03-09 00:25:32.551 IST 0089 INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [92] from buffer channel=arogyaehrchannel
+[34m2023-03-09 00:25:32.551 IST 008a INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [92] in 0ms
+[34m2023-03-09 00:25:32.570 IST 008b INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [92] with 1 transaction(s) in 18ms (state_validation=0ms block_and_pvtdata_commit=11ms state_commit=3ms) commitHash=[7198d820de5af3985f8189479c5e3350c6993a64163e96fd3f034b5c06012e37]
+[34m2023-03-09 00:25:34.623 IST 008c INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [93] from buffer channel=arogyaehrchannel
+[34m2023-03-09 00:25:34.625 IST 008d INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [93] in 1ms
+[34m2023-03-09 00:25:34.648 IST 008e INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [93] with 1 transaction(s) in 22ms (state_validation=0ms block_and_pvtdata_commit=15ms state_commit=4ms) commitHash=[c60ba6428e9f65e0251009aec74483fd80a9b132d74ad7a88cc5c333fadfa361]
+[34m2023-03-09 00:25:51.745 IST 008f INFO[0m [lifecycle] [34;1mCheckCommitReadiness[0m -> Successfully checked commit readiness of chaincode name 'accessControlSimpleldb_1_0' on channel 'arogyaehrchannel' with definition {sequence: 2, endorsement info: (version: '1_0', plugin: 'escc', init required: false), validation info: (plugin: 'vscc', policy: '12202f4368616e6e656c2f4170706c69636174696f6e2f456e646f7273656d656e74'), collections: (<nil>)}
+[34m2023-03-09 00:25:51.745 IST 0090 INFO[0m [lifecycle] [34;1mCommitChaincodeDefinition[0m -> Successfully endorsed commit for chaincode name 'accessControlSimpleldb_1_0' on channel 'arogyaehrchannel' with definition {sequence: 2, endorsement info: (version: '1_0', plugin: 'escc', init required: false), validation info: (plugin: 'vscc', policy: '12202f4368616e6e656c2f4170706c69636174696f6e2f456e646f7273656d656e74'), collections: (<nil>)}
+[34m2023-03-09 00:25:51.745 IST 0091 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: _lifecycle duration: 0ms channel=arogyaehrchannel txID=45c0bb4d
+[34m2023-03-09 00:25:51.745 IST 0092 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:43324 grpc.code=OK grpc.call_duration=1.503874ms
+[34m2023-03-09 00:25:53.770 IST 0093 INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [94] from buffer channel=arogyaehrchannel
+[34m2023-03-09 00:25:53.772 IST 0094 INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [94] in 2ms
+[34m2023-03-09 00:25:53.772 IST 0095 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControlSimpleldb_1_0' on channel 'arogyaehrchannel'
+[34m2023-03-09 00:25:53.773 IST 0096 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControlSimpleldb_1_1:3a92b125e1c479c7ec7adfd7f6a892b63d79851c7b206878a139e587dfa22ae6' now available on channel arogyaehrchannel for chaincode definition accessControlSimpleldb_1_0:1_0
+[34m2023-03-09 00:25:53.774 IST 0097 INFO[0m [cceventmgmt] [34;1mHandleStateUpdates[0m -> Channel [arogyaehrchannel]: Handling deploy or update of chaincode [accessControlSimpleldb_1_0]
+[34m2023-03-09 00:25:53.796 IST 0098 INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [94] with 1 transaction(s) in 24ms (state_validation=2ms block_and_pvtdata_commit=15ms state_commit=3ms) commitHash=[70212cf88497cb9d4a9027cb44c5e172136efbea7523c0234ee71cfcbb0c48cb]
+[34m2023-03-09 00:25:53.799 IST 0099 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=protos.Deliver grpc.method=DeliverFiltered grpc.request_deadline=2023-03-09T00:26:21.753+05:30 grpc.peer_address=127.0.0.1:43330 error="context finished before block retrieved: context canceled" grpc.code=Unknown grpc.call_duration=2.045508172s
+[34m2023-03-09 00:26:27.399 IST 009a INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: accessControlSimpleldb_1_0 duration: 33ms channel=arogyaehrchannel txID=6aac4c52
+[31m2023-03-09 00:26:27.399 IST 009b ERRO[0m [chaincode] [31;1misValidTxSim[0m -> no ledger context: arogyaehrchannel 6aac4c523247a2227b7226fe760aecab6ea4c11f891b723ecb660f83862182e2
+
+ no ledger context
+github.com/hyperledger/fabric/core/chaincode.(*Handler).isValidTxSim
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:523
 github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:239
 runtime.goexit
 	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:857
+[34m2023-03-09 00:26:27.399 IST 009c INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:46256 grpc.code=OK grpc.call_duration=34.255912ms
+[31m2023-03-09 00:26:27.399 IST 009d ERRO[0m [chaincode] [31;1mHandleTransaction[0m -> [6aac4c52] Failed to handle QUERY_STATE_CLOSE. error: no ledger context
+github.com/hyperledger/fabric/core/chaincode.(*Handler).isValidTxSim
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:523
 github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
+	/home/runner/work/fabric/fabric/core/chaincode/handler.go:239
 runtime.goexit
 	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-GET_QUERY_RESULT failed: transaction ID: f038c1e62340b773d835da47189a0e7f37dbbb49e3ae6d573ff22ec33085bad8
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:255
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-[34m2023-03-01 23:25:14.124 IST 0043 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecord_1_7 duration: 45ms channel=arogyaehrchannel txID=f038c1e6
-[31m2023-03-01 23:25:14.125 IST 0044 ERRO[0m [endorser] [31;1msimulateProposal[0m -> failed to invoke chaincode medicalRecord_1_7, error: transaction returned with failure: Error: GET_QUERY_RESULT failed: transaction ID: f038c1e62340b773d835da47189a0e7f37dbbb49e3ae6d573ff22ec33085bad8: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields.
-github.com/hyperledger/fabric/core/chaincode.processChaincodeExecutionResult
-	/home/runner/work/fabric/fabric/core/chaincode/chaincode_support.go:188
-github.com/hyperledger/fabric/core/chaincode.(*ChaincodeSupport).Execute
-	/home/runner/work/fabric/fabric/core/chaincode/chaincode_support.go:162
-github.com/hyperledger/fabric/core/endorser.(*SupportImpl).Execute
-	/home/runner/work/fabric/fabric/core/endorser/support.go:126
-github.com/hyperledger/fabric/core/endorser.(*Endorser).callChaincode
-	/home/runner/work/fabric/fabric/core/endorser/endorser.go:120
-github.com/hyperledger/fabric/core/endorser.(*Endorser).simulateProposal
-	/home/runner/work/fabric/fabric/core/endorser/endorser.go:187
-github.com/hyperledger/fabric/core/endorser.(*Endorser).ProcessProposalSuccessfullyOrError
-	/home/runner/work/fabric/fabric/core/endorser/endorser.go:409
-github.com/hyperledger/fabric/core/endorser.(*Endorser).ProcessProposal
-	/home/runner/work/fabric/fabric/core/endorser/endorser.go:350
-github.com/hyperledger/fabric/core/handlers/auth/filter.(*expirationCheckFilter).ProcessProposal
-	/home/runner/work/fabric/fabric/core/handlers/auth/filter/expiration.go:61
-github.com/hyperledger/fabric/core/handlers/auth/filter.(*filter).ProcessProposal
-	/home/runner/work/fabric/fabric/core/handlers/auth/filter/filter.go:32
-github.com/hyperledger/fabric-protos-go/peer._Endorser_ProcessProposal_Handler.func1
-	/home/runner/work/fabric/fabric/vendor/github.com/hyperledger/fabric-protos-go/peer/peer.pb.go:107
-github.com/hyperledger/fabric/common/grpclogging.UnaryServerInterceptor.func1
-	/home/runner/work/fabric/fabric/common/grpclogging/server.go:92
-github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1.1.1
-	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:25
-github.com/hyperledger/fabric/common/grpcmetrics.UnaryServerInterceptor.func1
-	/home/runner/work/fabric/fabric/common/grpcmetrics/interceptor.go:31
-github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1.1.1
-	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:25
-github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1
-	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:34
-github.com/hyperledger/fabric-protos-go/peer._Endorser_ProcessProposal_Handler
-	/home/runner/work/fabric/fabric/vendor/github.com/hyperledger/fabric-protos-go/peer/peer.pb.go:109
-google.golang.org/grpc.(*Server).processUnaryRPC
-	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:1180
-google.golang.org/grpc.(*Server).handleStream
-	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:1503
-google.golang.org/grpc.(*Server).serveStreams.func1.2
-	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:843
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571 channel=arogyaehrchannel txID=f038c1e6
-[33m2023-03-01 23:25:14.125 IST 0045 WARN[0m [endorser] [33;1mProcessProposal[0m -> Failed to invoke chaincode channel=arogyaehrchannel chaincode=medicalRecord_1_7 error="error in simulation: transaction returned with failure: Error: GET_QUERY_RESULT failed: transaction ID: f038c1e62340b773d835da47189a0e7f37dbbb49e3ae6d573ff22ec33085bad8: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields."
-[34m2023-03-01 23:25:14.125 IST 0046 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:57278 grpc.code=OK grpc.call_duration=47.766561ms
-[34m2023-03-01 23:34:52.433 IST 0047 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecord_1_7 duration: 10ms channel=arogyaehrchannel txID=de3bbade
-[34m2023-03-01 23:34:52.433 IST 0048 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:37092 grpc.code=OK grpc.call_duration=11.870476ms
-[34m2023-03-01 23:34:54.449 IST 0049 INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [38] from buffer channel=arogyaehrchannel
-[34m2023-03-01 23:34:54.450 IST 004a INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [38] in 0ms
-[34m2023-03-01 23:34:54.680 IST 004b INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [38] with 1 transaction(s) in 230ms (state_validation=0ms block_and_pvtdata_commit=8ms state_commit=219ms) commitHash=[779a23b0b79c7cbe60257263a95ef67cb650935fda40aeca3eb204e492d66487]
-[31m2023-03-01 23:35:33.068 IST 004c ERRO[0m [chaincode] [31;1mHandleTransaction[0m -> [272d2199] Failed to handle GET_QUERY_RESULT. error: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields.
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchInstance).handleRequest
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1737
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).handleRequest
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1543
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).queryDocuments
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1008
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*queryScanner).executeQueryWithBookmark
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:691
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.newQueryScanner
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:1028
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQueryWithPagination
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:673
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQuery
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:653
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/txmgr.(*queryExecutor).ExecuteQuery
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/txmgr/query_executor.go:174
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:854
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:857
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-GET_QUERY_RESULT failed: transaction ID: 272d219957ae147778c9a4fc9afd081517ba2f8f880b47277198d8ab5280afa0
+QUERY_STATE_CLOSE failed: transaction ID: 6aac4c523247a2227b7226fe760aecab6ea4c11f891b723ecb660f83862182e2
 github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
 	/home/runner/work/fabric/fabric/core/chaincode/handler.go:255
 runtime.goexit
 	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-[34m2023-03-01 23:35:33.070 IST 004d INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecord_1_7 duration: 10ms channel=arogyaehrchannel txID=272d2199
-[31m2023-03-01 23:35:33.070 IST 004e ERRO[0m [endorser] [31;1msimulateProposal[0m -> failed to invoke chaincode medicalRecord_1_7, error: transaction returned with failure: Error: GET_QUERY_RESULT failed: transaction ID: 272d219957ae147778c9a4fc9afd081517ba2f8f880b47277198d8ab5280afa0: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields.
-github.com/hyperledger/fabric/core/chaincode.processChaincodeExecutionResult
-	/home/runner/work/fabric/fabric/core/chaincode/chaincode_support.go:188
-github.com/hyperledger/fabric/core/chaincode.(*ChaincodeSupport).Execute
-	/home/runner/work/fabric/fabric/core/chaincode/chaincode_support.go:162
-github.com/hyperledger/fabric/core/endorser.(*SupportImpl).Execute
-	/home/runner/work/fabric/fabric/core/endorser/support.go:126
-github.com/hyperledger/fabric/core/endorser.(*Endorser).callChaincode
-	/home/runner/work/fabric/fabric/core/endorser/endorser.go:120
-github.com/hyperledger/fabric/core/endorser.(*Endorser).simulateProposal
-	/home/runner/work/fabric/fabric/core/endorser/endorser.go:187
-github.com/hyperledger/fabric/core/endorser.(*Endorser).ProcessProposalSuccessfullyOrError
-	/home/runner/work/fabric/fabric/core/endorser/endorser.go:409
-github.com/hyperledger/fabric/core/endorser.(*Endorser).ProcessProposal
-	/home/runner/work/fabric/fabric/core/endorser/endorser.go:350
-github.com/hyperledger/fabric/core/handlers/auth/filter.(*expirationCheckFilter).ProcessProposal
-	/home/runner/work/fabric/fabric/core/handlers/auth/filter/expiration.go:61
-github.com/hyperledger/fabric/core/handlers/auth/filter.(*filter).ProcessProposal
-	/home/runner/work/fabric/fabric/core/handlers/auth/filter/filter.go:32
-github.com/hyperledger/fabric-protos-go/peer._Endorser_ProcessProposal_Handler.func1
-	/home/runner/work/fabric/fabric/vendor/github.com/hyperledger/fabric-protos-go/peer/peer.pb.go:107
-github.com/hyperledger/fabric/common/grpclogging.UnaryServerInterceptor.func1
-	/home/runner/work/fabric/fabric/common/grpclogging/server.go:92
-github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1.1.1
-	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:25
-github.com/hyperledger/fabric/common/grpcmetrics.UnaryServerInterceptor.func1
-	/home/runner/work/fabric/fabric/common/grpcmetrics/interceptor.go:31
-github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1.1.1
-	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:25
-github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1
-	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:34
-github.com/hyperledger/fabric-protos-go/peer._Endorser_ProcessProposal_Handler
-	/home/runner/work/fabric/fabric/vendor/github.com/hyperledger/fabric-protos-go/peer/peer.pb.go:109
-google.golang.org/grpc.(*Server).processUnaryRPC
-	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:1180
-google.golang.org/grpc.(*Server).handleStream
-	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:1503
-google.golang.org/grpc.(*Server).serveStreams.func1.2
-	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:843
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571 channel=arogyaehrchannel txID=272d2199
-[33m2023-03-01 23:35:33.070 IST 004f WARN[0m [endorser] [33;1mProcessProposal[0m -> Failed to invoke chaincode channel=arogyaehrchannel chaincode=medicalRecord_1_7 error="error in simulation: transaction returned with failure: Error: GET_QUERY_RESULT failed: transaction ID: 272d219957ae147778c9a4fc9afd081517ba2f8f880b47277198d8ab5280afa0: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields."
-[34m2023-03-01 23:35:33.070 IST 0050 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:56888 grpc.code=OK grpc.call_duration=11.379008ms
-[31m2023-03-01 23:43:35.213 IST 0051 ERRO[0m [chaincode] [31;1mHandleTransaction[0m -> [57b9d96c] Failed to handle GET_QUERY_RESULT. error: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields.
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchInstance).handleRequest
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1737
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).handleRequest
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1543
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).queryDocuments
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1008
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*queryScanner).executeQueryWithBookmark
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:691
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.newQueryScanner
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:1028
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQueryWithPagination
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:673
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQuery
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:653
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/txmgr.(*queryExecutor).ExecuteQuery
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/txmgr/query_executor.go:174
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:854
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:857
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-GET_QUERY_RESULT failed: transaction ID: 57b9d96c9a946fdf59c568482cd4cdf6ab784533a35a370fa8325aac187ad29c
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:255
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-[34m2023-03-01 23:43:35.215 IST 0052 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecord_1_7 duration: 8ms channel=arogyaehrchannel txID=57b9d96c
-[31m2023-03-01 23:43:35.215 IST 0053 ERRO[0m [endorser] [31;1msimulateProposal[0m -> failed to invoke chaincode medicalRecord_1_7, error: transaction returned with failure: Error: GET_QUERY_RESULT failed: transaction ID: 57b9d96c9a946fdf59c568482cd4cdf6ab784533a35a370fa8325aac187ad29c: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields.
-github.com/hyperledger/fabric/core/chaincode.processChaincodeExecutionResult
-	/home/runner/work/fabric/fabric/core/chaincode/chaincode_support.go:188
-github.com/hyperledger/fabric/core/chaincode.(*ChaincodeSupport).Execute
-	/home/runner/work/fabric/fabric/core/chaincode/chaincode_support.go:162
-github.com/hyperledger/fabric/core/endorser.(*SupportImpl).Execute
-	/home/runner/work/fabric/fabric/core/endorser/support.go:126
-github.com/hyperledger/fabric/core/endorser.(*Endorser).callChaincode
-	/home/runner/work/fabric/fabric/core/endorser/endorser.go:120
-github.com/hyperledger/fabric/core/endorser.(*Endorser).simulateProposal
-	/home/runner/work/fabric/fabric/core/endorser/endorser.go:187
-github.com/hyperledger/fabric/core/endorser.(*Endorser).ProcessProposalSuccessfullyOrError
-	/home/runner/work/fabric/fabric/core/endorser/endorser.go:409
-github.com/hyperledger/fabric/core/endorser.(*Endorser).ProcessProposal
-	/home/runner/work/fabric/fabric/core/endorser/endorser.go:350
-github.com/hyperledger/fabric/core/handlers/auth/filter.(*expirationCheckFilter).ProcessProposal
-	/home/runner/work/fabric/fabric/core/handlers/auth/filter/expiration.go:61
-github.com/hyperledger/fabric/core/handlers/auth/filter.(*filter).ProcessProposal
-	/home/runner/work/fabric/fabric/core/handlers/auth/filter/filter.go:32
-github.com/hyperledger/fabric-protos-go/peer._Endorser_ProcessProposal_Handler.func1
-	/home/runner/work/fabric/fabric/vendor/github.com/hyperledger/fabric-protos-go/peer/peer.pb.go:107
-github.com/hyperledger/fabric/common/grpclogging.UnaryServerInterceptor.func1
-	/home/runner/work/fabric/fabric/common/grpclogging/server.go:92
-github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1.1.1
-	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:25
-github.com/hyperledger/fabric/common/grpcmetrics.UnaryServerInterceptor.func1
-	/home/runner/work/fabric/fabric/common/grpcmetrics/interceptor.go:31
-github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1.1.1
-	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:25
-github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1
-	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:34
-github.com/hyperledger/fabric-protos-go/peer._Endorser_ProcessProposal_Handler
-	/home/runner/work/fabric/fabric/vendor/github.com/hyperledger/fabric-protos-go/peer/peer.pb.go:109
-google.golang.org/grpc.(*Server).processUnaryRPC
-	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:1180
-google.golang.org/grpc.(*Server).handleStream
-	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:1503
-google.golang.org/grpc.(*Server).serveStreams.func1.2
-	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:843
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571 channel=arogyaehrchannel txID=57b9d96c
-[33m2023-03-01 23:43:35.215 IST 0054 WARN[0m [endorser] [33;1mProcessProposal[0m -> Failed to invoke chaincode channel=arogyaehrchannel chaincode=medicalRecord_1_7 error="error in simulation: transaction returned with failure: Error: GET_QUERY_RESULT failed: transaction ID: 57b9d96c9a946fdf59c568482cd4cdf6ab784533a35a370fa8325aac187ad29c: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields."
-[34m2023-03-01 23:43:35.215 IST 0055 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:41212 grpc.code=OK grpc.call_duration=9.451798ms
-[31m2023-03-02 00:01:06.656 IST 0056 ERRO[0m [chaincode] [31;1mHandleTransaction[0m -> [0b08faf4] Failed to handle GET_QUERY_RESULT. error: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields.
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchInstance).handleRequest
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1737
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).handleRequest
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1543
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).queryDocuments
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1008
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*queryScanner).executeQueryWithBookmark
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:691
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.newQueryScanner
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:1028
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQueryWithPagination
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:673
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQuery
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:653
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/txmgr.(*queryExecutor).ExecuteQuery
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/txmgr/query_executor.go:174
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:854
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:857
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-GET_QUERY_RESULT failed: transaction ID: 0b08faf493ae36784dbbd9b443af784cffbce6bd9f7fdbc57bc8a01b0949e09a
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:255
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-[34m2023-03-02 00:01:06.660 IST 0057 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecord_1_7 duration: 17ms channel=arogyaehrchannel txID=0b08faf4
-[31m2023-03-02 00:01:06.660 IST 0058 ERRO[0m [endorser] [31;1msimulateProposal[0m -> failed to invoke chaincode medicalRecord_1_7, error: transaction returned with failure: Error: GET_QUERY_RESULT failed: transaction ID: 0b08faf493ae36784dbbd9b443af784cffbce6bd9f7fdbc57bc8a01b0949e09a: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields.
-github.com/hyperledger/fabric/core/chaincode.processChaincodeExecutionResult
-	/home/runner/work/fabric/fabric/core/chaincode/chaincode_support.go:188
-github.com/hyperledger/fabric/core/chaincode.(*ChaincodeSupport).Execute
-	/home/runner/work/fabric/fabric/core/chaincode/chaincode_support.go:162
-github.com/hyperledger/fabric/core/endorser.(*SupportImpl).Execute
-	/home/runner/work/fabric/fabric/core/endorser/support.go:126
-github.com/hyperledger/fabric/core/endorser.(*Endorser).callChaincode
-	/home/runner/work/fabric/fabric/core/endorser/endorser.go:120
-github.com/hyperledger/fabric/core/endorser.(*Endorser).simulateProposal
-	/home/runner/work/fabric/fabric/core/endorser/endorser.go:187
-github.com/hyperledger/fabric/core/endorser.(*Endorser).ProcessProposalSuccessfullyOrError
-	/home/runner/work/fabric/fabric/core/endorser/endorser.go:409
-github.com/hyperledger/fabric/core/endorser.(*Endorser).ProcessProposal
-	/home/runner/work/fabric/fabric/core/endorser/endorser.go:350
-github.com/hyperledger/fabric/core/handlers/auth/filter.(*expirationCheckFilter).ProcessProposal
-	/home/runner/work/fabric/fabric/core/handlers/auth/filter/expiration.go:61
-github.com/hyperledger/fabric/core/handlers/auth/filter.(*filter).ProcessProposal
-	/home/runner/work/fabric/fabric/core/handlers/auth/filter/filter.go:32
-github.com/hyperledger/fabric-protos-go/peer._Endorser_ProcessProposal_Handler.func1
-	/home/runner/work/fabric/fabric/vendor/github.com/hyperledger/fabric-protos-go/peer/peer.pb.go:107
-github.com/hyperledger/fabric/common/grpclogging.UnaryServerInterceptor.func1
-	/home/runner/work/fabric/fabric/common/grpclogging/server.go:92
-github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1.1.1
-	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:25
-github.com/hyperledger/fabric/common/grpcmetrics.UnaryServerInterceptor.func1
-	/home/runner/work/fabric/fabric/common/grpcmetrics/interceptor.go:31
-github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1.1.1
-	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:25
-github.com/grpc-ecosystem/go-grpc-middleware.ChainUnaryServer.func1
-	/home/runner/work/fabric/fabric/vendor/github.com/grpc-ecosystem/go-grpc-middleware/chain.go:34
-github.com/hyperledger/fabric-protos-go/peer._Endorser_ProcessProposal_Handler
-	/home/runner/work/fabric/fabric/vendor/github.com/hyperledger/fabric-protos-go/peer/peer.pb.go:109
-google.golang.org/grpc.(*Server).processUnaryRPC
-	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:1180
-google.golang.org/grpc.(*Server).handleStream
-	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:1503
-google.golang.org/grpc.(*Server).serveStreams.func1.2
-	/home/runner/work/fabric/fabric/vendor/google.golang.org/grpc/server.go:843
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571 channel=arogyaehrchannel txID=0b08faf4
-[33m2023-03-02 00:01:06.660 IST 0059 WARN[0m [endorser] [33;1mProcessProposal[0m -> Failed to invoke chaincode channel=arogyaehrchannel chaincode=medicalRecord_1_7 error="error in simulation: transaction returned with failure: Error: GET_QUERY_RESULT failed: transaction ID: 0b08faf493ae36784dbbd9b443af784cffbce6bd9f7fdbc57bc8a01b0949e09a: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields."
-[34m2023-03-02 00:01:06.660 IST 005a INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:46632 grpc.code=OK grpc.call_duration=18.039946ms
-[34m2023-03-02 00:06:14.316 IST 005b INFO[0m [couchdb] [34;1mcreateDatabaseIfNotExist[0m -> Created state database arogyaehrchannel_access$control_1_6
-[31m2023-03-02 00:06:14.327 IST 005c ERRO[0m [chaincode] [31;1mHandleTransaction[0m -> [07804078] Failed to handle GET_QUERY_RESULT. error: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields.
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchInstance).handleRequest
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1737
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).handleRequest
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1543
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).queryDocuments
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1008
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*queryScanner).executeQueryWithBookmark
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:691
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.newQueryScanner
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:1028
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQueryWithPagination
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:673
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQuery
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:653
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/txmgr.(*queryExecutor).ExecuteQuery
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/txmgr/query_executor.go:174
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:854
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:857
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-GET_QUERY_RESULT failed: transaction ID: 07804078f65fe0dab7f1aa11058fec85d86dfcce086c3413ba0f9ca6c9823119
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:255
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-[34m2023-03-02 00:06:14.329 IST 005d INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: accessControl_1_6 duration: 118ms channel=arogyaehrchannel txID=07804078
-[34m2023-03-02 00:06:14.329 IST 005e INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:33820 grpc.code=OK grpc.call_duration=118.885607ms
-[31m2023-03-02 00:07:27.299 IST 005f ERRO[0m [chaincode] [31;1mHandleTransaction[0m -> [eebd89e3] Failed to handle GET_QUERY_RESULT. error: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields.
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchInstance).handleRequest
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1737
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).handleRequest
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1543
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).queryDocuments
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1008
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*queryScanner).executeQueryWithBookmark
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:691
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.newQueryScanner
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:1028
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQueryWithPagination
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:673
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQuery
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:653
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/txmgr.(*queryExecutor).ExecuteQuery
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/txmgr/query_executor.go:174
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:854
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:857
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-GET_QUERY_RESULT failed: transaction ID: eebd89e37f770b256b7d95d247cc4e0dd138f376101b94021a72ecd0431408b8
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:255
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-[34m2023-03-02 00:07:27.301 IST 0060 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: accessControl_1_6 duration: 8ms channel=arogyaehrchannel txID=eebd89e3
-[34m2023-03-02 00:07:27.301 IST 0061 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:52166 grpc.code=OK grpc.call_duration=9.001404ms
-[31m2023-03-02 00:07:42.569 IST 0062 ERRO[0m [chaincode] [31;1mHandleTransaction[0m -> [5f8d4b31] Failed to handle GET_QUERY_RESULT. error: error handling CouchDB request. Error:no_usable_index,  Status Code:400,  Reason:No index exists for this sort, try indexing by the sort fields.
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchInstance).handleRequest
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1737
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).handleRequest
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1543
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*couchDatabase).queryDocuments
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/couchdb.go:1008
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*queryScanner).executeQueryWithBookmark
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:691
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.newQueryScanner
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:1028
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQueryWithPagination
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:673
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb.(*VersionedDB).ExecuteQuery
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/statedb/statecouchdb/statecouchdb.go:653
-github.com/hyperledger/fabric/core/ledger/kvledger/txmgmt/txmgr.(*queryExecutor).ExecuteQuery
-	/home/runner/work/fabric/fabric/core/ledger/kvledger/txmgmt/txmgr/query_executor.go:174
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:854
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleGetQueryResult
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:857
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:251
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-GET_QUERY_RESULT failed: transaction ID: 5f8d4b3120e9a3c2ed3fce587e0f11ad42faed29ef00cfb60f19f3904925b6fd
-github.com/hyperledger/fabric/core/chaincode.(*Handler).HandleTransaction
-	/home/runner/work/fabric/fabric/core/chaincode/handler.go:255
-runtime.goexit
-	/opt/hostedtoolcache/go/1.18.7/x64/src/runtime/asm_amd64.s:1571
-[34m2023-03-02 00:07:42.571 IST 0063 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: accessControl_1_6 duration: 7ms channel=arogyaehrchannel txID=5f8d4b31
-[34m2023-03-02 00:07:42.571 IST 0064 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:33100 grpc.code=OK grpc.call_duration=8.294151ms
-[34m2023-03-02 01:28:31.082 IST 0065 INFO[0m [nodeCmd] [34;1mfunc1[0m -> Received signal: 15 (terminated)
-[33m2023-03-02 01:28:31.113 IST 0066 WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=medicalRecord-1.2:dfcd8354cc38e3a7c37b315305c6daae02ad20f96f98710bdf0f8fc876f9148a error="No such container: dev-mohfw-anchor-peer-medicalRecord-1.2-dfcd8354cc38e3a7c37b315305c6daae02ad20f96f98710bdf0f8fc876f9148a"
-[33m2023-03-02 01:28:31.117 IST 0067 WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=medicalRecord_1.3:50ae1277bb4ba4b5073430c81a3bafb3f52dea0f7069619efb64419f0909a69f error="No such container: dev-mohfw-anchor-peer-medicalRecord_1.3-50ae1277bb4ba4b5073430c81a3bafb3f52dea0f7069619efb64419f0909a69f"
-[34m2023-03-02 01:28:31.709 IST 0068 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=gossip.Gossip grpc.method=GossipStream grpc.peer_address=127.0.0.1:44224 error="rpc error: code = Canceled desc = context canceled" grpc.code=Canceled grpc.call_duration=2h5m42.883970098s
-[34m2023-03-02 01:28:31.718 IST 0069 INFO[0m [gossip.service] [34;1mStop[0m -> Stopping chain arogyaehrchannel
-[34m2023-03-02 01:28:31.718 IST 006a INFO[0m [gossip.service] [34;1mStop[0m -> Stopping leader election for arogyaehrchannel
-[34m2023-03-02 01:28:31.718 IST 006b INFO[0m [gossip.gossip] [34;1mStop[0m -> Stopping gossip
-[34m2023-03-02 01:28:31.718 IST 006c INFO[0m [gossip.discovery] [34;1mStop[0m -> Stopping
-[34m2023-03-02 01:28:31.718 IST 006d INFO[0m [gossip.discovery] [34;1mStop[0m -> Stopped
-[34m2023-03-02 01:28:31.718 IST 006e INFO[0m [gossip.comm] [34;1mStop[0m -> Stopping
-[34m2023-03-02 01:28:31.718 IST 006f INFO[0m [gossip.comm] [34;1mStop[0m -> Stopped
+[34m2023-03-09 00:27:32.089 IST 009e INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: accessControlSimpleldb_1_0 duration: 4ms channel=arogyaehrchannel txID=d789f7ef
+[34m2023-03-09 00:27:32.089 IST 009f INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:47642 grpc.code=OK grpc.call_duration=5.087619ms
+[34m2023-03-09 00:27:45.999 IST 00a0 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: accessControlSimpleldb_1_0 duration: 5ms channel=arogyaehrchannel txID=08ffdecb
+[34m2023-03-09 00:27:45.999 IST 00a1 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:34238 grpc.code=OK grpc.call_duration=6.449231ms
+[34m2023-03-09 00:30:43.643 IST 00a2 INFO[0m [lifecycle] [34;1mInstallChaincode[0m -> Successfully installed chaincode with package ID 'medicalRecordSimpleldb_1_0:eb5182f0655a3fd5c40777f02314a5b89743075aa49eb1c89986894836a531e3'
+[34m2023-03-09 00:30:43.643 IST 00a3 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: _lifecycle duration: 7043ms channel= txID=cb50f544
+[34m2023-03-09 00:30:43.643 IST 00a4 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:39828 grpc.code=OK grpc.call_duration=7.044052346s
+[34m2023-03-09 00:34:31.306 IST 00a5 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: _lifecycle duration: 0ms channel= txID=602abc3e
+[34m2023-03-09 00:34:31.306 IST 00a6 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:38766 grpc.code=OK grpc.call_duration=543.348µs
+[34m2023-03-09 00:35:15.844 IST 00a7 INFO[0m [lifecycle] [34;1mApproveChaincodeDefinitionForOrg[0m -> Successfully endorsed chaincode approval with name 'medicalRecordSimpleldb_1_0', package ID 'medicalRecordSimpleldb_1_0:eb5182f0655a3fd5c40777f02314a5b89743075aa49eb1c89986894836a531e3', on channel 'arogyaehrchannel' with definition {sequence: 1, endorsement info: (version: '1_0', plugin: 'escc', init required: false), validation info: (plugin: 'vscc', policy: '12202f4368616e6e656c2f4170706c69636174696f6e2f456e646f7273656d656e74'), collections: ()}
+[34m2023-03-09 00:35:15.844 IST 00a8 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: _lifecycle duration: 0ms channel=arogyaehrchannel txID=9aad3325
+[34m2023-03-09 00:35:15.849 IST 00a9 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:56252 grpc.code=OK grpc.call_duration=6.037974ms
+[34m2023-03-09 00:35:17.867 IST 00aa INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [95] from buffer channel=arogyaehrchannel
+[34m2023-03-09 00:35:17.868 IST 00ab INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [95] in 0ms
+[34m2023-03-09 00:35:17.868 IST 00ac INFO[0m [gossip.privdata] [34;1mRetrievePvtdata[0m -> Successfully fetched all 1 eligible collection private write sets for block [95] (0 from local cache, 1 from transient store, 0 from other peers) channel=arogyaehrchannel
+[34m2023-03-09 00:35:17.884 IST 00ad INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [95] with 1 transaction(s) in 16ms (state_validation=0ms block_and_pvtdata_commit=10ms state_commit=2ms) commitHash=[810319d8d776700a63036edd765f404efe1006913ecc5f0c0a1e64e422d34dc3]
+[34m2023-03-09 00:35:17.886 IST 00ae INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=protos.Deliver grpc.method=DeliverFiltered grpc.request_deadline=2023-03-09T00:35:45.85+05:30 grpc.peer_address=127.0.0.1:56264 error="context finished before block retrieved: context canceled" grpc.code=Unknown grpc.call_duration=2.03612022s
+[34m2023-03-09 00:35:19.941 IST 00af INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [96] from buffer channel=arogyaehrchannel
+[34m2023-03-09 00:35:19.941 IST 00b0 INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [96] in 0ms
+[34m2023-03-09 00:35:19.958 IST 00b1 INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [96] with 1 transaction(s) in 16ms (state_validation=0ms block_and_pvtdata_commit=11ms state_commit=3ms) commitHash=[176221cb7840380d2a0ac7e880680a38713cb57d5b74fa950c85d44929463f32]
+[34m2023-03-09 00:35:22.014 IST 00b2 INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [97] from buffer channel=arogyaehrchannel
+[34m2023-03-09 00:35:22.015 IST 00b3 INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [97] in 0ms
+[34m2023-03-09 00:35:22.031 IST 00b4 INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [97] with 1 transaction(s) in 15ms (state_validation=0ms block_and_pvtdata_commit=10ms state_commit=2ms) commitHash=[2cf9adb4f2fefab4f7fb21ed8aa8404ca59dd27289452cf5139cc1be337dfe6f]
+[34m2023-03-09 00:35:47.496 IST 00b5 INFO[0m [lifecycle] [34;1mCheckCommitReadiness[0m -> Successfully checked commit readiness of chaincode name 'medicalRecordSimpleldb_1_0' on channel 'arogyaehrchannel' with definition {sequence: 1, endorsement info: (version: '1_0', plugin: 'escc', init required: false), validation info: (plugin: 'vscc', policy: '12202f4368616e6e656c2f4170706c69636174696f6e2f456e646f7273656d656e74'), collections: (<nil>)}
+[34m2023-03-09 00:35:47.496 IST 00b6 INFO[0m [lifecycle] [34;1mCommitChaincodeDefinition[0m -> Successfully endorsed commit for chaincode name 'medicalRecordSimpleldb_1_0' on channel 'arogyaehrchannel' with definition {sequence: 1, endorsement info: (version: '1_0', plugin: 'escc', init required: false), validation info: (plugin: 'vscc', policy: '12202f4368616e6e656c2f4170706c69636174696f6e2f456e646f7273656d656e74'), collections: (<nil>)}
+[34m2023-03-09 00:35:47.496 IST 00b7 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: _lifecycle duration: 0ms channel=arogyaehrchannel txID=07044c18
+[34m2023-03-09 00:35:47.496 IST 00b8 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:51338 grpc.code=OK grpc.call_duration=1.462117ms
+[34m2023-03-09 00:35:49.520 IST 00b9 INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [98] from buffer channel=arogyaehrchannel
+[34m2023-03-09 00:35:49.530 IST 00ba INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [98] in 9ms
+[34m2023-03-09 00:35:49.530 IST 00bb INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecordSimpleldb_1_0' on channel 'arogyaehrchannel'
+[34m2023-03-09 00:35:49.530 IST 00bc INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecordSimpleldb_1_0:eb5182f0655a3fd5c40777f02314a5b89743075aa49eb1c89986894836a531e3' now available on channel arogyaehrchannel for chaincode definition medicalRecordSimpleldb_1_0:1_0
+[34m2023-03-09 00:35:49.532 IST 00bd INFO[0m [cceventmgmt] [34;1mHandleStateUpdates[0m -> Channel [arogyaehrchannel]: Handling deploy or update of chaincode [medicalRecordSimpleldb_1_0]
+[34m2023-03-09 00:35:49.571 IST 00be INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [98] with 1 transaction(s) in 40ms (state_validation=2ms block_and_pvtdata_commit=24ms state_commit=10ms) commitHash=[bf6a4cf0c01e086f598f5f5a4af20546054a78e22dc11dcddfac6a841a577bd2]
+[34m2023-03-09 00:35:49.583 IST 00bf INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=protos.Deliver grpc.method=DeliverFiltered grpc.request_deadline=2023-03-09T00:36:17.504+05:30 grpc.peer_address=127.0.0.1:51352 error="context finished before block retrieved: context canceled" grpc.code=Unknown grpc.call_duration=2.0791582s
+[34m2023-03-09 01:17:09.672 IST 00c0 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: cscc duration: 0ms channel= txID=7a8bb43a
+[34m2023-03-09 01:17:09.673 IST 00c1 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:39168 grpc.code=OK grpc.call_duration=1.880215ms
+[34m2023-03-09 01:17:09.689 IST 00c2 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: accessControlSimpleldb_1_0 duration: 8ms channel=arogyaehrchannel txID=08e2ace4
+[34m2023-03-09 01:17:09.689 IST 00c3 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:39168 grpc.code=OK grpc.call_duration=9.494807ms
+[34m2023-03-09 01:17:11.711 IST 00c4 INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [99] from buffer channel=arogyaehrchannel
+[34m2023-03-09 01:17:11.712 IST 00c5 INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [99] in 0ms
+[34m2023-03-09 01:17:11.734 IST 00c6 INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [99] with 1 transaction(s) in 22ms (state_validation=0ms block_and_pvtdata_commit=15ms state_commit=3ms) commitHash=[2e3d1c8be5013b186df271ad7f7626d0c5cfe3cd5d2f93f65270748e3f1c1b6d]
+[34m2023-03-09 01:18:09.199 IST 00c7 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: accessControlSimpleldb_1_0 duration: 6ms channel=arogyaehrchannel txID=f4ff952b
+[34m2023-03-09 01:18:09.199 IST 00c8 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:43758 grpc.code=OK grpc.call_duration=7.176757ms
+[34m2023-03-09 01:18:28.174 IST 00c9 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 35ms channel=arogyaehrchannel txID=dc1c78b4
+[34m2023-03-09 01:18:28.174 IST 00ca INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:48252 grpc.code=OK grpc.call_duration=36.887831ms
+[34m2023-03-09 01:18:30.190 IST 00cb INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [100] from buffer channel=arogyaehrchannel
+[34m2023-03-09 01:18:30.191 IST 00cc INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [100] in 1ms
+[34m2023-03-09 01:18:30.209 IST 00cd INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [100] with 1 transaction(s) in 17ms (state_validation=0ms block_and_pvtdata_commit=10ms state_commit=3ms) commitHash=[add509d99d45209847cdbb09193565f4c8f1719e11d96721a51e8b838b63f4f4]
+[34m2023-03-09 01:19:34.376 IST 00ce INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 11ms channel=arogyaehrchannel txID=e3bdf0e2
+[34m2023-03-09 01:19:34.377 IST 00cf INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:58386 grpc.code=OK grpc.call_duration=12.566822ms
+[34m2023-03-09 01:19:53.452 IST 00d0 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 4ms channel=arogyaehrchannel txID=f60077f9
+[34m2023-03-09 01:19:53.452 IST 00d1 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:54038 grpc.code=OK grpc.call_duration=5.316846ms
+[34m2023-03-09 01:20:19.533 IST 00d2 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 4ms channel=arogyaehrchannel txID=06f31f40
+[34m2023-03-09 01:20:19.533 IST 00d3 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:51962 grpc.code=OK grpc.call_duration=5.663332ms
+[34m2023-03-09 01:20:34.472 IST 00d4 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 10ms channel=arogyaehrchannel txID=e1430466
+[34m2023-03-09 01:20:34.472 IST 00d5 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:41656 grpc.code=OK grpc.call_duration=11.393368ms
+[34m2023-03-09 01:21:11.938 IST 00d6 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 6ms channel=arogyaehrchannel txID=699804ed
+[34m2023-03-09 01:21:11.938 IST 00d7 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:48784 grpc.code=OK grpc.call_duration=7.589811ms
+[34m2023-03-09 01:21:57.553 IST 00d8 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 8ms channel=arogyaehrchannel txID=b37cce4c
+[34m2023-03-09 01:21:57.553 IST 00d9 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:34224 grpc.code=OK grpc.call_duration=9.573859ms
+[34m2023-03-09 01:22:12.078 IST 00da INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 6ms channel=arogyaehrchannel txID=dd9caef9
+[34m2023-03-09 01:22:12.078 IST 00db INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:45772 grpc.code=OK grpc.call_duration=7.031197ms
+[34m2023-03-09 01:28:05.220 IST 00dc INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 10ms channel=arogyaehrchannel txID=62466172
+[34m2023-03-09 01:28:05.220 IST 00dd INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:57214 grpc.code=OK grpc.call_duration=10.84625ms
+[34m2023-03-09 01:28:23.891 IST 00de INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 7ms channel=arogyaehrchannel txID=28dd97f8
+[34m2023-03-09 01:28:23.891 IST 00df INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:36356 grpc.code=OK grpc.call_duration=7.907378ms
+[34m2023-03-09 01:31:29.928 IST 00e0 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 8ms channel=arogyaehrchannel txID=f468ba0d
+[34m2023-03-09 01:31:29.928 IST 00e1 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:48356 grpc.code=OK grpc.call_duration=9.200289ms
+[34m2023-03-09 01:31:41.972 IST 00e2 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 4ms channel=arogyaehrchannel txID=72067b4b
+[34m2023-03-09 01:31:41.972 IST 00e3 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:49188 grpc.code=OK grpc.call_duration=5.546208ms
+[34m2023-03-09 01:31:49.064 IST 00e4 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 4ms channel=arogyaehrchannel txID=2b489488
+[34m2023-03-09 01:31:49.064 IST 00e5 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:50864 grpc.code=OK grpc.call_duration=4.845409ms
+[34m2023-03-09 01:34:02.633 IST 00e6 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 7ms channel=arogyaehrchannel txID=e046834d
+[34m2023-03-09 01:34:02.633 IST 00e7 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:46276 grpc.code=OK grpc.call_duration=8.104508ms
+[34m2023-03-09 01:34:04.651 IST 00e8 INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [101] from buffer channel=arogyaehrchannel
+[34m2023-03-09 01:34:04.652 IST 00e9 INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [101] in 0ms
+[34m2023-03-09 01:34:04.670 IST 00ea INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [101] with 1 transaction(s) in 18ms (state_validation=0ms block_and_pvtdata_commit=10ms state_commit=4ms) commitHash=[f418b07fbff0aeabcc141969aae43b58949b560f6f56a3461f6d151a8fac6ad7]
+[34m2023-03-09 01:34:34.737 IST 00eb INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 7ms channel=arogyaehrchannel txID=50106191
+[34m2023-03-09 01:34:34.737 IST 00ec INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:60272 grpc.code=OK grpc.call_duration=7.706857ms
+[34m2023-03-09 01:34:55.855 IST 00ed INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 9ms channel=arogyaehrchannel txID=a99e05eb
+[34m2023-03-09 01:34:55.855 IST 00ee INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:50966 grpc.code=OK grpc.call_duration=10.373055ms
+[34m2023-03-09 01:35:25.898 IST 00ef INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 7ms channel=arogyaehrchannel txID=b9418513
+[34m2023-03-09 01:35:25.899 IST 00f0 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:54248 grpc.code=OK grpc.call_duration=7.957564ms
+[34m2023-03-09 01:36:01.616 IST 00f1 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 9ms channel=arogyaehrchannel txID=db208707
+[34m2023-03-09 01:36:01.616 IST 00f2 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:38382 grpc.code=OK grpc.call_duration=9.699296ms
+[34m2023-03-09 01:36:03.630 IST 00f3 INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [102] from buffer channel=arogyaehrchannel
+[34m2023-03-09 01:36:03.631 IST 00f4 INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [102] in 0ms
+[34m2023-03-09 01:36:03.649 IST 00f5 INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [102] with 1 transaction(s) in 18ms (state_validation=0ms block_and_pvtdata_commit=12ms state_commit=3ms) commitHash=[58c29c43ec88bcc6224dd6bfd58032897a54a7e1375ce391b3266286d63c28b4]
+[34m2023-03-09 01:36:11.911 IST 00f6 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 9ms channel=arogyaehrchannel txID=da162488
+[34m2023-03-09 01:36:11.911 IST 00f7 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:54270 grpc.code=OK grpc.call_duration=9.974915ms
+[34m2023-03-09 01:36:21.070 IST 00f8 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 7ms channel=arogyaehrchannel txID=eccf0303
+[34m2023-03-09 01:36:21.070 IST 00f9 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:49150 grpc.code=OK grpc.call_duration=7.728555ms
+[34m2023-03-09 01:36:33.864 IST 00fa INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 7ms channel=arogyaehrchannel txID=ee9fb058
+[34m2023-03-09 01:36:33.864 IST 00fb INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:36008 grpc.code=OK grpc.call_duration=7.99681ms
+[34m2023-03-09 01:38:37.171 IST 00fc INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: cscc duration: 0ms channel= txID=9acff7c3
+[34m2023-03-09 01:38:37.171 IST 00fd INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:60380 grpc.code=OK grpc.call_duration=600.158µs
+[34m2023-03-09 01:38:37.178 IST 00fe INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: accessControlSimpleldb_1_0 duration: 3ms channel=arogyaehrchannel txID=94a9004d
+[34m2023-03-09 01:38:37.178 IST 00ff INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:60380 grpc.code=OK grpc.call_duration=4.010859ms
+[34m2023-03-09 01:38:39.188 IST 0100 INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [103] from buffer channel=arogyaehrchannel
+[34m2023-03-09 01:38:39.188 IST 0101 INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [103] in 0ms
+[34m2023-03-09 01:38:39.206 IST 0102 INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [103] with 1 transaction(s) in 17ms (state_validation=0ms block_and_pvtdata_commit=11ms state_commit=3ms) commitHash=[4fb82455810c173bf578199ff79df1c999fd164e2bcf41d46ca37892c5d04478]
+[34m2023-03-09 01:38:48.217 IST 0103 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 9ms channel=arogyaehrchannel txID=46b725d5
+[34m2023-03-09 01:38:48.217 IST 0104 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:34124 grpc.code=OK grpc.call_duration=9.885844ms
+[34m2023-03-09 01:39:57.382 IST 0105 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: cscc duration: 0ms channel= txID=01fadbd8
+[34m2023-03-09 01:39:57.382 IST 0106 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:34638 grpc.code=OK grpc.call_duration=883.983µs
+[34m2023-03-09 01:39:57.390 IST 0107 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: accessControlSimpleldb_1_0 duration: 4ms channel=arogyaehrchannel txID=fdf08c51
+[34m2023-03-09 01:39:57.390 IST 0108 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:34638 grpc.code=OK grpc.call_duration=4.657039ms
+[34m2023-03-09 01:39:59.403 IST 0109 INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [104] from buffer channel=arogyaehrchannel
+[34m2023-03-09 01:39:59.404 IST 010a INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [104] in 1ms
+[34m2023-03-09 01:39:59.488 IST 010b INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [104] with 1 transaction(s) in 84ms (state_validation=0ms block_and_pvtdata_commit=77ms state_commit=3ms) commitHash=[7f841d76fecbb605e8dbf6378337468af05358ba901dcb75d6f2d493832b072e]
+[34m2023-03-09 01:40:08.285 IST 010c INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 7ms channel=arogyaehrchannel txID=b2870e6a
+[34m2023-03-09 01:40:08.285 IST 010d INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:36596 grpc.code=OK grpc.call_duration=8.339079ms
+[34m2023-03-09 01:41:19.701 IST 010e INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 9ms channel=arogyaehrchannel txID=dda9b344
+[34m2023-03-09 01:41:19.702 IST 010f INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:47774 grpc.code=OK grpc.call_duration=9.736636ms
+[34m2023-03-09 01:43:26.303 IST 0110 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: cscc duration: 0ms channel= txID=a7af2928
+[34m2023-03-09 01:43:26.303 IST 0111 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:54072 grpc.code=OK grpc.call_duration=612.068µs
+[34m2023-03-09 01:43:26.310 IST 0112 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: accessControlSimpleldb_1_0 duration: 3ms channel=arogyaehrchannel txID=6cb41356
+[34m2023-03-09 01:43:26.310 IST 0113 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:54072 grpc.code=OK grpc.call_duration=3.736825ms
+[34m2023-03-09 01:43:28.327 IST 0114 INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [105] from buffer channel=arogyaehrchannel
+[34m2023-03-09 01:43:28.328 IST 0115 INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [105] in 0ms
+[34m2023-03-09 01:43:28.341 IST 0116 INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [105] with 1 transaction(s) in 13ms (state_validation=0ms block_and_pvtdata_commit=9ms state_commit=1ms) commitHash=[e902ed1f5614f598bb9c623f704f8b06b7feb8420c0b6aec886293aba8178ce1]
+[34m2023-03-09 01:43:47.534 IST 0117 INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: medicalRecordSimpleldb_1_0 duration: 7ms channel=arogyaehrchannel txID=a699c63f
+[34m2023-03-09 01:43:47.535 IST 0118 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=127.0.0.1:47602 grpc.code=OK grpc.call_duration=8.672285ms
+[34m2023-03-09 01:59:01.468 IST 0119 INFO[0m [nodeCmd] [34;1mfunc1[0m -> Received signal: 15 (terminated)
+[33m2023-03-09 01:59:01.499 IST 011a WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=medicalRecord_2_1:ee88bab1cfdae5533034ad48f5234127db744b28098dae0475e2873286561471 error="No such container: dev-mohfw-anchor-peer-medicalRecord_2_1-ee88bab1cfdae5533034ad48f5234127db744b28098dae0475e2873286561471"
+[33m2023-03-09 01:59:01.517 IST 011b WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=accessControl_2_2:29a5fce3618ed4315b01af556f27059dde4a004e2cd6b084287b7d6b9522fe69 error="No such container: dev-mohfw-anchor-peer-accessControl_2_2-29a5fce3618ed4315b01af556f27059dde4a004e2cd6b084287b7d6b9522fe69"
+[33m2023-03-09 01:59:01.519 IST 011c WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=medicalRecord-1.2:dfcd8354cc38e3a7c37b315305c6daae02ad20f96f98710bdf0f8fc876f9148a error="No such container: dev-mohfw-anchor-peer-medicalRecord-1.2-dfcd8354cc38e3a7c37b315305c6daae02ad20f96f98710bdf0f8fc876f9148a"
+[33m2023-03-09 01:59:01.520 IST 011d WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=accessControl_2_0:cf346c7b87b7a979e13b0de73702f4d9a8deda504187c006ff3dfac20496d513 error="No such container: dev-mohfw-anchor-peer-accessControl_2_0-cf346c7b87b7a979e13b0de73702f4d9a8deda504187c006ff3dfac20496d513"
+[33m2023-03-09 01:59:01.521 IST 011e WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=accessControlSimpleldb_1_0:3085fdc17424d838f4259f7ed14cecce39cc01188f1f5ea689e74eef4f7ac29e error="No such container: dev-mohfw-anchor-peer-accessControlSimpleldb_1_0-3085fdc17424d838f4259f7ed14cecce39cc01188f1f5ea689e74eef4f7ac29e"
+[33m2023-03-09 01:59:01.521 IST 011f WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=accessControl_1_8:c35458cd0522e0e8679dcc92be5443039de880b4518f20a3dd251cc001351171 error="No such container: dev-mohfw-anchor-peer-accessControl_1_8-c35458cd0522e0e8679dcc92be5443039de880b4518f20a3dd251cc001351171"
+[33m2023-03-09 01:59:01.521 IST 0120 WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=medicalRecord_1.3:50ae1277bb4ba4b5073430c81a3bafb3f52dea0f7069619efb64419f0909a69f error="No such container: dev-mohfw-anchor-peer-medicalRecord_1.3-50ae1277bb4ba4b5073430c81a3bafb3f52dea0f7069619efb64419f0909a69f"
+[34m2023-03-09 01:59:03.833 IST 0121 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=gossip.Gossip grpc.method=GossipStream grpc.peer_address=127.0.0.1:42866 error="rpc error: code = Canceled desc = context canceled" grpc.code=Canceled grpc.call_duration=2h22m27.071428199s
+[34m2023-03-09 01:59:03.870 IST 0122 INFO[0m [gossip.service] [34;1mStop[0m -> Stopping chain arogyaehrchannel
+[34m2023-03-09 01:59:03.870 IST 0123 INFO[0m [gossip.service] [34;1mStop[0m -> Stopping leader election for arogyaehrchannel
+[34m2023-03-09 01:59:03.870 IST 0124 INFO[0m [gossip.gossip] [34;1mStop[0m -> Stopping gossip
+[34m2023-03-09 01:59:03.870 IST 0125 INFO[0m [gossip.discovery] [34;1mStop[0m -> Stopping
+[34m2023-03-09 01:59:03.870 IST 0126 INFO[0m [gossip.discovery] [34;1mStop[0m -> Stopped
+[34m2023-03-09 01:59:03.870 IST 0127 INFO[0m [gossip.comm] [34;1mStop[0m -> Stopping
+[34m2023-03-09 01:59:03.870 IST 0128 INFO[0m [gossip.comm] [34;1mStop[0m -> Stopped

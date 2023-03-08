@@ -15,7 +15,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chai": "^4.3.7",
     "fabric-contract-api": "^2.2.3",
     "fabric-shim": "^2.2.3",
     "fabric-shim-api": "^2.2.3",
@@ -23,10 +22,12 @@
     "sort-keys-recursive": "^2.1.8"
   },
   "devDependencies": {
+    "chai": "^4.3.7",
     "chai-exclude": "^2.1.0",
     "mocha": "^10.2.0",
     "nyc": "^15.1.0",
     "sinon": "^15.0.1",
-    "sinon-chai": "^3.7.0"
+    "sinon-chai": "^3.7.0",
+    "tslib": "^2.5.0"
   }
 }

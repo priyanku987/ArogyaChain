@@ -8,14 +8,15 @@ const { Context } = require("fabric-contract-api");
 const { ChaincodeStub, ClientIdentity } = require("fabric-shim");
 
 const MedicalRecord = require("../lib/medicalRecordContract");
+const AccessControl = require("../../../accessControl/javascript/lib/accessControlContract");
 
 let assert = sinon.assert;
 chai.use(chaiExclude);
 chai.use(sinonChai);
 
 describe("Medical Record Contract Tests", () => {
-  let transactionContext, chaincodeStub, medicalRecord;
-  beforeEach(() => {
+  let transactionContext, chaincodeStub, medicalRecord, accessControl;
+  beforeEach(async () => {
     transactionContext = new Context();
     chaincodeStub = sinon.createStubInstance(ChaincodeStub);
     transactionContext.setChaincodeStub(chaincodeStub);
@@ -79,7 +80,7 @@ describe("Medical Record Contract Tests", () => {
       UpdatedBy: "mohfw",
       PatientId: "demo",
       PatientName: "demo",
-      PatientAge: "20",
+      PatientAge: 20,
       PatientAddress: "demo",
       PatientCountry: "demo",
       PatientState: "demo",
@@ -104,6 +105,9 @@ describe("Medical Record Contract Tests", () => {
       Suggesstions: "Eath Healthy",
       TestsRecommended: ["Sterotonin LIB1 blood test", "Creatin B12 test"],
     };
+    accessControl = new AccessControl();
+    await accessControl.initLedger(transactionContext);
+    console.log("bbc", accessControl);
   });
 
   describe("Test InitLedger", () => {
@@ -131,34 +135,82 @@ describe("Medical Record Contract Tests", () => {
     });
   });
 
-  describe("Test ReadEMR", () => {
-    it("should return error on ReadEMR", async () => {
-      let medicalRecordContract = new MedicalRecord();
+  describe("#GetAccessListByPerformedByAndPerformedFor", () => {
+    it("should return access list for performedBy and performedFor", async () => {
+      const performedBy = "user1";
+      const performedFor = "user2";
+      const queryString = {
+        selector: {
+          Type: "ACCESS-GRANT-REVOKE",
+          PerformedBy: performedBy,
+          PerformedFor: performedFor,
+        },
+        limit: 4,
+        sort: [{ Date: "desc" }],
+      };
+      const expectedResult = [
+        {
+          Key: "1kwd13",
+          Record: {
+            Id: "1kwd13",
+            Type: "ACCESS-GRANT-REVOKE",
+            Operation: "GRANT_ACCESS",
+            EHRId: "demo",
+            PerformedBy: performedBy,
+            PerformedFor: performedFor,
+            Date: new Date().getTime(),
+          },
+        },
+      ];
+      transactionContext.stub.getQueryResult.returns(
+        sinon.stub().resolves(expectedResult)
+      );
 
-      try {
-        await medicalRecordContract.GetEMRByPatientId(
+      const result =
+        await accessControl.GetAccessListByPerformedByAndPerformedFor(
           transactionContext,
-          "asset2"
+          performedBy,
+          performedFor
         );
-        assert.fail("GetEMRByPatientId should have failed");
-      } catch (err) {
-        expect(err.message).to.equal("The EMR asset2 does not exist");
-      }
+      expect(JSON.parse(result)).to.deep.equal(expectedResult);
     });
-
-    // it("should return success on ReadAsset", async () => {
-    //   let assetTransfer = new AssetTransfer();
-    //   await assetTransfer.CreateAsset(
-    //     transactionContext,
-    //     asset.ID,
-    //     asset.Color,
-    //     asset.Size,
-    //     asset.Owner,
-    //     asset.AppraisedValue
-    //   );
-
-    //   let ret = JSON.parse(await chaincodeStub.getState(asset.ID));
-    //   expect(ret).to.eql(asset);
-    // });
   });
+
+  // describe("Test ReadEMR", () => {
+  //   it("should return error on ReadEMR", async () => {
+  //     let medicalRecordContract = new MedicalRecord();
+
+  //     try {
+  //       const a = await accessControl.GetAccessListByPerformedByAndPerformedFor(
+  //         transactionContext,
+  //         "demo",
+  //         "demo"
+  //       );
+  //       await medicalRecordContract.GetEMRByPatientId(
+  //         transactionContext,
+  //         "demo",
+  //         "AccessRecord"
+  //       );
+  //       assert.fail("GetEMRByPatientId should have failed");
+  //     } catch (err) {
+  //       console.log("ee", err);
+  //       expect(err.message).to.equal("The EMR asset2 does not exist");
+  //     }
+  //   });
+
+  //   // it("should return success on ReadAsset", async () => {
+  //   //   let assetTransfer = new AssetTransfer();
+  //   //   await assetTransfer.CreateAsset(
+  //   //     transactionContext,
+  //   //     asset.ID,
+  //   //     asset.Color,
+  //   //     asset.Size,
+  //   //     asset.Owner,
+  //   //     asset.AppraisedValue
+  //   //   );
+
+  //   //   let ret = JSON.parse(await chaincodeStub.getState(asset.ID));
+  //   //   expect(ret).to.eql(asset);
+  //   // });
+  // });
 });

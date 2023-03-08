@@ -55,7 +55,7 @@ source set-identity.sh mohfw admin
 echo "Performing approval operation for installing chaincode for mohfw.."
 #NOTE: the cafile path needs to be changed according to the system where it will be operated
 #NOTE: chaincode name and version needs to be replaced
-../bin/peer lifecycle chaincode approveformyorg -o localhost:7050 --cafile "/home/priyanku/Desktop/major-project/ArogyaChain/client/orderer/msp/cacerts/ca-cert.pem" --channelID arogyaehrchannel --name $CHAINCODE_NAME --version $CHAINCODE_VERSION --package-id $CHAINCODE_PACKAGE_ID --sequence $SEQUENCE_NUMBER 
+../bin/peer lifecycle chaincode approveformyorg -o localhost:7050 --cafile "/home/priyanku/Desktop/major-project/ArogyaChain/client/orderer/msp/cacerts/ca-cert.pem" --channelID arogyaehrchannel --name $CHAINCODE_NAME --version $CHAINCODE_VERSION --package-id $CHAINCODE_PACKAGE_ID --sequence $SEQUENCE_NUMBER
 
 
 

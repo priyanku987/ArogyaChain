@@ -1,0 +1,16 @@
+{
+  "index": {
+    "fields": [
+      "Id",
+      "Type",
+      "Operation",
+      "EHRId",
+      "PerformedBy",
+      "PerformedFor",
+      "Date"
+    ]
+  },
+  "ddoc": "indexAccessControlDoc",
+  "name": "accessControl",
+  "type": "json"
+}
