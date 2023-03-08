@@ -67,12 +67,20 @@ class AccessRecord extends Contract {
   async GetQueryResultForQueryString(ctx, queryString) {
     let resultsIterator = await ctx.stub.getQueryResult(queryString);
     let results = await this._GetAllResults(resultsIterator, false);
-
     return JSON.stringify(results);
   }
 
   // GrantAccess grants access to a particular identity.
-  async GrantAccess(ctx, accessRecord) {
+  async GrantAccess(ctx, id, ehrId, performedBy, performedFor) {
+    const accessRecord = {
+      Id: id,
+      Type: "ACCESS-GRANT-REVOKE",
+      Operation: "GRANT_ACCESS",
+      EHRId: ehrId,
+      PerformedBy: performedBy,
+      PerformedFor: performedFor,
+      Date: new Date().getTime(),
+    };
     await ctx.stub.putState(
       accessRecord?.Id,
       Buffer.from(JSON.stringify(accessRecord))
@@ -81,7 +89,16 @@ class AccessRecord extends Contract {
   }
 
   // RevokeAccess revoke access from a particular identity.
-  async RevokeAccess(ctx, accessRecord) {
+  async RevokeAccess(ctx, id, ehrId, performedBy, performedFor) {
+    const accessRecord = {
+      Id: id,
+      Type: "ACCESS-GRANT-REVOKE",
+      Operation: "REVOKE_ACCESS",
+      EHRId: ehrId,
+      PerformedBy: performedBy,
+      PerformedFor: performedFor,
+      Date: new Date().getTime(),
+    };
     await ctx.stub.putState(
       accessRecord?.Id,
       Buffer.from(JSON.stringify(accessRecord))
@@ -97,12 +114,26 @@ class AccessRecord extends Contract {
     queryString.selector.PerformedFor = invoker;
     queryString.selector.Type = "ACCESS-GRANT-REVOKE";
     queryString.selector.Operation = "GRANT_ACCESS";
-    queryString.sort = [{ Date: "desc" }];
     const results = await this.GetQueryResultForQueryString(
       ctx,
       JSON.stringify(queryString)
     );
-    return results;
+
+    let formattedResults = [];
+    if (typeof results === "object") {
+      formattedResults = results;
+    } else {
+      formattedResults = JSON.parse(results);
+    }
+    formattedResults = formattedResults?.map((res) => {
+      return res?.Record;
+    });
+
+    //sort by date
+    const sortedResults = formattedResults?.sort((a, b) => {
+      return Number(b.Date) - Number(a.Date);
+    });
+    return sortedResults;
   }
 
   async GetAccessListByPerformedByAndPerformedFor(
@@ -115,12 +146,26 @@ class AccessRecord extends Contract {
     queryString.selector.Type = "ACCESS-GRANT-REVOKE";
     queryString.selector.PerformedBy = performedBy;
     queryString.selector.PerformedFor = performedFor;
-    queryString.sort = [{ Date: "desc" }];
     const results = await this.GetQueryResultForQueryString(
       ctx,
       JSON.stringify(queryString)
     );
-    return results;
+
+    let formattedResults = [];
+    if (typeof results === "object") {
+      formattedResults = results;
+    } else {
+      formattedResults = JSON.parse(results);
+    }
+    formattedResults = formattedResults?.map((res) => {
+      return res?.Record;
+    });
+
+    //sort by date
+    const sortedResults = formattedResults?.sort((a, b) => {
+      return Number(b.Date) - Number(a.Date);
+    });
+    return sortedResults;
   }
 }
 

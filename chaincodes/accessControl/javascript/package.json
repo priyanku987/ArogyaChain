@@ -15,12 +15,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chai": "^4.3.7",
     "fabric-contract-api": "^2.2.3",
     "fabric-shim": "^2.2.3",
     "fabric-shim-api": "^2.2.3",
-    "fabric-shim-crypto": "^2.2.2",
-    "sinon": "^15.0.1",
-    "sinon-chai": "^3.7.0"
+    "fabric-shim-crypto": "^2.2.2"
   }
 }

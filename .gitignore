@@ -3,3 +3,5 @@ bin
 .env
 chaincodes/accessControl/javascript/node_modules
 chaincodes/medicalRecord/javascript/node_modules
+chaincodes/accessControlSimpleldb/javascript/node_modules
+chaincodes/medicalRecordSimpleldb/javascript/node_modules

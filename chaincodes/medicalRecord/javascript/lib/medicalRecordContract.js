@@ -93,12 +93,26 @@ class MedicalRecord extends Contract {
     return allResults;
   }
 
+  _extractCommonNameFromX509SubjectIdentityString(subjectIdentityString) {
+    const parts = subjectIdentityString.split("/");
+    for (let i = 0; i < parts.length; i++) {
+      if (parts[i].startsWith("CN=")) {
+        return parts[i].substring(3);
+      }
+    }
+    return null;
+  }
+
+  _extractSubjectDN(identityString) {
+    const parts = identityString?.split("::");
+    return parts[1];
+  }
+
   // GetQueryResultForQueryString executes the passed in query string.
   // Result set is built and returned as a byte array containing the JSON results.
   async GetQueryResultForQueryString(ctx, queryString) {
     let resultsIterator = await ctx.stub.getQueryResult(queryString);
     let results = await this._GetAllResults(resultsIterator, false);
-
     return JSON.stringify(results);
   }
 
@@ -181,44 +195,54 @@ class MedicalRecord extends Contract {
   }
 
   // GetEMRSByPatientId returns EMRs based on Patient Id.
-  async GetEMRByPatientId(ctx, patientId) {
+  async GetEMRByPatientId(ctx, patientId, accessControlChaincodeName) {
     //get client identity
-    const invokerIdentity = await ctx.clientIdentity.id;
+    const invokerIdentityX509 = await ctx.clientIdentity.getID();
+    const invokerDN = this._extractSubjectDN(invokerIdentityX509);
+    const invokerIdentity =
+      this._extractCommonNameFromX509SubjectIdentityString(invokerDN);
     if (invokerIdentity === patientId) {
-      console.log("kelalala bobo");
       let queryString = {};
       queryString.selector = {};
       queryString.selector.PatientId = patientId;
       queryString.selector.Type = "PRESCRIPTION";
-      const results = await this.GetQueryResultForQueryString(
+      let results = await this.GetQueryResultForQueryString(
         ctx,
         JSON.stringify(queryString)
       );
+      if (typeof results === "string") {
+        results = JSON.parse(results);
+      }
       return results;
     } else {
-      //check whether the entity invoking this have the access to the resource
-      let queryString1 = {};
-      queryString1.selector = {};
-      queryString1.selector.Type = "ACCESS-GRANT-REVOKE";
-      queryString1.selector.PerformedBy = patientId;
-      queryString1.selector.PerformedFor = invokerIdentity;
-      queryString1.sort = [{ Date: "desc" }];
-      const results1 = await this.GetQueryResultForQueryString(
-        ctx,
-        JSON.stringify(queryString1)
+      // Invoke the acces control smart contract and fetch access results
+      const accessControlResponse = await ctx.stub.invokeChaincode(
+        accessControlChaincodeName,
+        [
+          "GetAccessListByPerformedByAndPerformedFor",
+          patientId,
+          invokerIdentity,
+        ],
+        "arogyaehrchannel"
       );
-      if (results1.length === 0) {
+      const stringResponse = accessControlResponse.payload.toString("utf8");
+      const accessControlJSONResults = JSON.parse(stringResponse);
+      if (accessControlJSONResults.length === 0) {
         return []; // need to through errror saying this invoker has no access to any o the patients EMRs
       } else {
-        if (results1[0].Operation === "GRANT_ACCESS") {
+        //assuming that the results are in sorted order in descending, means latest record comes in first
+        if (accessControlJSONResults[0].Operation === "GRANT_ACCESS") {
           let queryString2 = {};
           queryString2.selector = {};
           queryString2.selector.Type = "PRESCRIPTION";
           queryString2.selector.PatientId = patientId;
-          const results2 = await this.GetQueryResultForQueryString(
+          let results2 = await this.GetQueryResultForQueryString(
             ctx,
             JSON.stringify(queryString2)
           );
+          if (typeof results2 === "string") {
+            results2 = JSON.parse(results2);
+          }
           return results2;
         } else {
           return []; // need to through errror saying this invoker has no access to any o the patients EMRs
