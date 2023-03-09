@@ -4,8 +4,6 @@ const path = require("path");
 
 const commonConnectionProfilePath =
   "backendServer/utils/commonConnectionProfile.json";
-const walletPath =
-  "/Users/priyankuhazarika/Desktop/.personal/major-project/ArogyaChain/wallet";
 
 module.exports.registerPatient = async (req, res) => {
   try {

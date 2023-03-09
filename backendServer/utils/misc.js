@@ -23,4 +23,4 @@ function makeX509Identity(certificate, privatekeyString, mspId) {
   };
 }
 
-export { getConnectionProfileJSON, getWalletPath, makeX509Identity };
+module.exports = { getConnectionProfileJSON, getWalletPath, makeX509Identity };

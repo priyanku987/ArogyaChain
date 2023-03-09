@@ -6,6 +6,7 @@ const {
   revokeParticularEHRAccessFromIdentity,
 } = require("./chaincode");
 const { enrollUser, reenrollUser } = require("./auth");
+const injectIdentity = require("../middlewares/identityInjectionMiddleware");
 
 const router = Express.Router();
 
@@ -14,6 +15,7 @@ router.post("/auth/enroll", enrollUser);
 router.post("/auth/reenroll", reenrollUser);
 
 // Chaincode routes
+router.use(injectIdentity);
 router.get("/chaincode/getAllEHR", getEHRs);
 router.post(
   "/chaincode/grantAllEHRAccessToIdentity",
@@ -33,4 +35,4 @@ router.all("*", (req, res) =>
     .status(404)
     .json({ error: "Requested Resource not exist", data: null, status: 404 })
 );
-module.exports.userRouter = router;
+module.exports = router;

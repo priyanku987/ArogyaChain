@@ -1,36 +1,18 @@
-2023/03/08 21:08:51 [INFO] Configuration file location: /home/priyanku/Desktop/major-project/ArogyaChain/ca-server/fabric-ca-server-config.yaml
-2023/03/08 21:08:51 [INFO] Starting server in home directory: /home/priyanku/Desktop/major-project/ArogyaChain/ca-server
-2023/03/08 21:08:51 [WARNING] Unknown provider type: ; metrics disabled
-2023/03/08 21:08:51 [INFO] Server Version: 1.5.5
-2023/03/08 21:08:51 [INFO] Server Levels: &{Identity:2 Affiliation:1 Certificate:1 Credential:1 RAInfo:1 Nonce:1}
-2023/03/08 21:08:51 [INFO] The CA key and certificate already exist
-2023/03/08 21:08:51 [INFO] The key is stored by BCCSP provider 'SW'
-2023/03/08 21:08:51 [INFO] The certificate is at: /home/priyanku/Desktop/major-project/ArogyaChain/ca-server/ca-cert.pem
-2023/03/08 21:08:51 [INFO] Initialized sqlite3 database at /home/priyanku/Desktop/major-project/ArogyaChain/ca-server/fabric-ca-server.db
-2023/03/08 21:08:51 [INFO] The Idemix issuer public and secret key files already exist
-2023/03/08 21:08:51 [INFO]    secret key file location: /home/priyanku/Desktop/major-project/ArogyaChain/ca-server/msp/keystore/IssuerSecretKey
-2023/03/08 21:08:51 [INFO]    public key file location: /home/priyanku/Desktop/major-project/ArogyaChain/ca-server/IssuerPublicKey
-2023/03/08 21:08:51 [INFO] The Idemix issuer revocation public and secret key files already exist
-2023/03/08 21:08:51 [INFO]    private key file location: /home/priyanku/Desktop/major-project/ArogyaChain/ca-server/msp/keystore/IssuerRevocationPrivateKey
-2023/03/08 21:08:51 [INFO]    public key file location: /home/priyanku/Desktop/major-project/ArogyaChain/ca-server/IssuerRevocationPublicKey
-2023/03/08 21:08:51 [INFO] Home directory for default CA: /home/priyanku/Desktop/major-project/ArogyaChain/ca-server
-2023/03/08 21:08:51 [INFO] Operation Server Listening on [::]:41345
-2023/03/08 21:08:51 [INFO] Listening on http://0.0.0.0:7054
-2023/03/09 00:53:17 [INFO] 127.0.0.1:34966 POST /register 201 0 "OK"
-2023/03/09 00:53:17 [INFO] signed certificate with serial number 729243415644687641623471517473232211519709007480
-2023/03/09 00:53:17 [INFO] 127.0.0.1:34982 POST /enroll 201 0 "OK"
-2023/03/09 00:55:17 [INFO] 127.0.0.1:57072 POST /register 409 74 "Identity 'demouser' is already registered"
-2023/03/09 00:55:17 [INFO] signed certificate with serial number 312232950745251993329353489726508337355307857754
-2023/03/09 00:55:17 [INFO] 127.0.0.1:57084 POST /enroll 201 0 "OK"
-2023/03/09 01:04:36 [INFO] 127.0.0.1:47666 POST /register 201 0 "OK"
-2023/03/09 01:04:36 [INFO] signed certificate with serial number 510739017687928869659069089182459072662110526966
-2023/03/09 01:04:36 [INFO] 127.0.0.1:47678 POST /enroll 201 0 "OK"
-2023/03/09 01:11:46 [INFO] 127.0.0.1:34782 POST /register 201 0 "OK"
-2023/03/09 01:11:46 [INFO] signed certificate with serial number 304405131624965286927533305441363123594631785325
-2023/03/09 01:11:46 [INFO] 127.0.0.1:34784 POST /enroll 201 0 "OK"
-2023/03/09 01:31:13 [INFO] 127.0.0.1:52584 POST /register 201 0 "OK"
-2023/03/09 01:31:13 [INFO] signed certificate with serial number 616568396063326325137810308167091544410762379197
-2023/03/09 01:31:13 [INFO] 127.0.0.1:52596 POST /enroll 201 0 "OK"
-2023/03/09 01:42:19 [INFO] 127.0.0.1:44870 POST /register 201 0 "OK"
-2023/03/09 01:42:19 [INFO] signed certificate with serial number 21053576568483833148856101457415341073077131755
-2023/03/09 01:42:19 [INFO] 127.0.0.1:44876 POST /enroll 201 0 "OK"
+2023/03/09 17:22:31 [INFO] Configuration file location: /home/priyanku/Desktop/major-project/ArogyaChain/ca-server/fabric-ca-server-config.yaml
+2023/03/09 17:22:31 [INFO] Starting server in home directory: /home/priyanku/Desktop/major-project/ArogyaChain/ca-server
+2023/03/09 17:22:31 [WARNING] Unknown provider type: ; metrics disabled
+2023/03/09 17:22:31 [INFO] Server Version: 1.5.5
+2023/03/09 17:22:31 [INFO] Server Levels: &{Identity:2 Affiliation:1 Certificate:1 Credential:1 RAInfo:1 Nonce:1}
+2023/03/09 17:22:31 [INFO] The CA key and certificate already exist
+2023/03/09 17:22:31 [INFO] The key is stored by BCCSP provider 'SW'
+2023/03/09 17:22:31 [INFO] The certificate is at: /home/priyanku/Desktop/major-project/ArogyaChain/ca-server/ca-cert.pem
+2023/03/09 17:22:31 [INFO] Initialized sqlite3 database at /home/priyanku/Desktop/major-project/ArogyaChain/ca-server/fabric-ca-server.db
+2023/03/09 17:22:31 [INFO] The Idemix issuer public and secret key files already exist
+2023/03/09 17:22:31 [INFO]    secret key file location: /home/priyanku/Desktop/major-project/ArogyaChain/ca-server/msp/keystore/IssuerSecretKey
+2023/03/09 17:22:31 [INFO]    public key file location: /home/priyanku/Desktop/major-project/ArogyaChain/ca-server/IssuerPublicKey
+2023/03/09 17:22:31 [INFO] The Idemix issuer revocation public and secret key files already exist
+2023/03/09 17:22:31 [INFO]    private key file location: /home/priyanku/Desktop/major-project/ArogyaChain/ca-server/msp/keystore/IssuerRevocationPrivateKey
+2023/03/09 17:22:31 [INFO]    public key file location: /home/priyanku/Desktop/major-project/ArogyaChain/ca-server/IssuerRevocationPublicKey
+2023/03/09 17:22:31 [INFO] Home directory for default CA: /home/priyanku/Desktop/major-project/ArogyaChain/ca-server
+2023/03/09 17:22:31 [INFO] Operation Server Listening on [::]:33911
+2023/03/09 17:22:31 [INFO] Listening on http://0.0.0.0:7054
