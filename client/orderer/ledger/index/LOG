@@ -601,3 +601,13 @@
 14:20:45.204418 db@janitor F·5 G·1
 14:20:45.204432 db@janitor removing table-154
 14:20:45.204459 db@open done T·17.636483ms
+=============== Mar 20, 2023 (IST) ===============
+21:14:44.646290 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+21:14:44.646582 version@stat F·[1 1] S·1KiB[287B 1KiB] Sc·[0.25 0.00]
+21:14:44.646613 db@open opening
+21:14:44.646684 journal@recovery F·1
+21:14:44.647800 journal@recovery recovering @159
+21:14:44.651829 memdb@flush created L0@161 N·107 S·1KiB "aro..nfo,v591":"ord..nfo,v488"
+21:14:44.652299 version@stat F·[2 1] S·3KiB[1KiB 1KiB] Sc·[0.50 0.00]
+21:14:44.661863 db@janitor F·5 G·0
+21:14:44.661878 db@open done T·15.256461ms
