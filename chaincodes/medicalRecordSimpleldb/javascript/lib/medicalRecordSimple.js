@@ -225,8 +225,14 @@ class MedicalRecord extends Contract {
           record?.PatientId === patientId && record?.Type === "PRESCRIPTION"
         );
       });
+
+      // sort the data by issue date in descending order
+      const sortedFinalData = filteredResults?.sort((a, b) => {
+        return Number(b?.IssueDate) - Number(a?.IssueDate);
+      });
+
       // return JSON data
-      return filteredResults;
+      return sortedFinalData;
     } else {
       // Invoke the acces control smart contract and fetch access results
       const accessControlResponse = await ctx.stub.invokeChaincode(
@@ -243,31 +249,38 @@ class MedicalRecord extends Contract {
       if (accessControlJSONResults.length === 0) {
         return []; // need to through errror saying this invoker has no access to any o the patients EMRs
       } else {
-        //assuming that the results are in sorted order in descending, means latest record comes in first
-        if (accessControlJSONResults[0].Operation === "GRANT_ACCESS") {
-          const results2 = await this.GetAllResultLeveldb(ctx);
-          let formattedResults = [];
-          if (typeof results2 === "object") {
-            formattedResults = results2;
-          } else {
-            formattedResults = JSON.parse(results2);
-          }
-          formattedResults = formattedResults?.map((res) => {
-            return res?.Record;
-          });
-
-          // filter results
-          const filteredResults2 = formattedResults?.filter((record) => {
-            return (
-              record?.PatientId === patientId && record?.Type === "PRESCRIPTION"
-            );
-          });
-
-          //return JSON data
-          return filteredResults2;
+        const results2 = await this.GetAllResultLeveldb(ctx);
+        let formattedResults = [];
+        if (typeof results2 === "object") {
+          formattedResults = results2;
         } else {
-          return []; // need to through errror saying this invoker has no access to any o the patients EMRs
+          formattedResults = JSON.parse(results2);
         }
+        formattedResults = formattedResults?.map((res) => {
+          return res?.Record;
+        });
+
+        // filter results
+        let filteredResults2 = formattedResults?.filter((record) => {
+          return (
+            record?.PatientId === patientId && record?.Type === "PRESCRIPTION"
+          );
+        });
+
+        // filter on the basis of ehrids
+        filteredResults2 = filteredResults2?.filter((ehr) => {
+          return accessControlJSONResults?.some(
+            (accessControlObj) => accessControlObj?.EHRId === ehr?.Id
+          );
+        });
+
+        // sort the data by issue date in descending order
+        const sortedFinalData = filteredResults2?.sort((a, b) => {
+          return Number(b?.IssueDate) - Number(a?.IssueDate);
+        });
+
+        //return JSON data
+        return sortedFinalData;
       }
     }
   }

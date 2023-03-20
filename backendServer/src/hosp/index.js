@@ -1,14 +1,14 @@
 const Express = require("express");
-const { registerPatient } = require("./auth");
+const { registerIdentity } = require("./auth");
 const { createEHR, getEHRByPatient } = require("./chaincode");
 const injectIdentity = require("../middlewares/identityInjectionMiddleware");
 
 const router = Express.Router();
 
 router.use(injectIdentity);
-router.post("/auth/registerPatient", registerPatient);
-router.post("/chaincode/createEHR", createEHR);
-router.get("/chaincode/getEHRByPatient", getEHRByPatient);
+router.post("/auth/registerIdentity", registerIdentity); //tested
+router.post("/chaincode/createEHR", createEHR); // tested
+router.get("/chaincode/getEHRByPatient", getEHRByPatient); // tested
 
 router.all("*", (req, res) =>
   res

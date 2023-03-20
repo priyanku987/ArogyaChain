@@ -14,22 +14,20 @@ function extractCNFromSubject(str) {
 
 function extractUserIdentityDetails(req) {
   let certificate = req?.header("ACCertificate");
-  console.log("c", certificate);
   const privateKey = req?.header("ACPrivateKey");
   const mspId = req?.header("ACMspId");
 
   // extract subject
-  const x509Cert = new crypto.X509Certificate(certificate);
-
-  console.log(x509Cert, "heh");
-  const subject = x509Cert?.subject;
+  const pemFormattedCertificate = certificate.replace(/\\n/g, "\n");
+  let pemFormattedPrivateKey = privateKey.replace(/\\r\\n|\\n/g, "\n");
+  const x509Cert = new crypto.X509Certificate(pemFormattedCertificate);
 
   //Extract the CN: in this case the Adhaar number
-  const CN = extractCNFromSubject(subject);
+  const CN = extractCNFromSubject(x509Cert?.subject);
 
   return {
-    certificate,
-    privateKey,
+    certificate: pemFormattedCertificate,
+    privateKey: pemFormattedPrivateKey,
     mspId,
     CN,
   };
@@ -37,18 +35,15 @@ function extractUserIdentityDetails(req) {
 
 module.exports = async (req, res, next) => {
   try {
-    console.log("hello", req);
     const userIdentityDetails = extractUserIdentityDetails(req);
-    console.log(userIdentityDetails);
+    req.user = {};
     req.user.X509Identity = makeX509Identity(
       userIdentityDetails?.certificate,
       userIdentityDetails?.privateKey,
       userIdentityDetails?.mspId
     );
     req.user.adhaarNumber = userIdentityDetails?.CN;
-    return res
-      ?.status(200)
-      .json({ data: "", message: "Something not went wrong!" });
+    return next();
   } catch (error) {
     console.log("err", error);
     return res?.status(500).json({ error, message: "Something went wrong!" });

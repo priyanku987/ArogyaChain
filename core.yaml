@@ -201,7 +201,7 @@ peer:
     reconnectInterval: 25s
     # This is an endpoint that is published to peers outside of the organization.
     # If this isn't set, the peer will not be known to other organizations.
-    externalEndpoint: 127.0.0.1:9111
+    externalEndpoint: 127.0.0.1:49153
     # Leader election service configuration
     election:
       # Longest time peer waits for stable membership during leader election startup (unit: second)

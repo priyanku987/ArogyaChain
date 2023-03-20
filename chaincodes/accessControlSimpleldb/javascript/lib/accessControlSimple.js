@@ -185,8 +185,36 @@ class AccessRecord extends Contract {
         record?.PerformedFor === performedFor
       );
     });
-    //sort by date
-    const sortedResults = filteredResults?.sort((a, b) => {
+
+    // object
+    const recordsByEhr = filteredResults?.reduce((acc, obj) => {
+      if (acc[obj.EHRId]) {
+        acc[obj.EHRId].push(obj);
+      } else {
+        acc[obj.EHRId] = [obj];
+      }
+      return acc;
+    }, {});
+
+    // sort records
+    for (let ehrId in recordsByEhr) {
+      const sortedRecords = recordsByEhr[ehrId].sort((a, b) => {
+        return Number(b.Date) - Number(a.Date);
+      });
+      recordsByEhr[ehrId] = sortedRecords;
+    }
+
+    // make final access list
+    const finalAccessList = [];
+    for (let ehrId in recordsByEhr) {
+      const currentlyAnalysedRecord = recordsByEhr[ehrId][0]; // getting the first element because its the latest
+      if (currentlyAnalysedRecord?.Operation === "GRANT_ACCESS") {
+        finalAccessList?.push(currentlyAnalysedRecord);
+      }
+    }
+
+    //again sort by date
+    const sortedResults = finalAccessList?.sort((a, b) => {
       return Number(b.Date) - Number(a.Date);
     });
     //returns JSON data
