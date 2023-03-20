@@ -2,6 +2,13 @@ import logo from "./logo.svg";
 import "./App.css";
 import { Button } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import Cookies from "js-cookie";
 
 const theme = createTheme({
   palette: {
@@ -12,24 +19,44 @@ const theme = createTheme({
 });
 
 function App() {
+  function isCertificateAndPrivateKeyAvailable() {
+    const certificate = Cookies?.get("ACCertificate");
+    const privateKey = Cookies?.get("ACPrivateKey");
+    if (certificate && privateKey) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-        <Button variant="contained">Contained</Button>
+        <Router>
+          <Switch>
+            {/* <Route path="/" render={() => <Dashboard />} /> */}
+            <Route path="/login" exact>
+              {isCertificateAndPrivateKeyAvailable() ? (
+                <Redirect to="/" />
+              ) : (
+                <Login />
+              )}
+            </Route>
+            <Route
+              path="/"
+              render={({ location }) =>
+                isCertificateAndPrivateKeyAvailable() ? (
+                  <Dashboard />
+                ) : (
+                  <Redirect
+                    to={`/login?next=${encodeURIComponent(
+                      `${location.pathname}${location.search}`
+                    )}`}
+                  />
+                )
+              }
+            />
+          </Switch>
+        </Router>
       </ThemeProvider>
     </div>
   );
