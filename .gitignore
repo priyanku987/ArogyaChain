@@ -1,4 +1,5 @@
 backendServer/node_modules
+arogyachain-webapp/node_modules
 bin
 .env
 chaincodes/accessControl/javascript/node_modules
