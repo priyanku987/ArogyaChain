@@ -1,5 +1,9 @@
 const crypto = require("crypto");
-const { makeX509Identity } = require("../../utils/misc");
+const { Gateway } = require("fabric-network");
+const { makeX509Identity, decryptCookie } = require("../../utils/misc");
+const { getConnectionProfileJSON } = require("../../utils/misc");
+const x509 = require("@peculiar/x509");
+const _ = require("lodash");
 
 function extractCNFromSubject(str) {
   const parts = str.split("\n");
@@ -35,17 +39,18 @@ function extractUserIdentityDetails(req) {
 
 module.exports = async (req, res, next) => {
   try {
-    const userIdentityDetails = extractUserIdentityDetails(req);
-    req.user = {};
-    req.user.X509Identity = makeX509Identity(
-      userIdentityDetails?.certificate,
-      userIdentityDetails?.privateKey,
-      userIdentityDetails?.mspId
-    );
-    req.user.adhaarNumber = userIdentityDetails?.CN;
+    if (_.isEmpty(req?.session?.user)) {
+      return res.status(401).json({
+        error: "Unauthorized",
+        message: "No credentials found, Please Login!",
+      });
+    }
     return next();
   } catch (error) {
-    console.log("err", error);
-    return res?.status(500).json({ error, message: "Something went wrong!" });
+    console.log(error);
+    return res?.status(401).json({
+      error: error?.message,
+      message: "Invalid Certificate and Keys!",
+    });
   }
 };

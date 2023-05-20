@@ -3,7 +3,7 @@
 # mohfw-admin, hospa-admin, orderer-admin
 
 function usage {
-    echo 'USAGE:  ./register-enroll-user.sh  NAME PASSWORD AFFILIATION'
+    echo 'USAGE:  ./register-enroll-user.sh  NAME PASSWORD AFFILIATION FULL_NAME PHONE_NUMBER_WITH_COUNTRY_CODE DOB MSPID'
 }
 
 if [ -z $1 ];
@@ -33,14 +33,51 @@ else
     AFFILIATION=$3
 fi
 
+if [ -z "$4" ];
+then
+    usage
+    echo "Please provide the FULL NAME!!!"
+    exit 0
+else
+    FULL_NAME="$4"
+fi
+
+if [ -z $5 ];
+then
+    usage
+    echo "Please provide the PHONE NUMBER WITH COUNTRY CODE!!!"
+    exit 0
+else
+    PHONE_NUMBER_WITH_COUNTRY_CODE=$5
+fi
+
+if [ -z $6 ];
+then
+    usage
+    echo "Please provide the DOB!!!"
+    exit 0
+else
+    DOB=$6
+fi
+
+if [ -z $7 ];
+then
+    usage
+    echo "Please provide the MSPID!!!"
+    exit 0
+else
+    MSPID=$7
+fi
+
+
 # Registers the admins
 function registerAdmins {
     # 1. Set the CA Server Admin as FABRIC_CA_CLIENT_HOME
     source setclient.sh   ca-server   admin
 
-    # 2. Register mohfw-admin
+    # 2. Register mohfw-admi
     echo "Registering: admin"
-    ATTRIBUTES='"hf.Registrar.Roles=peer,user,client,orderer","hf.AffiliationMgr=true","hf.Revoker=true","hf.Registrar.Attributes=*"'
+    ATTRIBUTES='"hf.Registrar.Roles=peer,user,client,orderer","hf.AffiliationMgr=true","hf.Revoker=true","hf.Registrar.Attributes=*","FULL_NAME=PRAVESH_SUKUMAR:ecert","PHONE_NUMBER=+913345678902:ecert","DOB=12-01-1987:ecert","MSPID=MohfwMSP:ecert","PATIENT=true:ecert","ADMIN=true:ecert","DOCTOR=false:ecert"'
     ../bin/fabric-ca-client register --id.type client --id.name $NAME --id.secret $PASSWORD --id.affiliation $AFFILIATION --id.attrs $ATTRIBUTES
 }
 

@@ -1,4 +1,4 @@
-[34m2023-03-20 21:14:56.288 IST 0001 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer:
+[34m2023-05-09 13:46:35.350 IST 0001 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer:
  Version: 2.4.7
  Commit SHA: df9c661
  Go version: go1.18.7
@@ -6,82 +6,110 @@
  Chaincode:
   Base Docker Label: org.hyperledger.fabric
   Docker Namespace: hyperledger
-[34m2023-03-20 21:14:56.288 IST 0002 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Auto-detected peer address: 10.42.0.1:51000
-[34m2023-03-20 21:14:56.289 IST 0003 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Returning localhost:51000
-[34m2023-03-20 21:14:56.365 IST 0004 INFO[0m [deliveryClient] [34;1mloadDeliverServiceConfig[0m -> peer.deliveryclient.blockGossipEnabled is not set, defaulting to true.
-[34m2023-03-20 21:14:56.366 IST 0005 INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2024-01-13 08:23:00 +0000 UTC
-[34m2023-03-20 21:14:56.368 IST 0006 INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initializing LedgerMgr
-[34m2023-03-20 21:14:56.648 IST 0007 INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initialized LedgerMgr
-[34m2023-03-20 21:14:56.649 IST 0008 INFO[0m [gossip.service] [34;1mNew[0m -> Initialize gossip with endpoint localhost:51000
-[34m2023-03-20 21:14:56.649 IST 0009 INFO[0m [gossip.gossip] [34;1mNew[0m -> Creating gossip service with self membership of Endpoint: 127.0.0.1:49153, InternalEndpoint: localhost:51000, PKI-ID: 92b74bda4ccd6ebd412743059e9f98c6c6f1632b1932a16bae3a90d90d293f87, Metadata: 
-[34m2023-03-20 21:14:56.649 IST 000a INFO[0m [gossip.gossip] [34;1mstart[0m -> Gossip instance localhost:51000 started
-[34m2023-03-20 21:14:56.703 IST 000b INFO[0m [lifecycle] [34;1mInitializeLocalChaincodes[0m -> Initialized lifecycle cache with 33 already installed chaincodes
-[34m2023-03-20 21:14:56.703 IST 000c INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Entering computeChaincodeEndpoint with peerHostname: localhost
-[34m2023-03-20 21:14:56.703 IST 000d INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Exit with ccEndpoint: localhost:51001
-[34m2023-03-20 21:14:56.704 IST 000e INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'lscc'
-[34m2023-03-20 21:14:56.704 IST 000f INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'cscc'
-[34m2023-03-20 21:14:56.704 IST 0010 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'qscc'
-[34m2023-03-20 21:14:56.704 IST 0011 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode '_lifecycle'
-[34m2023-03-20 21:14:56.704 IST 0012 INFO[0m [nodeCmd] [34;1mserve[0m -> Deployed system chaincodes
-[34m2023-03-20 21:14:56.704 IST 0013 INFO[0m [peer] [34;1mInitialize[0m -> Loading chain arogyaehrchannel
-[34m2023-03-20 21:14:56.704 IST 0014 INFO[0m [ledgermgmt] [34;1mOpenLedger[0m -> Opening ledger with id = arogyaehrchannel
-[34m2023-03-20 21:14:56.718 IST 0015 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_4' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.718 IST 0016 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_4:1da9586aebf3d6a5bb307bb38d5d0e2020e226095b5ef985eaa78b8bd7f751a8' now available on channel arogyaehrchannel for chaincode definition accessControl_1_4:1_4
-[34m2023-03-20 21:14:56.718 IST 0017 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_7' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.718 IST 0018 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_7:1d43810fd5b9f3dc47db50adfc986db0336cecf463f986fa5fce5b0908e58227' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_7:1_7
-[34m2023-03-20 21:14:56.718 IST 0019 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_8' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.718 IST 001a INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_8:38b151012658f5ff1194055bd1c5f2c667efcda3b3474038530ec5f4fbc650b6' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_8:1_8
-[34m2023-03-20 21:14:56.718 IST 001b INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecordSimpleldb_1_0' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.718 IST 001c INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecordSimpleldb_1_5:d09efbc39956fc8b8767b68fb1553c31c3967c50ad42ef7753e50680091a5a7f' now available on channel arogyaehrchannel for chaincode definition medicalRecordSimpleldb_1_0:1_0
-[34m2023-03-20 21:14:56.718 IST 001d INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_6' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.718 IST 001e INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_6:6ff61bf3d2cd58881488d8f773d9bca5e308ad9a9460ac8484136bed25ad550e' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_6:1_6
-[34m2023-03-20 21:14:56.718 IST 001f INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_2_0' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.719 IST 0020 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_2_0:0ff632e520333b219f36ec96858a7bb36284dee33173a07e458bfe69de829f1e' now available on channel arogyaehrchannel for chaincode definition medicalRecord_2_0:2_0
-[34m2023-03-20 21:14:56.719 IST 0021 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_6' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.719 IST 0022 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_6:d839d4b0791416bbbf908bd3850e2a522536da9fc9e9edfba7ce4169a86bf249' now available on channel arogyaehrchannel for chaincode definition accessControl_1_6:1_6
-[34m2023-03-20 21:14:56.719 IST 0023 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_5' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.719 IST 0024 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_5:b38b7bd307f0feb8e9b5bf011df4db5133b2af14994fa01b5e4b546bc22d2e15' now available on channel arogyaehrchannel for chaincode definition accessControl_1_5:1_5
-[34m2023-03-20 21:14:56.719 IST 0025 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_5' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.719 IST 0026 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_5:7b1c064d305b6640d926b248167ba3dde2733eee63bc66b4a3fd94ccbd8e4993' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_5:1_5
-[34m2023-03-20 21:14:56.719 IST 0027 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControlSimpleldb_1_0' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.719 IST 0028 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControlSimpleldb_1_3:6448da1d1fa975868575403fbbeaa8b7c4d5c99d92b1be7bf8afae033bc0de3a' now available on channel arogyaehrchannel for chaincode definition accessControlSimpleldb_1_0:1_0
-[34m2023-03-20 21:14:56.719 IST 0029 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.719 IST 002a INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_4' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.719 IST 002b INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_4:cd35de01c50a0597586644841924a52db797a7cfc252cdb0c7197f59c6be8f9e' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_4:1_4
-[34m2023-03-20 21:14:56.719 IST 002c INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_7' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.719 IST 002d INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_7:1c3835a7b03dc6149401f8b9fb89af476bc4f7a8c74d20e7ecff4a325151f36a' now available on channel arogyaehrchannel for chaincode definition accessControl_1_7:1_7
-[34m2023-03-20 21:14:56.719 IST 002e INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_3' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.720 IST 002f INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_3:6649dc3e6a0b4925f57a6bbb655ffec115bab60b19e7c55dae0b4de56a96c777' now available on channel arogyaehrchannel for chaincode definition accessControl_1_3:1_3
-[34m2023-03-20 21:14:56.720 IST 0030 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_9' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.720 IST 0031 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_9:92ceabcb48a7b19ba4f1ad124f8d6e9fadac6e63371f433ed3c9c4495385b009' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_9:1_9
-[34m2023-03-20 21:14:56.720 IST 0032 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_2_2' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.720 IST 0033 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_2_3:f67bbc0713c68403ff38a7ea9d5cff776a624ac76b015a880635d795ab19ff95' now available on channel arogyaehrchannel for chaincode definition accessControl_2_2:2_2
-[34m2023-03-20 21:14:56.720 IST 0034 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_2_1' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.720 IST 0035 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_2_2:b1c2bb8f96c6dc4fe7e4a33652b80bf6bf15dd6b4b58829aff68d96dfe49af94' now available on channel arogyaehrchannel for chaincode definition medicalRecord_2_1:2_1
-[34m2023-03-20 21:14:56.720 IST 0036 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_2_1' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.720 IST 0037 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_2_1:8ec54a9203acfa520e69f142cad58d327d5ac74885fd5b8422ff612a7d9e7202' now available on channel arogyaehrchannel for chaincode definition accessControl_2_1:2_1
-[34m2023-03-20 21:14:56.720 IST 0038 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_9' on channel 'arogyaehrchannel'
-[34m2023-03-20 21:14:56.720 IST 0039 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_9:689c233b9689c8ced3b8fdfb9ef2c7fb545a678d51f070bfd5ab4b9e6e3389e8' now available on channel arogyaehrchannel for chaincode definition accessControl_1_9:1_9
-[34m2023-03-20 21:14:56.726 IST 003a INFO[0m [ledgermgmt] [34;1mOpenLedger[0m -> Opened ledger with id = arogyaehrchannel
-[34m2023-03-20 21:14:56.729 IST 003b INFO[0m [gossip.gossip] [34;1mJoinChan[0m -> Joining gossip network of channel arogyaehrchannel with 4 organizations
-[34m2023-03-20 21:14:56.731 IST 003c INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of MohfwMSP for channel arogyaehrchannel to learn about
-[34m2023-03-20 21:14:56.731 IST 003d INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp1MSP for channel arogyaehrchannel to learn about
-[34m2023-03-20 21:14:56.731 IST 003e INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp2MSP for channel arogyaehrchannel to learn about
-[34m2023-03-20 21:14:56.731 IST 003f INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp3MSP for channel arogyaehrchannel to learn about
-[34m2023-03-20 21:14:56.731 IST 0040 INFO[0m [gossip.state] [34;1mNewGossipStateProvider[0m -> Updating metadata information for channel arogyaehrchannel, current ledger sequence is at = 145, next expected block is = 146
-[34m2023-03-20 21:14:56.732 IST 0041 INFO[0m [discovery] [34;1mNewService[0m -> Created with config TLS: false, authCacheMaxSize: 1000, authCachePurgeRatio: 0.750000
-[34m2023-03-20 21:14:56.732 IST 0042 INFO[0m [nodeCmd] [34;1mserve[0m -> Discovery service activated
-[34m2023-03-20 21:14:56.732 IST 0043 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with Gateway enabled
-[34m2023-03-20 21:14:56.732 IST 0044 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with ID=[hosp1-anchor-peer], network ID=[dev], address=[localhost:51000]
-[34m2023-03-20 21:14:56.732 IST 0045 INFO[0m [nodeCmd] [34;1mserve[0m -> Started peer with ID=[hosp1-anchor-peer], network ID=[dev], address=[localhost:51000]
-[34m2023-03-20 21:14:56.732 IST 0046 INFO[0m [kvledger] [34;1mLoadPreResetHeight[0m -> Loading prereset height from path [/home/priyanku/Desktop/major-project/client/hosp1/hosp1-anchor-peer/ledger/ledgersData/chains]
-[34m2023-03-20 21:14:57.645 IST 0047 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=gossip.Gossip grpc.method=Ping grpc.request_deadline=2023-03-20T21:14:59.645+05:30 grpc.peer_address=127.0.0.1:50206 grpc.code=OK grpc.call_duration=50.086µs
-[34m2023-03-20 21:14:57.647 IST 0048 INFO[0m [gossip.comm] [34;1mGossipStream[0m -> Peer 3e03c8b72cb3e85fbf560b5b64ffd6db808fd8128e8df7faa213d476292edd01 (127.0.0.1:50206) probed us
-[34m2023-03-20 21:14:57.647 IST 0049 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=gossip.Gossip grpc.method=GossipStream grpc.request_deadline=2023-03-20T21:15:07.646+05:30 grpc.peer_address=127.0.0.1:50206 grpc.code=OK grpc.call_duration=1.199372ms
-[34m2023-03-20 21:14:57.650 IST 004a INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=gossip.Gossip grpc.method=Ping grpc.request_deadline=2023-03-20T21:14:59.65+05:30 grpc.peer_address=127.0.0.1:50216 grpc.code=OK grpc.call_duration=57.232µs
-[33m2023-03-20 21:14:58.037 IST 004b WARN[0m [lifecycle] [33;1mWork[0m -> could not launch chaincode 'accessControl_1_4:1da9586aebf3d6a5bb307bb38d5d0e2020e226095b5ef985eaa78b8bd7f751a8': chaincode registration failed: container exited with 127
-[34m2023-03-20 21:15:01.730 IST 004c INFO[0m [gossip.channel] [34;1mreportMembershipChanges[0m -> [[arogyaehrchannel] Membership view has changed. peers went online:  [[127.0.0.1:49153 localhost:52000]] , current view:  [[127.0.0.1:49153 localhost:52000]]]
-[34m2023-03-20 21:15:02.725 IST 004d INFO[0m [gossip.election] [34;1mleaderElection[0m -> 92b74bda4ccd6ebd412743059e9f98c6c6f1632b1932a16bae3a90d90d293f87 : Some peer is already a leader
-[33m2023-03-20 21:15:17.938 IST 004e WARN[0m [lifecycle] [33;1mWork[0m -> could not launch chaincode 'medicalRecord_1_4:cd35de01c50a0597586644841924a52db797a7cfc252cdb0c7197f59c6be8f9e': chaincode registration failed: container exited with 1
-[33m2023-03-20 21:15:20.857 IST 004f WARN[0m [lifecycle] [33;1mWork[0m -> could not launch chaincode 'accessControl_1_7:1c3835a7b03dc6149401f8b9fb89af476bc4f7a8c74d20e7ecff4a325151f36a': chaincode registration failed: container exited with 1
-[33m2023-03-20 21:15:22.182 IST 0050 WARN[0m [lifecycle] [33;1mWork[0m -> could not launch chaincode 'accessControl_1_3:6649dc3e6a0b4925f57a6bbb655ffec115bab60b19e7c55dae0b4de56a96c777': chaincode registration failed: container exited with 1
+[34m2023-05-09 13:46:35.351 IST 0002 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Auto-detected peer address: 172.20.10.3:51000
+[34m2023-05-09 13:46:35.351 IST 0003 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Returning localhost:51000
+[34m2023-05-09 13:46:35.552 IST 0004 INFO[0m [deliveryClient] [34;1mloadDeliverServiceConfig[0m -> peer.deliveryclient.blockGossipEnabled is not set, defaulting to true.
+[34m2023-05-09 13:46:35.553 IST 0005 INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2024-01-13 08:23:00 +0000 UTC
+[34m2023-05-09 13:46:35.556 IST 0006 INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initializing LedgerMgr
+[34m2023-05-09 13:46:36.700 IST 0007 INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initialized LedgerMgr
+[34m2023-05-09 13:46:36.700 IST 0008 INFO[0m [gossip.service] [34;1mNew[0m -> Initialize gossip with endpoint localhost:51000
+[34m2023-05-09 13:46:36.701 IST 0009 INFO[0m [gossip.gossip] [34;1mNew[0m -> Creating gossip service with self membership of Endpoint: 127.0.0.1:49153, InternalEndpoint: localhost:51000, PKI-ID: 92b74bda4ccd6ebd412743059e9f98c6c6f1632b1932a16bae3a90d90d293f87, Metadata: 
+[34m2023-05-09 13:46:36.701 IST 000a INFO[0m [gossip.gossip] [34;1mstart[0m -> Gossip instance localhost:51000 started
+[34m2023-05-09 13:46:36.848 IST 000b INFO[0m [lifecycle] [34;1mInitializeLocalChaincodes[0m -> Initialized lifecycle cache with 34 already installed chaincodes
+[34m2023-05-09 13:46:36.849 IST 000c INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Entering computeChaincodeEndpoint with peerHostname: localhost
+[34m2023-05-09 13:46:36.849 IST 000d INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Exit with ccEndpoint: localhost:51001
+[34m2023-05-09 13:46:36.850 IST 000e INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'lscc'
+[34m2023-05-09 13:46:36.850 IST 000f INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'cscc'
+[34m2023-05-09 13:46:36.850 IST 0010 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'qscc'
+[34m2023-05-09 13:46:36.850 IST 0011 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode '_lifecycle'
+[34m2023-05-09 13:46:36.850 IST 0012 INFO[0m [nodeCmd] [34;1mserve[0m -> Deployed system chaincodes
+[34m2023-05-09 13:46:36.850 IST 0013 INFO[0m [peer] [34;1mInitialize[0m -> Loading chain arogyaehrchannel
+[34m2023-05-09 13:46:36.850 IST 0014 INFO[0m [ledgermgmt] [34;1mOpenLedger[0m -> Opening ledger with id = arogyaehrchannel
+[34m2023-05-09 13:46:36.885 IST 0015 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_2_0' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.886 IST 0016 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_2_0:0ff632e520333b219f36ec96858a7bb36284dee33173a07e458bfe69de829f1e' now available on channel arogyaehrchannel for chaincode definition medicalRecord_2_0:2_0
+[34m2023-05-09 13:46:36.886 IST 0017 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_7' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.886 IST 0018 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_7:1c3835a7b03dc6149401f8b9fb89af476bc4f7a8c74d20e7ecff4a325151f36a' now available on channel arogyaehrchannel for chaincode definition accessControl_1_7:1_7
+[34m2023-05-09 13:46:36.886 IST 0019 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecordSimpleldb_1_0' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.886 IST 001a INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecordSimpleldb_1_5:d09efbc39956fc8b8767b68fb1553c31c3967c50ad42ef7753e50680091a5a7f' now available on channel arogyaehrchannel for chaincode definition medicalRecordSimpleldb_1_0:1_0
+[34m2023-05-09 13:46:36.886 IST 001b INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_9' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.886 IST 001c INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_9:689c233b9689c8ced3b8fdfb9ef2c7fb545a678d51f070bfd5ab4b9e6e3389e8' now available on channel arogyaehrchannel for chaincode definition accessControl_1_9:1_9
+[34m2023-05-09 13:46:36.886 IST 001d INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_4' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.886 IST 001e INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_4:1da9586aebf3d6a5bb307bb38d5d0e2020e226095b5ef985eaa78b8bd7f751a8' now available on channel arogyaehrchannel for chaincode definition accessControl_1_4:1_4
+[34m2023-05-09 13:46:36.886 IST 001f INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_5' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.886 IST 0020 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_5:7b1c064d305b6640d926b248167ba3dde2733eee63bc66b4a3fd94ccbd8e4993' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_5:1_5
+[34m2023-05-09 13:46:36.886 IST 0021 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControlSimpleldb_1_0' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.886 IST 0022 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControlSimpleldb_1_4:e0aba71d751f7aed6df996a34faf7cb07a4effd8b4cc5f6cebbde2355f37c10f' now available on channel arogyaehrchannel for chaincode definition accessControlSimpleldb_1_0:1_0
+[34m2023-05-09 13:46:36.886 IST 0023 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_6' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.886 IST 0024 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_6:d839d4b0791416bbbf908bd3850e2a522536da9fc9e9edfba7ce4169a86bf249' now available on channel arogyaehrchannel for chaincode definition accessControl_1_6:1_6
+[34m2023-05-09 13:46:36.886 IST 0025 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_8' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.886 IST 0026 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_8:38b151012658f5ff1194055bd1c5f2c667efcda3b3474038530ec5f4fbc650b6' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_8:1_8
+[34m2023-05-09 13:46:36.886 IST 0027 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_2_1' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.886 IST 0028 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_2_2:b1c2bb8f96c6dc4fe7e4a33652b80bf6bf15dd6b4b58829aff68d96dfe49af94' now available on channel arogyaehrchannel for chaincode definition medicalRecord_2_1:2_1
+[34m2023-05-09 13:46:36.886 IST 0029 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_9' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.886 IST 002a INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_9:92ceabcb48a7b19ba4f1ad124f8d6e9fadac6e63371f433ed3c9c4495385b009' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_9:1_9
+[34m2023-05-09 13:46:36.887 IST 002b INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_6' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.887 IST 002c INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_6:6ff61bf3d2cd58881488d8f773d9bca5e308ad9a9460ac8484136bed25ad550e' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_6:1_6
+[34m2023-05-09 13:46:36.887 IST 002d INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_2_2' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.887 IST 002e INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_2_3:f67bbc0713c68403ff38a7ea9d5cff776a624ac76b015a880635d795ab19ff95' now available on channel arogyaehrchannel for chaincode definition accessControl_2_2:2_2
+[34m2023-05-09 13:46:36.887 IST 002f INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_2_1' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.887 IST 0030 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_2_1:8ec54a9203acfa520e69f142cad58d327d5ac74885fd5b8422ff612a7d9e7202' now available on channel arogyaehrchannel for chaincode definition accessControl_2_1:2_1
+[34m2023-05-09 13:46:36.887 IST 0031 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_7' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.887 IST 0032 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_7:1d43810fd5b9f3dc47db50adfc986db0336cecf463f986fa5fce5b0908e58227' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_7:1_7
+[34m2023-05-09 13:46:36.887 IST 0033 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord_1_4' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.887 IST 0034 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'medicalRecord_1_4:cd35de01c50a0597586644841924a52db797a7cfc252cdb0c7197f59c6be8f9e' now available on channel arogyaehrchannel for chaincode definition medicalRecord_1_4:1_4
+[34m2023-05-09 13:46:36.887 IST 0035 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_3' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.887 IST 0036 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_3:6649dc3e6a0b4925f57a6bbb655ffec115bab60b19e7c55dae0b4de56a96c777' now available on channel arogyaehrchannel for chaincode definition accessControl_1_3:1_3
+[34m2023-05-09 13:46:36.887 IST 0037 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'medicalRecord' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.887 IST 0038 INFO[0m [lifecycle] [34;1mupdate[0m -> Updating cached definition for chaincode 'accessControl_1_5' on channel 'arogyaehrchannel'
+[34m2023-05-09 13:46:36.887 IST 0039 INFO[0m [lifecycle] [34;1mupdate[0m -> Chaincode with package ID 'accessControl_1_5:b38b7bd307f0feb8e9b5bf011df4db5133b2af14994fa01b5e4b546bc22d2e15' now available on channel arogyaehrchannel for chaincode definition accessControl_1_5:1_5
+[34m2023-05-09 13:46:36.897 IST 003a INFO[0m [ledgermgmt] [34;1mOpenLedger[0m -> Opened ledger with id = arogyaehrchannel
+[34m2023-05-09 13:46:36.900 IST 003b INFO[0m [gossip.gossip] [34;1mJoinChan[0m -> Joining gossip network of channel arogyaehrchannel with 4 organizations
+[34m2023-05-09 13:46:36.900 IST 003c INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of MohfwMSP for channel arogyaehrchannel to learn about
+[34m2023-05-09 13:46:36.900 IST 003d INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp1MSP for channel arogyaehrchannel to learn about
+[34m2023-05-09 13:46:36.900 IST 003e INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp2MSP for channel arogyaehrchannel to learn about
+[34m2023-05-09 13:46:36.900 IST 003f INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Hosp3MSP for channel arogyaehrchannel to learn about
+[34m2023-05-09 13:46:36.900 IST 0040 INFO[0m [gossip.state] [34;1mNewGossipStateProvider[0m -> Updating metadata information for channel arogyaehrchannel, current ledger sequence is at = 180, next expected block is = 181
+[34m2023-05-09 13:46:36.900 IST 0041 INFO[0m [discovery] [34;1mNewService[0m -> Created with config TLS: false, authCacheMaxSize: 1000, authCachePurgeRatio: 0.750000
+[34m2023-05-09 13:46:36.900 IST 0042 INFO[0m [nodeCmd] [34;1mserve[0m -> Discovery service activated
+[34m2023-05-09 13:46:36.901 IST 0043 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with Gateway enabled
+[34m2023-05-09 13:46:36.901 IST 0044 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with ID=[hosp1-anchor-peer], network ID=[dev], address=[localhost:51000]
+[34m2023-05-09 13:46:36.901 IST 0045 INFO[0m [nodeCmd] [34;1mserve[0m -> Started peer with ID=[hosp1-anchor-peer], network ID=[dev], address=[localhost:51000]
+[34m2023-05-09 13:46:36.901 IST 0046 INFO[0m [kvledger] [34;1mLoadPreResetHeight[0m -> Loading prereset height from path [/home/priyanku/Desktop/major-project/client/hosp1/hosp1-anchor-peer/ledger/ledgersData/chains]
+[34m2023-05-09 13:46:36.901 IST 0047 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=gossip.Gossip grpc.method=Ping grpc.request_deadline=2023-05-09T13:46:38.901+05:30 grpc.peer_address=127.0.0.1:39832 grpc.code=OK grpc.call_duration=23.001µs
+[34m2023-05-09 13:46:36.903 IST 0048 INFO[0m [gossip.comm] [34;1mGossipStream[0m -> Peer 3e03c8b72cb3e85fbf560b5b64ffd6db808fd8128e8df7faa213d476292edd01 (127.0.0.1:39832) probed us
+[34m2023-05-09 13:46:36.903 IST 0049 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=gossip.Gossip grpc.method=GossipStream grpc.request_deadline=2023-05-09T13:46:46.902+05:30 grpc.peer_address=127.0.0.1:39832 grpc.code=OK grpc.call_duration=1.126931ms
+[34m2023-05-09 13:46:36.903 IST 004a INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=gossip.Gossip grpc.method=Ping grpc.request_deadline=2023-05-09T13:46:38.903+05:30 grpc.peer_address=127.0.0.1:39846 grpc.code=OK grpc.call_duration=36.247µs
+[34m2023-05-09 13:46:41.901 IST 004b INFO[0m [gossip.channel] [34;1mreportMembershipChanges[0m -> [[arogyaehrchannel] Membership view has changed. peers went online:  [[127.0.0.1:49153 localhost:52000]] , current view:  [[127.0.0.1:49153 localhost:52000]]]
+[33m2023-05-09 13:46:42.064 IST 004c WARN[0m [lifecycle] [33;1mWork[0m -> could not launch chaincode 'accessControl_1_7:1c3835a7b03dc6149401f8b9fb89af476bc4f7a8c74d20e7ecff4a325151f36a': chaincode registration failed: container exited with 1
+[34m2023-05-09 13:46:42.969 IST 004d INFO[0m [gossip.election] [34;1mleaderElection[0m -> 92b74bda4ccd6ebd412743059e9f98c6c6f1632b1932a16bae3a90d90d293f87 : Some peer is already a leader
+[33m2023-05-09 13:46:46.764 IST 004e WARN[0m [lifecycle] [33;1mWork[0m -> could not launch chaincode 'accessControl_1_4:1da9586aebf3d6a5bb307bb38d5d0e2020e226095b5ef985eaa78b8bd7f751a8': chaincode registration failed: container exited with 127
+[33m2023-05-09 13:47:15.136 IST 004f WARN[0m [lifecycle] [33;1mWork[0m -> could not launch chaincode 'medicalRecord_1_4:cd35de01c50a0597586644841924a52db797a7cfc252cdb0c7197f59c6be8f9e': chaincode registration failed: container exited with 1
+[33m2023-05-09 13:47:16.840 IST 0050 WARN[0m [lifecycle] [33;1mWork[0m -> could not launch chaincode 'accessControl_1_3:6649dc3e6a0b4925f57a6bbb655ffec115bab60b19e7c55dae0b4de56a96c777': chaincode registration failed: container exited with 1
+[34m2023-05-09 14:04:51.843 IST 0051 INFO[0m [gossip.privdata] [34;1mStoreBlock[0m -> Received block [181] from buffer channel=arogyaehrchannel
+[34m2023-05-09 14:04:51.844 IST 0052 INFO[0m [committer.txvalidator] [34;1mValidate[0m -> [arogyaehrchannel] Validated block [181] in 1ms
+[34m2023-05-09 14:04:51.864 IST 0053 INFO[0m [kvledger] [34;1mcommit[0m -> [arogyaehrchannel] Committed block [181] with 1 transaction(s) in 19ms (state_validation=0ms block_and_pvtdata_commit=12ms state_commit=3ms) commitHash=[2f08e185a73226c3b3f059aa5409da5c4737e597bdfb0f1f3ab7c3fe7a915f6c]
+[34m2023-05-09 14:42:03.251 IST 0054 INFO[0m [nodeCmd] [34;1mfunc1[0m -> Received signal: 15 (terminated)
+[33m2023-05-09 14:42:03.269 IST 0056 WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=medicalRecord_2_1:ee88bab1cfdae5533034ad48f5234127db744b28098dae0475e2873286561471 error="No such container: dev-hosp1-anchor-peer-medicalRecord_2_1-ee88bab1cfdae5533034ad48f5234127db744b28098dae0475e2873286561471"
+[33m2023-05-09 14:42:03.269 IST 0055 WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=medicalRecordSimpleldb_1_3:3bce98fbb42acba7b8d9f83fe53bb4e0c45187fc0e64399e9af00c5765ace5c9 error="No such container: dev-hosp1-anchor-peer-medicalRecordSimpleldb_1_3-3bce98fbb42acba7b8d9f83fe53bb4e0c45187fc0e64399e9af00c5765ace5c9"
+[33m2023-05-09 14:42:03.272 IST 0057 WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=accessControlSimpleldb_1_0:3085fdc17424d838f4259f7ed14cecce39cc01188f1f5ea689e74eef4f7ac29e error="No such container: dev-hosp1-anchor-peer-accessControlSimpleldb_1_0-3085fdc17424d838f4259f7ed14cecce39cc01188f1f5ea689e74eef4f7ac29e"
+[33m2023-05-09 14:42:03.281 IST 0058 WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=medicalRecord-1.0:dfde34148e420399c197f11f9a140b20e0d0a4bf0c6e7714afbd765d70aadf26 error="No such container: dev-hosp1-anchor-peer-medicalRecord-1.0-dfde34148e420399c197f11f9a140b20e0d0a4bf0c6e7714afbd765d70aadf26"
+[33m2023-05-09 14:42:03.281 IST 0059 WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=medicalRecord_1.3:50ae1277bb4ba4b5073430c81a3bafb3f52dea0f7069619efb64419f0909a69f error="No such container: dev-hosp1-anchor-peer-medicalRecord_1.3-50ae1277bb4ba4b5073430c81a3bafb3f52dea0f7069619efb64419f0909a69f"
+[33m2023-05-09 14:42:03.282 IST 005a WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=medicalRecordSimpleldb_1_0:eb5182f0655a3fd5c40777f02314a5b89743075aa49eb1c89986894836a531e3 error="No such container: dev-hosp1-anchor-peer-medicalRecordSimpleldb_1_0-eb5182f0655a3fd5c40777f02314a5b89743075aa49eb1c89986894836a531e3"
+[33m2023-05-09 14:42:03.282 IST 005b WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=accessControl_1_8:c35458cd0522e0e8679dcc92be5443039de880b4518f20a3dd251cc001351171 error="No such container: dev-hosp1-anchor-peer-accessControl_1_8-c35458cd0522e0e8679dcc92be5443039de880b4518f20a3dd251cc001351171"
+[33m2023-05-09 14:42:03.284 IST 005c WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=accessControlSimpleldb_1_3:6448da1d1fa975868575403fbbeaa8b7c4d5c99d92b1be7bf8afae033bc0de3a error="No such container: dev-hosp1-anchor-peer-accessControlSimpleldb_1_3-6448da1d1fa975868575403fbbeaa8b7c4d5c99d92b1be7bf8afae033bc0de3a"
+[33m2023-05-09 14:42:03.284 IST 005d WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=medicalRecord-1.2:dfcd8354cc38e3a7c37b315305c6daae02ad20f96f98710bdf0f8fc876f9148a error="No such container: dev-hosp1-anchor-peer-medicalRecord-1.2-dfcd8354cc38e3a7c37b315305c6daae02ad20f96f98710bdf0f8fc876f9148a"
+[33m2023-05-09 14:42:03.284 IST 005e WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=medicalRecordSimpleldb_1_2:386ed2fe6f88fa403c7deedbd1581f2c4ccfabb7a324772ce03ed8ab7843dd89 error="No such container: dev-hosp1-anchor-peer-medicalRecordSimpleldb_1_2-386ed2fe6f88fa403c7deedbd1581f2c4ccfabb7a324772ce03ed8ab7843dd89"
+[33m2023-05-09 14:42:03.284 IST 005f WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=accessControl_2_0:cf346c7b87b7a979e13b0de73702f4d9a8deda504187c006ff3dfac20496d513 error="No such container: dev-hosp1-anchor-peer-accessControl_2_0-cf346c7b87b7a979e13b0de73702f4d9a8deda504187c006ff3dfac20496d513"
+[33m2023-05-09 14:42:03.285 IST 0060 WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=accessControl_2_2:29a5fce3618ed4315b01af556f27059dde4a004e2cd6b084287b7d6b9522fe69 error="No such container: dev-hosp1-anchor-peer-accessControl_2_2-29a5fce3618ed4315b01af556f27059dde4a004e2cd6b084287b7d6b9522fe69"
+[33m2023-05-09 14:42:03.286 IST 0061 WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=medicalRecordSimpleldb_1_4:6612bc2851f4364f0b990b7d4af8cd0bd6e69f5449b0e750a81d77fb2111bbbe error="No such container: dev-hosp1-anchor-peer-medicalRecordSimpleldb_1_4-6612bc2851f4364f0b990b7d4af8cd0bd6e69f5449b0e750a81d77fb2111bbbe"
+[33m2023-05-09 14:42:03.286 IST 0062 WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=medicalRecordSimpleldb_1_1:41543dd2307da510998445eb6417d3c8bfb9b5c2f7a250786bb1982dc1f4d32f error="No such container: dev-hosp1-anchor-peer-medicalRecordSimpleldb_1_1-41543dd2307da510998445eb6417d3c8bfb9b5c2f7a250786bb1982dc1f4d32f"
+[33m2023-05-09 14:42:03.295 IST 0063 WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=accessControlSimpleldb_1_1:3a92b125e1c479c7ec7adfd7f6a892b63d79851c7b206878a139e587dfa22ae6 error="No such container: dev-hosp1-anchor-peer-accessControlSimpleldb_1_1-3a92b125e1c479c7ec7adfd7f6a892b63d79851c7b206878a139e587dfa22ae6"
+[33m2023-05-09 14:42:03.295 IST 0064 WARN[0m [container] [33;1mfunc1[0m -> failed to stop chaincode ccid=accessControlSimpleldb_1_2:dcbcded193171784315e93336d138925aa7e9a1adcf8efe06456ecb5a4b30f03 error="No such container: dev-hosp1-anchor-peer-accessControlSimpleldb_1_2-dcbcded193171784315e93336d138925aa7e9a1adcf8efe06456ecb5a4b30f03"
+[34m2023-05-09 14:42:05.312 IST 0065 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=gossip.Gossip grpc.method=GossipStream grpc.peer_address=127.0.0.1:39846 error="rpc error: code = Canceled desc = context canceled" grpc.code=Canceled grpc.call_duration=19m19.323527567s
+[34m2023-05-09 14:42:05.320 IST 0066 INFO[0m [gossip.service] [34;1mStop[0m -> Stopping chain arogyaehrchannel
+[34m2023-05-09 14:42:05.320 IST 0067 INFO[0m [gossip.service] [34;1mStop[0m -> Stopping leader election for arogyaehrchannel
+[34m2023-05-09 14:42:05.320 IST 0068 INFO[0m [gossip.gossip] [34;1mStop[0m -> Stopping gossip
+[34m2023-05-09 14:42:05.321 IST 0069 INFO[0m [gossip.discovery] [34;1mStop[0m -> Stopping
+[34m2023-05-09 14:42:05.321 IST 006a INFO[0m [gossip.discovery] [34;1mStop[0m -> Stopped
+[34m2023-05-09 14:42:05.321 IST 006b INFO[0m [gossip.comm] [34;1mStop[0m -> Stopping
+[34m2023-05-09 14:42:05.321 IST 006c INFO[0m [gossip.comm] [34;1mStop[0m -> Stopped

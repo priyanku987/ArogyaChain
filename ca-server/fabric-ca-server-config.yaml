@@ -30,35 +30,26 @@ ca:
 #############################################################################
 affiliations:
   mohfw:
-    - engineering
-    - support
-    - staffmanagement
-    - usermanagement
-    - tech
+    usermanagement:
+      - users
+      - staff
+
   orderer:
-    - engineering
-    - support
-    - staffmanagement
-    - usermanagement
-    - tech
+    usermanagement:
+      - users
+      - staff
   hosp1:
-    - engineering
-    - support
-    - staffmanagement
-    - usermanagement
-    - tech
+    usermanagement:
+      - users
+      - staff
   hosp2:
-    - engineering
-    - support
-    - staffmanagement
-    - usermanagement
-    - tech
+    usermanagement:
+      - users
+      - staff
   hosp3:
-    - engineering
-    - support
-    - staffmanagement
-    - usermanagement
-    - tech
+    usermanagement:
+      - users
+      - staff
 #############################################################################
 #  Used for ID registry setup
 #############################################################################

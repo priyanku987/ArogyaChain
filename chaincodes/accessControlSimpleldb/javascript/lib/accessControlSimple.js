@@ -220,6 +220,110 @@ class AccessRecord extends Contract {
     //returns JSON data
     return sortedResults;
   }
+
+  // This function returns the entire Access Control History granted or revoked by a paticular identity
+  async GetACLHistoryForACProviderIdentity(ctx, performedBy) {
+    const results = await this.GetAllResultLeveldb(ctx);
+    let formattedResults = [];
+    if (typeof results === "object") {
+      formattedResults = results;
+    } else {
+      formattedResults = JSON.parse(results);
+    }
+    formattedResults = formattedResults?.map((res) => {
+      return res?.Record;
+    });
+
+    // filter the results
+    const filteredResults = formattedResults?.filter((record) => {
+      return record?.PerformedBy === performedBy;
+    });
+
+    //asort by date
+    const sortedResults = filteredResults?.sort((a, b) => {
+      return Number(b.Date) - Number(a.Date);
+    });
+
+    return sortedResults;
+  }
+
+  // This function returns the entire Access Control History granted to or revoked from a paticular identity
+  async GetACLHistoryForACAcceptorIdentity(ctx, performedFor) {
+    const results = await this.GetAllResultLeveldb(ctx);
+    let formattedResults = [];
+    if (typeof results === "object") {
+      formattedResults = results;
+    } else {
+      formattedResults = JSON.parse(results);
+    }
+    formattedResults = formattedResults?.map((res) => {
+      return res?.Record;
+    });
+
+    // filter the results
+    const filteredResults = formattedResults?.filter((record) => {
+      return record?.PerformedFor === performedFor;
+    });
+
+    //asort by date
+    const sortedResults = filteredResults?.sort((a, b) => {
+      return Number(b.Date) - Number(a.Date);
+    });
+
+    return sortedResults;
+  }
+
+  // This returns all the access_grant type records that an identity has granted for another identity, eg: for a doctor
+  async GetAccessGrantListPerformedForIdentity(ctx, performedFor) {
+    const results = await this.GetAllResultLeveldb(ctx);
+    let formattedResults = [];
+    if (typeof results === "object") {
+      formattedResults = results;
+    } else {
+      formattedResults = JSON.parse(results);
+    }
+    formattedResults = formattedResults?.map((res) => {
+      return res?.Record;
+    });
+
+    // filter the results
+    const filteredResults = formattedResults?.filter((record) => {
+      return record?.PerformedFor === performedFor;
+    });
+
+    // group by ehrid
+    const recordsByEhr = filteredResults?.reduce((acc, obj) => {
+      if (acc[obj.EHRId]) {
+        acc[obj.EHRId].push(obj);
+      } else {
+        acc[obj.EHRId] = [obj];
+      }
+      return acc;
+    }, {});
+
+    // sort records
+    for (let ehrId in recordsByEhr) {
+      const sortedRecords = recordsByEhr[ehrId].sort((a, b) => {
+        return Number(b.Date) - Number(a.Date);
+      });
+      recordsByEhr[ehrId] = sortedRecords;
+    }
+
+    const accessGrantedRecordsArray = [];
+    for (let ehrId in recordsByEhr) {
+      const currentlyAnalysedRecord = recordsByEhr[ehrId][0]; // getting the first element because its the latest
+      if (currentlyAnalysedRecord?.Operation === "GRANT_ACCESS") {
+        accessGrantedRecordsArray?.push(currentlyAnalysedRecord);
+      }
+    }
+
+    //again sort by date
+    const sortedResults = accessGrantedRecordsArray?.sort((a, b) => {
+      return Number(b.Date) - Number(a.Date);
+    });
+    //returns JSON data
+    return sortedResults;
+  }
 }
 
 module.exports = AccessRecord;

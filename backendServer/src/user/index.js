@@ -4,6 +4,8 @@ const {
   grantAllEHRAccessToIdentity,
   grantParticularEHRAccessToIdentity,
   revokeParticularEHRAccessFromIdentity,
+  getACLHistoryExecutedForAnIdentity,
+  getExecutorACLHistory,
 } = require("./chaincode");
 const { enrollUser, reenrollUser } = require("./auth");
 const { getMSPs } = require("./channel");
@@ -29,6 +31,13 @@ router.post(
 router.post(
   "/chaincode/revokeParticularEHRAccessFromIdentity",
   revokeParticularEHRAccessFromIdentity
+); // tested
+
+router.get("/chaincode/getACProviderACLHistory", getExecutorACLHistory); // tested
+
+router.get(
+  "/chaincode/getACLHistoryExecutedForIdentity",
+  getACLHistoryExecutedForAnIdentity
 ); // tested
 
 router.get("/channel/getMSPs", getMSPs); //tested

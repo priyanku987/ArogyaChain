@@ -12,13 +12,22 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@peculiar/x509": "^1.9.3",
+    "@sendgrid/mail": "^7.7.0",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
+    "dayjs": "^1.11.7",
     "dotenv": "^16.0.3",
     "express": "^4.17.1",
+    "express-session": "^1.17.3",
     "fabric-ca-client": "^2.2.16",
     "fabric-common": "^2.2.17",
     "fabric-network": "^2.2.16",
     "helmet": "^6.0.1",
-    "nanoid": "^3.1.25"
+    "jszip": "^3.10.1",
+    "lodash": "^4.17.21",
+    "nanoid": "^3.1.25",
+    "sqlite": "^4.0.14",
+    "sqlite3": "^5.0.0"
   }
 }

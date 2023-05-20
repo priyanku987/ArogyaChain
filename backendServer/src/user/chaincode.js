@@ -3,17 +3,18 @@ const FabricCaServices = require("fabric-ca-client");
 const fs = require("fs");
 const { getConnectionProfileJSON } = require("../../utils/misc");
 const { nanoid } = require("nanoid");
+const _ = require("lodash");
 
 module.exports.getEHRs = async (req, res) => {
   try {
-    const { adhaarNumber, X509Identity } = req?.user;
+    const { aadhaarNumber, x509Identity } = req?.session?.user;
 
     // NOTE : implement a way to See if the user is already being enrolled
     // Make the gateway connection
     const connectionProfileJSON = getConnectionProfileJSON();
     const gateway = new Gateway();
     await gateway.connect(connectionProfileJSON, {
-      identity: X509Identity,
+      identity: x509Identity,
       discovery: { enabled: true, asLocalhost: true },
     });
 
@@ -24,19 +25,31 @@ module.exports.getEHRs = async (req, res) => {
     const contract = network.getContract("medicalRecordSimpleldb_1_0");
     const results = await contract?.evaluateTransaction(
       "GetEMRByPatientId",
-      adhaarNumber,
+      aadhaarNumber,
       "accessControlSimpleldb_1_0"
     );
     const jsonResults = JSON.parse(results.toString());
 
+    const filteredJsonResults = [];
+    jsonResults?.forEach((ree) => {
+      const element = _.attempt(JSON.parse, ree?.MedicinesPrescribed);
+      const element2 = _.attempt(JSON.parse, ree?.TestsRecommended);
+
+      if (!_.isError(element) && !_.isError(element2)) {
+        filteredJsonResults.push(ree);
+      }
+    });
+
     gateway?.disconnect();
 
     return res.status(200).json({
-      data: jsonResults,
+      data: filteredJsonResults,
     });
   } catch (error) {
-    console.log(error);
-    return res?.status(500).json({ message: "Internal server error!" });
+    // console.log(JSON.stringify(error));
+    return res
+      ?.status(500)
+      .json({ error: error?.message, message: "Internal server error!" });
   }
 };
 
@@ -91,7 +104,7 @@ module.exports.grantAllEHRAccessToIdentity = async (req, res) => {
 module.exports.grantParticularEHRAccessToIdentity = async (req, res) => {
   try {
     const { granteeId, ehrId } = req?.body; // The person's adhaar number to whom the user is granting access
-    const { adhaarNumber, X509Identity } = req?.user; // Users Adhaar Number
+    const { aadhaarNumber, x509Identity } = req?.session?.user; // Users Adhaar Number
 
     if (!granteeId || !ehrId) {
       return res?.status(400).json({
@@ -106,7 +119,7 @@ module.exports.grantParticularEHRAccessToIdentity = async (req, res) => {
     const connectionProfileJSON = getConnectionProfileJSON();
     const gateway = new Gateway();
     await gateway.connect(connectionProfileJSON, {
-      identity: X509Identity,
+      identity: x509Identity,
       discovery: { enabled: true, asLocalhost: true },
     });
 
@@ -119,7 +132,7 @@ module.exports.grantParticularEHRAccessToIdentity = async (req, res) => {
       "GrantAccess",
       nanoid(30),
       ehrId,
-      adhaarNumber,
+      aadhaarNumber,
       granteeId
     );
 
@@ -137,7 +150,7 @@ module.exports.grantParticularEHRAccessToIdentity = async (req, res) => {
 module.exports.revokeParticularEHRAccessFromIdentity = async (req, res) => {
   try {
     const { granteeId, ehrId } = req?.body; // The person's adhaar number to whom the user is granting access
-    const { adhaarNumber, X509Identity } = req?.user; // Users Adhaar Number
+    const { aadhaarNumber, x509Identity } = req?.session?.user; // Users Adhaar Number
 
     if (!granteeId || !ehrId) {
       return res?.status(400).json({
@@ -152,7 +165,7 @@ module.exports.revokeParticularEHRAccessFromIdentity = async (req, res) => {
     const connectionProfileJSON = getConnectionProfileJSON();
     const gateway = new Gateway();
     await gateway.connect(connectionProfileJSON, {
-      identity: X509Identity,
+      identity: x509Identity,
       discovery: { enabled: true, asLocalhost: true },
     });
 
@@ -166,13 +179,85 @@ module.exports.revokeParticularEHRAccessFromIdentity = async (req, res) => {
       "RevokeAccess",
       nanoid(30),
       ehrId,
-      adhaarNumber,
+      aadhaarNumber,
       granteeId
     );
     gateway?.disconnect();
 
     return res?.status(200).json({
       message: "Successfully submitted the transaction for revoking access!",
+    });
+  } catch (error) {
+    console.log(error);
+    return res?.status(500).json({ message: "Internal server error!" });
+  }
+};
+
+module.exports.getExecutorACLHistory = async (req, res) => {
+  try {
+    const { aadhaarNumber, x509Identity } = req?.session?.user;
+
+    // Make the gateway connection
+    const connectionProfileJSON = getConnectionProfileJSON();
+    const gateway = new Gateway();
+    await gateway.connect(connectionProfileJSON, {
+      identity: x509Identity,
+      discovery: { enabled: true, asLocalhost: true },
+    });
+
+    // Get the network (channel) where contract is deployed to.
+    const network = await gateway.getNetwork(process.env.EHR_CHANNEL);
+
+    // Get the contract from the network.
+    // Get the contract from the network.
+    const contract = network.getContract(process.env.ACCESS_CONTROL_CHAINCODE);
+
+    const results = await contract?.evaluateTransaction(
+      "GetACLHistoryForACProviderIdentity",
+      aadhaarNumber
+    );
+
+    const jsonResults = JSON.parse(results.toString());
+    gateway?.disconnect();
+
+    return res.status(200).json({
+      data: jsonResults,
+    });
+  } catch (error) {
+    console.log(error);
+    return res?.status(500).json({ message: "Internal server error!" });
+  }
+};
+
+module.exports.getACLHistoryExecutedForAnIdentity = async (req, res) => {
+  try {
+    const { aadhaarNumber, x509Identity } = req?.session?.user;
+
+    // Make the gateway connection
+    const connectionProfileJSON = getConnectionProfileJSON();
+    const gateway = new Gateway();
+    await gateway.connect(connectionProfileJSON, {
+      identity: x509Identity,
+      discovery: { enabled: true, asLocalhost: true },
+    });
+
+    // Get the network (channel) where contract is deployed to.
+    const network = await gateway.getNetwork(process.env.EHR_CHANNEL);
+
+    // Get the contract from the network.
+    // Get the contract from the network.
+    const contract = network.getContract(process.env.ACCESS_CONTROL_CHAINCODE);
+
+    const results = await contract?.evaluateTransaction(
+      "GetACLHistoryForACAcceptorIdentity",
+      aadhaarNumber
+    );
+
+    const jsonResults = JSON.parse(results.toString());
+    gateway?.disconnect();
+
+    return res.status(200).json({
+      data: jsonResults,
     });
   } catch (error) {
     console.log(error);

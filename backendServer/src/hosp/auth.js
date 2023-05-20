@@ -2,21 +2,26 @@ const { Wallets, Gateway } = require("fabric-network");
 const { getConnectionProfileJSON } = require("../../utils/misc");
 const FabricCAServices = require("fabric-ca-client");
 const { User } = require("fabric-common");
+const { nanoid } = require("nanoid");
+const mail = require("../../utils/mail");
 
 const commonConnectionProfilePath =
   "backendServer/utils/commonConnectionProfile.json";
 
 module.exports.registerIdentity = async (req, res) => {
   try {
-    const { X509Identity } = req.user;
-    const { adhaarId, secret, org, identityRoleAttributes } = req.body; //"org" should be in lower case letters
+    const { x509Identity } = req?.session?.user;
+    console.log(req?.session);
+    const { aadhaarNumber, fullName, dob, phoneNumber, email, roles } =
+      req.body; //"org" should be in lower case letters
 
     if (
-      !adhaarId ||
-      !secret ||
-      !org ||
-      !identityRoleAttributes ||
-      identityRoleAttributes?.length === 0
+      !aadhaarNumber ||
+      !fullName ||
+      !dob ||
+      !phoneNumber ||
+      !email ||
+      roles?.length === 0
     ) {
       return res?.status(400).json({
         message: "Required fields are not provided!",
@@ -30,29 +35,67 @@ module.exports.registerIdentity = async (req, res) => {
     const connectionProfile = getConnectionProfileJSON();
     const networkGateway = new Gateway();
     await networkGateway.connect(connectionProfile, {
-      identity: X509Identity,
+      identity: x509Identity,
       discovery: { enabled: true, asLocalhost: true },
     });
 
     // Get the ca instance
     const ca = new FabricCAServices(process.env.CA_SERVER_ENDPOINT);
 
-    const attributes = identityRoleAttributes?.map((roleAttr) => ({
-      name: roleAttr,
-      value: "true",
-      ecert: true,
-    }));
+    const attributes = [
+      {
+        name: "FULL_NAME",
+        value: fullName,
+        ecert: true,
+      },
+      {
+        name: "DOB",
+        value: dob,
+        ecert: true,
+      },
+      {
+        name: "PHONE_NUMBER",
+        value: phoneNumber,
+        ecert: true,
+      },
+      {
+        name: "EMAIL",
+        value: email,
+        ecert: true,
+      },
+      {
+        name: "MSPID",
+        value: x509Identity?.mspId,
+        ecert: true,
+      },
+    ];
+    roles?.forEach((role) => {
+      attributes.push({
+        name: role,
+        value: "true",
+        ecert: true,
+      });
+    });
+
+    const secret = nanoid(20);
+    let affiliation = `${req?.session?.user?.attrs["hf.Affiliation"]}.usermanagement.users`;
+    if (roles?.includes("DOCTOR") || roles?.includes("RECIEPTIONIST")) {
+      affiliation = `${req?.session?.user?.attrs["hf.Affiliation"]}.usermanagement`;
+    }
     const registrationResult = await ca.register(
       {
-        enrollmentID: adhaarId,
+        enrollmentID: aadhaarNumber,
         enrollmentSecret: secret,
         role: "client",
-        affiliation: `${org}.usermanagement`, //NOTE: need to update the fabric-ca-server-config.yaml to include "user" in the affiliations
+        affiliation: affiliation, //NOTE: need to update the fabric-ca-server-config.yaml to include "user" in the affiliations
         maxEnrollments: -1,
         attrs: attributes,
       },
       networkGateway?.identityContext?.user
     );
+
+    // send mail
+    await mail.sendEnrollmentSecretMail(email, secret);
     return res.status(200).json({
       message: "Identity registration successfull!",
       data: registrationResult,

@@ -35,7 +35,9 @@ module.exports.createEHR = async (req, res) => {
       Suggesstions,
       TestsRecommended,
     } = req?.body;
-    const { X509Identity, adhaarNumber } = req?.user; // Doctor's Adhaar Number
+    const { x509Identity, aadhaarNumber } = req?.session?.user; // Doctor's Adhaar Number
+
+    console.log("iden", x509Identity);
 
     if (
       !Type ||
@@ -72,7 +74,7 @@ module.exports.createEHR = async (req, res) => {
     const connectionProfile = getConnectionProfileJSON();
     const networkGateway = new Gateway();
     await networkGateway.connect(connectionProfile, {
-      identity: X509Identity,
+      identity: x509Identity,
       discovery: { enabled: true, asLocalhost: true },
     });
 
@@ -83,7 +85,7 @@ module.exports.createEHR = async (req, res) => {
 
     // Generate neccesary data for EHR
     const ehrId = `ehr_${PatientId}_${nanoid(20)}`;
-    const doctorId = adhaarNumber;
+    const doctorId = aadhaarNumber;
     await contract.submitTransaction(
       "CreateMedicalRecord",
       ehrId,
@@ -115,9 +117,9 @@ module.exports.createEHR = async (req, res) => {
       DiseaseName,
       DiseaseDescription,
       SeverityOfDisease,
-      MedicinesPrescribed,
+      JSON.stringify(MedicinesPrescribed),
       Suggesstions,
-      TestsRecommended
+      JSON.stringify(TestsRecommended)
     );
 
     networkGateway.disconnect();
@@ -134,7 +136,7 @@ module.exports.createEHR = async (req, res) => {
 module.exports.getEHRByPatient = async (req, res) => {
   try {
     const { patientId } = req?.query;
-    const { X509Identity } = req?.user;
+    const { x509Identity } = req?.session?.user;
     if (!patientId) {
       return res.status(400).json({
         message: "Patient Id not provided!",
@@ -144,7 +146,7 @@ module.exports.getEHRByPatient = async (req, res) => {
     const connectionProfile = getConnectionProfileJSON();
     const networkGateway = new Gateway();
     await networkGateway.connect(connectionProfile, {
-      identity: X509Identity,
+      identity: x509Identity,
       discovery: { enabled: true, asLocalhost: true },
     });
 
@@ -153,7 +155,6 @@ module.exports.getEHRByPatient = async (req, res) => {
 
     // Get the contract from the network.
     const contract = network.getContract(process.env.MEDICAL_RECORD_CHAINCODE);
-    console.log("cotract", contract);
     let results = await contract?.evaluateTransaction(
       "GetEMRByPatientId",
       patientId,
@@ -169,6 +170,38 @@ module.exports.getEHRByPatient = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
+    return res?.status(500).json({ message: "Internal server error!" });
+  }
+};
+
+module.exports.getAccessGrantListPerformedForIdentity = async (req, res) => {
+  try {
+    const { x509Identity, aadhaarNumber } = req?.session?.user; // Doctor's Adhaar Number
+    const connectionProfile = getConnectionProfileJSON();
+    const networkGateway = new Gateway();
+    await networkGateway.connect(connectionProfile, {
+      identity: x509Identity,
+      discovery: { enabled: true, asLocalhost: true },
+    });
+
+    // Get the network (channel) where contract is deployed to.
+    const network = await networkGateway.getNetwork(process.env.EHR_CHANNEL);
+    // Get the contract from the network.
+    const contract = network.getContract(process.env.ACCESS_CONTROL_CHAINCODE);
+
+    const results = await contract?.evaluateTransaction(
+      "GetAccessGrantListPerformedForIdentity",
+      aadhaarNumber
+    );
+
+    const jsonResults = JSON.parse(results.toString());
+    networkGateway?.disconnect();
+
+    return res?.status(200).json({
+      data: jsonResults,
+    });
+  } catch (error) {
+    console.log("err", error);
     return res?.status(500).json({ message: "Internal server error!" });
   }
 };
